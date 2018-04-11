@@ -16,7 +16,8 @@ public class ManagerServiceImpl implements ManagerService {
 	@Autowired
 	private ManagerMapper managerMapper;
 	
-	public boolean getManagerByName(Manager manager){
+	@Override
+	public boolean getByName(Manager manager){
 		if(manager == null)
 			return false;
 		String name = manager.getName();
@@ -31,8 +32,51 @@ public class ManagerServiceImpl implements ManagerService {
 		if(real == null || !manager.getPwd().equals(real.getPwd()))
 			return false;
 		return true;
+		
 	}
-	
-	
 
+	@Override
+	public Manager getById(Number id) {
+		return managerMapper.selectByPrimaryKey(String.valueOf(id));
+	}
+
+	@Override
+	public boolean deleteById(Number id) {
+		if(managerMapper.deleteByPrimaryKey(id) == 1) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean insert(Manager entity) {
+		if(managerMapper.insert(entity) == 1) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean insertSelective(Manager entity) {
+		if(managerMapper.insertSelective(entity) == 1) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean updateByIdSelective(Manager entity) {
+		if(managerMapper.updateByPrimaryKeySelective(entity) == 1) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean updateById(Manager entity) {
+		if(managerMapper.updateByPrimaryKey(entity) == 1) {
+			return true;
+		}
+		return false;
+	}
 }
