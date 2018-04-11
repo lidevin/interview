@@ -13,18 +13,23 @@ public class ManagerController {
 	@Autowired
 	private ManagerService managerService;
 	
-	@RequestMapping("/login")
-	public String login() {
-		Manager manager = new Manager();
-		manager.setName("123");
-		manager.setPwd("123");
+	@RequestMapping("alogin")
+	public String toLoginPage() {
+		return "admin-login";
+	}
+	
+	@RequestMapping("adminlogin")
+	public String login(Manager manager) {
 		boolean loginFlag = managerService.getByName(manager);
-		
 		if(loginFlag) {
-			return "index";
+			return "redirect:toAdmin";
 		}else {
-			return "login";
+			return "redirect:/alogin";
 		}
 	}
 	
+	@RequestMapping("toAdmin")
+	public String toIndex() {
+		return "admin";
+	}
 }
