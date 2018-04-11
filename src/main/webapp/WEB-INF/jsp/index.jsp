@@ -7,6 +7,6 @@
 <title>index</title>
 </head>
 <body>
-this is index page.
+首页！
 </body>
 </html>

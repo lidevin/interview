@@ -18,7 +18,7 @@ public class ManagerController {
 		Manager manager = new Manager();
 		manager.setName("123");
 		manager.setPwd("123");
-		boolean loginFlag = managerService.getManagerByName(manager);
+		boolean loginFlag = managerService.getByName(manager);
 		
 		if(loginFlag) {
 			return "index";
