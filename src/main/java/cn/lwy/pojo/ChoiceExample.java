@@ -104,123 +104,63 @@ public class ChoiceExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andIdIsNull() {
-            addCriterion("id is null");
+        public Criteria andQidIsNull() {
+            addCriterion("qid is null");
             return (Criteria) this;
         }
 
-        public Criteria andIdIsNotNull() {
-            addCriterion("id is not null");
+        public Criteria andQidIsNotNull() {
+            addCriterion("qid is not null");
             return (Criteria) this;
         }
 
-        public Criteria andIdEqualTo(Integer value) {
-            addCriterion("id =", value, "id");
+        public Criteria andQidEqualTo(Integer value) {
+            addCriterion("qid =", value, "qid");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotEqualTo(Integer value) {
-            addCriterion("id <>", value, "id");
+        public Criteria andQidNotEqualTo(Integer value) {
+            addCriterion("qid <>", value, "qid");
             return (Criteria) this;
         }
 
-        public Criteria andIdGreaterThan(Integer value) {
-            addCriterion("id >", value, "id");
+        public Criteria andQidGreaterThan(Integer value) {
+            addCriterion("qid >", value, "qid");
             return (Criteria) this;
         }
 
-        public Criteria andIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("id >=", value, "id");
+        public Criteria andQidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("qid >=", value, "qid");
             return (Criteria) this;
         }
 
-        public Criteria andIdLessThan(Integer value) {
-            addCriterion("id <", value, "id");
+        public Criteria andQidLessThan(Integer value) {
+            addCriterion("qid <", value, "qid");
             return (Criteria) this;
         }
 
-        public Criteria andIdLessThanOrEqualTo(Integer value) {
-            addCriterion("id <=", value, "id");
+        public Criteria andQidLessThanOrEqualTo(Integer value) {
+            addCriterion("qid <=", value, "qid");
             return (Criteria) this;
         }
 
-        public Criteria andIdIn(List<Integer> values) {
-            addCriterion("id in", values, "id");
+        public Criteria andQidIn(List<Integer> values) {
+            addCriterion("qid in", values, "qid");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotIn(List<Integer> values) {
-            addCriterion("id not in", values, "id");
+        public Criteria andQidNotIn(List<Integer> values) {
+            addCriterion("qid not in", values, "qid");
             return (Criteria) this;
         }
 
-        public Criteria andIdBetween(Integer value1, Integer value2) {
-            addCriterion("id between", value1, value2, "id");
+        public Criteria andQidBetween(Integer value1, Integer value2) {
+            addCriterion("qid between", value1, value2, "qid");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("id not between", value1, value2, "id");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumIsNull() {
-            addCriterion("num is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumIsNotNull() {
-            addCriterion("num is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumEqualTo(Byte value) {
-            addCriterion("num =", value, "num");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumNotEqualTo(Byte value) {
-            addCriterion("num <>", value, "num");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumGreaterThan(Byte value) {
-            addCriterion("num >", value, "num");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumGreaterThanOrEqualTo(Byte value) {
-            addCriterion("num >=", value, "num");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumLessThan(Byte value) {
-            addCriterion("num <", value, "num");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumLessThanOrEqualTo(Byte value) {
-            addCriterion("num <=", value, "num");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumIn(List<Byte> values) {
-            addCriterion("num in", values, "num");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumNotIn(List<Byte> values) {
-            addCriterion("num not in", values, "num");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumBetween(Byte value1, Byte value2) {
-            addCriterion("num between", value1, value2, "num");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumNotBetween(Byte value1, Byte value2) {
-            addCriterion("num not between", value1, value2, "num");
+        public Criteria andQidNotBetween(Integer value1, Integer value2) {
+            addCriterion("qid not between", value1, value2, "qid");
             return (Criteria) this;
         }
 

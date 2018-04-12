@@ -413,6 +413,66 @@ public class AssessmentExample {
             addCriterion("score not between", value1, value2, "score");
             return (Criteria) this;
         }
+
+        public Criteria andRealscoreIsNull() {
+            addCriterion("realscore is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealscoreIsNotNull() {
+            addCriterion("realscore is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealscoreEqualTo(Byte value) {
+            addCriterion("realscore =", value, "realscore");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealscoreNotEqualTo(Byte value) {
+            addCriterion("realscore <>", value, "realscore");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealscoreGreaterThan(Byte value) {
+            addCriterion("realscore >", value, "realscore");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealscoreGreaterThanOrEqualTo(Byte value) {
+            addCriterion("realscore >=", value, "realscore");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealscoreLessThan(Byte value) {
+            addCriterion("realscore <", value, "realscore");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealscoreLessThanOrEqualTo(Byte value) {
+            addCriterion("realscore <=", value, "realscore");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealscoreIn(List<Byte> values) {
+            addCriterion("realscore in", values, "realscore");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealscoreNotIn(List<Byte> values) {
+            addCriterion("realscore not in", values, "realscore");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealscoreBetween(Byte value1, Byte value2) {
+            addCriterion("realscore between", value1, value2, "realscore");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealscoreNotBetween(Byte value1, Byte value2) {
+            addCriterion("realscore not between", value1, value2, "realscore");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

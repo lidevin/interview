@@ -11,7 +11,7 @@ public class Candidate {
 
     private String sex;
 
-    private Integer phone;
+    private String phone;
 
     private String school;
 
@@ -53,12 +53,12 @@ public class Candidate {
         this.sex = sex == null ? null : sex.trim();
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
-        this.phone = phone;
+    public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
     }
 
     public String getSchool() {

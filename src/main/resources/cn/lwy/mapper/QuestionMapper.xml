@@ -4,9 +4,8 @@
   <resultMap id="BaseResultMap" type="cn.lwy.pojo.Question" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="title" property="title" jdbcType="VARCHAR" />
-    <result column="cid" property="cid" jdbcType="INTEGER" />
     <result column="type" property="type" jdbcType="TINYINT" />
-    <result column="answer" property="answer" jdbcType="CHAR" />
+    <result column="answer" property="answer" jdbcType="VARCHAR" />
     <result column="score" property="score" jdbcType="TINYINT" />
     <result column="difficult" property="difficult" jdbcType="TINYINT" />
   </resultMap>
@@ -69,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, title, cid, type, answer, score, difficult
+    id, title, type, answer, score, difficult
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.lwy.pojo.QuestionExample" >
     select
@@ -102,11 +101,11 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.lwy.pojo.Question" >
-    insert into question (id, title, cid, 
-      type, answer, score, difficult
+    insert into question (id, title, type, 
+      answer, score, difficult
       )
-    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{cid,jdbcType=INTEGER}, 
-      #{type,jdbcType=TINYINT}, #{answer,jdbcType=CHAR}, #{score,jdbcType=TINYINT}, #{difficult,jdbcType=TINYINT}
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{type,jdbcType=TINYINT}, 
+      #{answer,jdbcType=VARCHAR}, #{score,jdbcType=TINYINT}, #{difficult,jdbcType=TINYINT}
       )
   </insert>
   <insert id="insertSelective" parameterType="cn.lwy.pojo.Question" >
@@ -117,9 +116,6 @@
       </if>
       <if test="title != null" >
         title,
-      </if>
-      <if test="cid != null" >
-        cid,
       </if>
       <if test="type != null" >
         type,
@@ -141,14 +137,11 @@
       <if test="title != null" >
         #{title,jdbcType=VARCHAR},
       </if>
-      <if test="cid != null" >
-        #{cid,jdbcType=INTEGER},
-      </if>
       <if test="type != null" >
         #{type,jdbcType=TINYINT},
       </if>
       <if test="answer != null" >
-        #{answer,jdbcType=CHAR},
+        #{answer,jdbcType=VARCHAR},
       </if>
       <if test="score != null" >
         #{score,jdbcType=TINYINT},
@@ -173,14 +166,11 @@
       <if test="record.title != null" >
         title = #{record.title,jdbcType=VARCHAR},
       </if>
-      <if test="record.cid != null" >
-        cid = #{record.cid,jdbcType=INTEGER},
-      </if>
       <if test="record.type != null" >
         type = #{record.type,jdbcType=TINYINT},
       </if>
       <if test="record.answer != null" >
-        answer = #{record.answer,jdbcType=CHAR},
+        answer = #{record.answer,jdbcType=VARCHAR},
       </if>
       <if test="record.score != null" >
         score = #{record.score,jdbcType=TINYINT},
@@ -197,9 +187,8 @@
     update question
     set id = #{record.id,jdbcType=INTEGER},
       title = #{record.title,jdbcType=VARCHAR},
-      cid = #{record.cid,jdbcType=INTEGER},
       type = #{record.type,jdbcType=TINYINT},
-      answer = #{record.answer,jdbcType=CHAR},
+      answer = #{record.answer,jdbcType=VARCHAR},
       score = #{record.score,jdbcType=TINYINT},
       difficult = #{record.difficult,jdbcType=TINYINT}
     <if test="_parameter != null" >
@@ -212,14 +201,11 @@
       <if test="title != null" >
         title = #{title,jdbcType=VARCHAR},
       </if>
-      <if test="cid != null" >
-        cid = #{cid,jdbcType=INTEGER},
-      </if>
       <if test="type != null" >
         type = #{type,jdbcType=TINYINT},
       </if>
       <if test="answer != null" >
-        answer = #{answer,jdbcType=CHAR},
+        answer = #{answer,jdbcType=VARCHAR},
       </if>
       <if test="score != null" >
         score = #{score,jdbcType=TINYINT},
@@ -233,9 +219,8 @@
   <update id="updateByPrimaryKey" parameterType="cn.lwy.pojo.Question" >
     update question
     set title = #{title,jdbcType=VARCHAR},
-      cid = #{cid,jdbcType=INTEGER},
       type = #{type,jdbcType=TINYINT},
-      answer = #{answer,jdbcType=CHAR},
+      answer = #{answer,jdbcType=VARCHAR},
       score = #{score,jdbcType=TINYINT},
       difficult = #{difficult,jdbcType=TINYINT}
     where id = #{id,jdbcType=INTEGER}

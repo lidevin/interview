@@ -11,6 +11,8 @@ public class Assessment {
 
     private Byte score;
 
+    private Byte realscore;
+
     public Integer getQid() {
         return qid;
     }
@@ -49,5 +51,13 @@ public class Assessment {
 
     public void setScore(Byte score) {
         this.score = score;
+    }
+
+    public Byte getRealscore() {
+        return realscore;
+    }
+
+    public void setRealscore(Byte realscore) {
+        this.realscore = realscore;
     }
 }

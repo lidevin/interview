@@ -2,8 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.lwy.mapper.ChoiceMapper" >
   <resultMap id="BaseResultMap" type="cn.lwy.pojo.Choice" >
-    <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="num" property="num" jdbcType="TINYINT" />
+    <result column="qid" property="qid" jdbcType="INTEGER" />
     <result column="content" property="content" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -65,7 +64,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, num, content
+    qid, content
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.lwy.pojo.ChoiceExample" >
     select
@@ -81,16 +80,6 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from choice
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from choice
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
   <delete id="deleteByExample" parameterType="cn.lwy.pojo.ChoiceExample" >
     delete from choice
     <if test="_parameter != null" >
@@ -98,30 +87,22 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.lwy.pojo.Choice" >
-    insert into choice (id, num, content
-      )
-    values (#{id,jdbcType=INTEGER}, #{num,jdbcType=TINYINT}, #{content,jdbcType=VARCHAR}
-      )
+    insert into choice (qid, content)
+    values (#{qid,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.lwy.pojo.Choice" >
     insert into choice
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
-      <if test="num != null" >
-        num,
+      <if test="qid != null" >
+        qid,
       </if>
       <if test="content != null" >
         content,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="num != null" >
-        #{num,jdbcType=TINYINT},
+      <if test="qid != null" >
+        #{qid,jdbcType=INTEGER},
       </if>
       <if test="content != null" >
         #{content,jdbcType=VARCHAR},
@@ -137,11 +118,8 @@
   <update id="updateByExampleSelective" parameterType="map" >
     update choice
     <set >
-      <if test="record.id != null" >
-        id = #{record.id,jdbcType=INTEGER},
-      </if>
-      <if test="record.num != null" >
-        num = #{record.num,jdbcType=TINYINT},
+      <if test="record.qid != null" >
+        qid = #{record.qid,jdbcType=INTEGER},
       </if>
       <if test="record.content != null" >
         content = #{record.content,jdbcType=VARCHAR},
@@ -153,29 +131,10 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update choice
-    set id = #{record.id,jdbcType=INTEGER},
-      num = #{record.num,jdbcType=TINYINT},
+    set qid = #{record.qid,jdbcType=INTEGER},
       content = #{record.content,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
-  </update>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.lwy.pojo.Choice" >
-    update choice
-    <set >
-      <if test="num != null" >
-        num = #{num,jdbcType=TINYINT},
-      </if>
-      <if test="content != null" >
-        content = #{content,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="cn.lwy.pojo.Choice" >
-    update choice
-    set num = #{num,jdbcType=TINYINT},
-      content = #{content,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

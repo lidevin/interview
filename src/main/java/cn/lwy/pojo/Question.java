@@ -5,8 +5,6 @@ public class Question {
 
     private String title;
 
-    private Integer cid;
-
     private Byte type;
 
     private String answer;
@@ -29,14 +27,6 @@ public class Question {
 
     public void setTitle(String title) {
         this.title = title == null ? null : title.trim();
-    }
-
-    public Integer getCid() {
-        return cid;
-    }
-
-    public void setCid(Integer cid) {
-        this.cid = cid;
     }
 
     public Byte getType() {

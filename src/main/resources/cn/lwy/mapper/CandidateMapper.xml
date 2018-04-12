@@ -6,7 +6,7 @@
     <result column="wid" property="wid" jdbcType="CHAR" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="sex" property="sex" jdbcType="CHAR" />
-    <result column="phone" property="phone" jdbcType="INTEGER" />
+    <result column="phone" property="phone" jdbcType="CHAR" />
     <result column="school" property="school" jdbcType="VARCHAR" />
     <result column="marjor" property="marjor" jdbcType="VARCHAR" />
     <result column="qualification" property="qualification" jdbcType="VARCHAR" />
@@ -108,7 +108,7 @@
       phone, school, marjor, 
       qualification, time)
     values (#{id,jdbcType=CHAR}, #{wid,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, 
-      #{phone,jdbcType=INTEGER}, #{school,jdbcType=VARCHAR}, #{marjor,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=CHAR}, #{school,jdbcType=VARCHAR}, #{marjor,jdbcType=VARCHAR}, 
       #{qualification,jdbcType=VARCHAR}, #{time,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="cn.lwy.pojo.Candidate" >
@@ -156,7 +156,7 @@
         #{sex,jdbcType=CHAR},
       </if>
       <if test="phone != null" >
-        #{phone,jdbcType=INTEGER},
+        #{phone,jdbcType=CHAR},
       </if>
       <if test="school != null" >
         #{school,jdbcType=VARCHAR},
@@ -194,7 +194,7 @@
         sex = #{record.sex,jdbcType=CHAR},
       </if>
       <if test="record.phone != null" >
-        phone = #{record.phone,jdbcType=INTEGER},
+        phone = #{record.phone,jdbcType=CHAR},
       </if>
       <if test="record.school != null" >
         school = #{record.school,jdbcType=VARCHAR},
@@ -219,7 +219,7 @@
       wid = #{record.wid,jdbcType=CHAR},
       name = #{record.name,jdbcType=VARCHAR},
       sex = #{record.sex,jdbcType=CHAR},
-      phone = #{record.phone,jdbcType=INTEGER},
+      phone = #{record.phone,jdbcType=CHAR},
       school = #{record.school,jdbcType=VARCHAR},
       marjor = #{record.marjor,jdbcType=VARCHAR},
       qualification = #{record.qualification,jdbcType=VARCHAR},
@@ -241,7 +241,7 @@
         sex = #{sex,jdbcType=CHAR},
       </if>
       <if test="phone != null" >
-        phone = #{phone,jdbcType=INTEGER},
+        phone = #{phone,jdbcType=CHAR},
       </if>
       <if test="school != null" >
         school = #{school,jdbcType=VARCHAR},
@@ -263,7 +263,7 @@
     set wid = #{wid,jdbcType=CHAR},
       name = #{name,jdbcType=VARCHAR},
       sex = #{sex,jdbcType=CHAR},
-      phone = #{phone,jdbcType=INTEGER},
+      phone = #{phone,jdbcType=CHAR},
       school = #{school,jdbcType=VARCHAR},
       marjor = #{marjor,jdbcType=VARCHAR},
       qualification = #{qualification,jdbcType=VARCHAR},

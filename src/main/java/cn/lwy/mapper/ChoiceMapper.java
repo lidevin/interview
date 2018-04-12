@@ -10,21 +10,13 @@ public interface ChoiceMapper {
 
     int deleteByExample(ChoiceExample example);
 
-    int deleteByPrimaryKey(Integer id);
-
     int insert(Choice record);
 
     int insertSelective(Choice record);
 
     List<Choice> selectByExample(ChoiceExample example);
 
-    Choice selectByPrimaryKey(Integer id);
-
     int updateByExampleSelective(@Param("record") Choice record, @Param("example") ChoiceExample example);
 
     int updateByExample(@Param("record") Choice record, @Param("example") ChoiceExample example);
-
-    int updateByPrimaryKeySelective(Choice record);
-
-    int updateByPrimaryKey(Choice record);
 }
