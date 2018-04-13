@@ -15,11 +15,18 @@ public interface QuestionMapper {
     int insert(Question record);
 
     int insertSelective(Question record);
-
-    List<Question> selectByExample(QuestionExample example);
-
+    
     Question selectByPrimaryKey(Integer id);
-
+    Question selectWithTagByPrimaryKey(Integer id);
+    Question selectFullByPrimaryKey(Integer id);
+    Question selectWithChoiceByPrimaryKey(Integer id);
+    
+    List<Question> selectByExample(QuestionExample example);
+    List<Question> selectWithChoiceByExample(QuestionExample example);
+    List<Question> selectWithTagByExample(QuestionExample example);
+    List<Question> selectFullByExample(QuestionExample example);
+    
+    
     int updateByExampleSelective(@Param("record") Question record, @Param("example") QuestionExample example);
 
     int updateByExample(@Param("record") Question record, @Param("example") QuestionExample example);

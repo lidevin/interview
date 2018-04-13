@@ -9,6 +9,26 @@
     <result column="score" property="score" jdbcType="TINYINT" />
     <result column="difficult" property="difficult" jdbcType="TINYINT" />
   </resultMap>
+  <resultMap type="cn.lwy.pojo.Choice" id="ChoiceResultMap">
+   	<id column="qid" property="qid"/>
+   	<result column="content" property="content"/>
+  </resultMap>
+  <resultMap type="cn.lwy.pojo.TagType" id="TagResultMap">
+  	<id column="id" property="id"/>
+   	<result column="tag" property="tag"/>
+   	<result column="type" property="type"/>
+  </resultMap>
+  <resultMap type="cn.lwy.pojo.Question" id="BaseWithChoiceResultMap" extends="BaseResultMap">
+  	<collection property="choices" column="id" resultMap="ChoiceResultMap"/>
+  </resultMap>
+  <resultMap type="cn.lwy.pojo.Question" id="BaseWithTagResultMap" extends="BaseResultMap">
+  	<collection property="tags" column="id" resultMap="TagResultMap" />
+  </resultMap>
+  <resultMap type="cn.lwy.pojo.Question" id="BaseFullResultMap" extends="BaseResultMap" >
+  	<collection property="choices" column="id" resultMap="ChoiceResultMap"/>
+  	<collection property="tags" column="id" resultMap="TagResultMap" />
+  </resultMap>
+  
   <sql id="Example_Where_Clause" >
     <where >
       <foreach collection="oredCriteria" item="criteria" separator="or" >
@@ -68,15 +88,90 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, title, type, answer, score, difficult
+    q.id, q.title, q.type, q.answer, q.score, q.difficult
   </sql>
+  <sql id="Base_Choice_Column_List">
+    q.id, q.title, q.type, q.answer, q.score, q.difficult,  c.qid, c.content
+  </sql>
+  <sql id="Base_Tag_Column_List" >
+    q.id, q.title, q.type, q.answer, q.score, q.difficult, t.tag, t.type
+  </sql>
+  <sql id="Base_Full_Column_List" >
+    q.id, q.title, q.type, q.answer, q.score, q.difficult,t.tag, t.type, c.qid, c.content
+  </sql>
+  <sql id="Base_From_Table">
+  	from question q 
+  </sql>
+  <sql id="Base_Tag_table">
+  	inner join
+  	  qst_tag qt
+  	on
+  	  q.id=qt.qid
+  	inner join
+  	  tag_type t
+  	on
+  	  qt.tid=t.id 
+  </sql>
+  <sql id="Base_Choice_table">
+    left join
+  	  choice c
+  	on
+  	  q.id=c.qid 
+  </sql>
+
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.lwy.pojo.QuestionExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from question
+    <include refid="Base_From_Table"/>
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectWithChoiceByExample" resultMap="BaseWithChoiceResultMap" parameterType="cn.lwy.pojo.QuestionExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Choice_Column_List" />
+    <include refid="Base_From_Table"/>
+  	<include refid="Base_Choice_table"/>
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectWithTagByExample" resultMap="BaseWithTagResultMap" parameterType="cn.lwy.pojo.QuestionExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Tag_Column_List" />
+  	<include refid="Base_From_Table"/>
+  	<include refid="Base_Tag_table"/>
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectFullByExample" resultMap="BaseFullResultMap" parameterType="cn.lwy.pojo.QuestionExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Full_Column_List" />
+    <include refid="Base_From_Table"/>
+  	<include refid="Base_Tag_table"/>
+  	<include refid="Base_Choice_table"/>
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -87,19 +182,43 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from question
-    where id = #{id,jdbcType=INTEGER}
+    <include refid="Base_From_Table"/>
+    where q.id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectWithChoiceByPrimaryKey" resultMap="BaseWithChoiceResultMap" parameterType="java.lang.Integer">
+  	select
+  	<include refid="Base_Choice_Column_List" />
+  	<include refid="Base_From_Table"/>
+  	<include refid="Base_Choice_table"/>
+  	where q.id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectWithTagByPrimaryKey" resultMap="BaseWithTagResultMap" parameterType="java.lang.Integer">
+  	select
+  	<include refid="Base_Tag_Column_List" />
+  	<include refid="Base_From_Table"/>
+  	<include refid="Base_Tag_table"/>
+  	where q.id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectFullByPrimaryKey" resultMap="BaseFullResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Full_Column_List" />
+    <include refid="Base_From_Table"/>
+  	<include refid="Base_Tag_table"/>
+  	<include refid="Base_Choice_table"/>
+    where q.id = #{id,jdbcType=INTEGER}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from question
-    where id = #{id,jdbcType=INTEGER}
+    delete from question q
+    where q.id = #{id,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="cn.lwy.pojo.QuestionExample" >
-    delete from question
+    delete from question q
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
+
   <insert id="insert" parameterType="cn.lwy.pojo.Question" >
     insert into question (id, title, type, 
       answer, score, difficult
@@ -151,12 +270,58 @@
       </if>
     </trim>
   </insert>
+
+  <insert id="insertSelective" parameterType="cn.lwy.pojo.Question" >
+    insert into question
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="answer != null" >
+        answer,
+      </if>
+      <if test="score != null" >
+        score,
+      </if>
+      <if test="difficult != null" >
+        difficult,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=TINYINT},
+      </if>
+      <if test="answer != null" >
+        #{answer,jdbcType=VARCHAR},
+      </if>
+      <if test="score != null" >
+        #{score,jdbcType=TINYINT},
+      </if>
+      <if test="difficult != null" >
+        #{difficult,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+
   <select id="countByExample" parameterType="cn.lwy.pojo.QuestionExample" resultType="java.lang.Integer" >
-    select count(*) from question
+    select count(*) from question q
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
+
   <update id="updateByExampleSelective" parameterType="map" >
     update question
     <set >
@@ -183,6 +348,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
+
   <update id="updateByExample" parameterType="map" >
     update question
     set id = #{record.id,jdbcType=INTEGER},
@@ -214,8 +380,9 @@
         difficult = #{difficult,jdbcType=TINYINT},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where q.id = #{id,jdbcType=INTEGER}
   </update>
+ 
   <update id="updateByPrimaryKey" parameterType="cn.lwy.pojo.Question" >
     update question
     set title = #{title,jdbcType=VARCHAR},
@@ -223,6 +390,6 @@
       answer = #{answer,jdbcType=VARCHAR},
       score = #{score,jdbcType=TINYINT},
       difficult = #{difficult,jdbcType=TINYINT}
-    where id = #{id,jdbcType=INTEGER}
+    where q.id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

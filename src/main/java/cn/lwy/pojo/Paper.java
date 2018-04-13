@@ -1,6 +1,7 @@
 package cn.lwy.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class Paper {
     private Integer id;
@@ -27,6 +28,8 @@ public class Paper {
 
     private Byte time;
 
+    private List<PaperQst> paperQsts;
+    
     public Integer getId() {
         return id;
     }

@@ -20,4 +20,10 @@ public class QstTag {
     public void setQid(Integer qid) {
         this.qid = qid;
     }
+
+	@Override
+	public String toString() {
+		return "QstTag [tid=" + tid + ", qid=" + qid + "]";
+	}
+    
 }
