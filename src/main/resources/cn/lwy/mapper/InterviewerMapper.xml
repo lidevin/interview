@@ -5,7 +5,7 @@
     <id column="id" property="id" jdbcType="CHAR" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="nickname" property="nickname" jdbcType="VARCHAR" />
-    <result column="pwd" property="pwd" jdbcType="VARCHAR" />
+    <result column="pwd" property="pwd" jdbcType="CHAR" />
     <result column="sex" property="sex" jdbcType="CHAR" />
     <result column="department" property="department" jdbcType="VARCHAR" />
     <result column="position" property="position" jdbcType="VARCHAR" />
@@ -104,11 +104,11 @@
   </delete>
   <insert id="insert" parameterType="cn.lwy.pojo.Interviewer" >
     insert into interviewer (id, name, nickname, 
-      pwd, sex, department, 
-      position, time)
+      pwd, sex, department, position, 
+      time)
     values (#{id,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
-      #{pwd,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{department,jdbcType=VARCHAR}, 
-      #{position,jdbcType=VARCHAR}, #{time,jdbcType=TIMESTAMP})
+      #{pwd,jdbcType=CHAR}, #{sex,jdbcType=CHAR}, #{department,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, 
+      #{time,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="cn.lwy.pojo.Interviewer" >
     insert into interviewer
@@ -149,7 +149,7 @@
         #{nickname,jdbcType=VARCHAR},
       </if>
       <if test="pwd != null" >
-        #{pwd,jdbcType=VARCHAR},
+        #{pwd,jdbcType=CHAR},
       </if>
       <if test="sex != null" >
         #{sex,jdbcType=CHAR},
@@ -184,7 +184,7 @@
         nickname = #{record.nickname,jdbcType=VARCHAR},
       </if>
       <if test="record.pwd != null" >
-        pwd = #{record.pwd,jdbcType=VARCHAR},
+        pwd = #{record.pwd,jdbcType=CHAR},
       </if>
       <if test="record.sex != null" >
         sex = #{record.sex,jdbcType=CHAR},
@@ -208,7 +208,7 @@
     set id = #{record.id,jdbcType=CHAR},
       name = #{record.name,jdbcType=VARCHAR},
       nickname = #{record.nickname,jdbcType=VARCHAR},
-      pwd = #{record.pwd,jdbcType=VARCHAR},
+      pwd = #{record.pwd,jdbcType=CHAR},
       sex = #{record.sex,jdbcType=CHAR},
       department = #{record.department,jdbcType=VARCHAR},
       position = #{record.position,jdbcType=VARCHAR},
@@ -227,7 +227,7 @@
         nickname = #{nickname,jdbcType=VARCHAR},
       </if>
       <if test="pwd != null" >
-        pwd = #{pwd,jdbcType=VARCHAR},
+        pwd = #{pwd,jdbcType=CHAR},
       </if>
       <if test="sex != null" >
         sex = #{sex,jdbcType=CHAR},
@@ -248,7 +248,7 @@
     update interviewer
     set name = #{name,jdbcType=VARCHAR},
       nickname = #{nickname,jdbcType=VARCHAR},
-      pwd = #{pwd,jdbcType=VARCHAR},
+      pwd = #{pwd,jdbcType=CHAR},
       sex = #{sex,jdbcType=CHAR},
       department = #{department,jdbcType=VARCHAR},
       position = #{position,jdbcType=VARCHAR},

@@ -15,7 +15,6 @@
     <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
     <result column="time" property="time" jdbcType="TINYINT" />
   </resultMap>
-  
   <sql id="Example_Where_Clause" >
     <where >
       <foreach collection="oredCriteria" item="criteria" separator="or" >

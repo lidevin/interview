@@ -9,6 +9,8 @@ public class Candidate {
 
     private String name;
 
+    private String wname;
+
     private String sex;
 
     private String phone;
@@ -43,6 +45,14 @@ public class Candidate {
 
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
+    }
+
+    public String getWname() {
+        return wname;
+    }
+
+    public void setWname(String wname) {
+        this.wname = wname == null ? null : wname.trim();
     }
 
     public String getSex() {
