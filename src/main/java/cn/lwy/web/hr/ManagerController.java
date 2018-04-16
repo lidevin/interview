@@ -20,6 +20,7 @@ public class ManagerController {
 	
 	@RequestMapping("adminlogin")
 	public String login(Manager manager) {
+		System.out.println("-------" + manager.getName());
 		boolean loginFlag = managerService.getByName(manager);
 		if(loginFlag) {
 			return "redirect:toAdmin";
