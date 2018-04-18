@@ -17,23 +17,8 @@ public class QuestionController {
 	@Autowired
 	private QuestionService questionService;
 	
-	@RequestMapping("question-list")
-	public String toLoginPage(Model model) {
+	public String test(Model model) {
 		test();
-//		int id = 1;
-//		long time1 = System.currentTimeMillis();
-//		System.out.println(questionService.getById(id));
-//		long time2 = System.currentTimeMillis();
-//		System.out.println("time: " + (time2-time1));
-//		Question list = questionService.getWithTagById(id);
-//		long time3 = System.currentTimeMillis();
-//		System.out.println("time: " + (time3-time2));
-//		System.out.println(questionService.getWithChoiceById(id));
-//		System.out.println("time: " + (System.currentTimeMillis()-time3));
-//		model.addAttribute("list", list);
-//		System.out.println(list);
-		System.out.println("========");
-		int id = 1;
 		long time1 = System.currentTimeMillis();
 		QuestionExample example = new QuestionExample();
 		example.createCriteria().andDifficultIsNotNull();
@@ -65,22 +50,8 @@ public class QuestionController {
 			System.out.println(question);
 		}
 		System.out.println("time: " + (System.currentTimeMillis()-time4));
-		/*List<Question> list = questionService.getByExample(id);
-		long time3 = System.currentTimeMillis();
-		System.out.println("time: " + (time3-time2));
-		
-		System.out.println(questionService.getWithChoiceById(id));
-		long time4 = System.currentTimeMillis();
-		System.out.println("time: " + (time4-time3));
-		System.out.println(questionService.getFullById(id));
-		System.out.println("time: " + (System.currentTimeMillis()-time4));
-		model.addAttribute("list", list);
-		System.out.println(list);
-		*/
-		
 		return "question-list";
 	}
-	
 	
 	public void test() {
 		int id = 1;
@@ -95,4 +66,23 @@ public class QuestionController {
 		System.out.println("time: " + (System.currentTimeMillis()-time3));
 		System.out.println(list);
 	}
+	
+	@RequestMapping("/question-list")
+	public String list(int id) {
+		Question question = questionService.getFullById(id);
+		System.out.println(question);
+		return "";
+	}
+	
+	@RequestMapping("/question-edit")
+	public String edit(int id) {
+		Question question = questionService.getFullById(id);
+		System.out.println(question);
+		question.setTitle(question.getTitle() + "0123456789");
+//		questionService.updateByIdSelective(question);
+		questionService.updateFullByIdSelective(question);
+		System.out.println(question);
+		return "";
+	}
+	
 }

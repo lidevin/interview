@@ -206,8 +206,9 @@
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>${tomcat-plugin.version}</version>
 				<configuration>
+					<!-- 路径只能是/, 否则需要修改拦截器 -->
 					<path>/</path>
-					<port>8080</port>
+					<port>80</port>
 					<!--解决中文乱码措施之一 -->
 					<uriEncoding>UTF-8</uriEncoding>
 				</configuration>

@@ -6,9 +6,32 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
-
-	<context:component-scan base-package="cn.lwy.web" />
+	<!-- 配置properties文件 -->
+	<context:property-placeholder location="classpath:conf/common.properties"/>
+	<!-- 注解扫描 -->
+	<context:component-scan base-package="cn.lwy.web,cn.lwy.exception" />
+	<!-- <context:component-scan base-package="cn.lwy.exception" /> -->
 	<mvc:annotation-driven />
+	<!-- 拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<!-- <mvc:mapping path="/web/**"/>
+			<mvc:mapping path="/wx/**"/> -->
+			<!-- <mvc:exclude-mapping path="/*/login"/> -->
+			<mvc:exclude-mapping path="/error/*"/>
+			<bean class="cn.lwy.web.WebHandlerInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
+	<!-- 异常处理类 -->
+	<bean class="cn.lwy.exception.CustomHandleException"/>
+	
+	<!-- 处理静态资源 -->  
+    <mvc:resources location="/css/" mapping="/css/**" />  
+    <mvc:resources location="/js/" mapping="/js/**" />  
+	<mvc:resources location="/error/" mapping="/error/*" />
+	
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/" />

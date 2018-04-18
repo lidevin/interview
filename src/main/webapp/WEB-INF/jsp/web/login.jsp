@@ -9,11 +9,10 @@
 </head>
 <body>
 	<h1>登录</h1>
-	<form action="adminlogin" method="get">
+	<form action="${pageContext.request.contextPath }/web/login.do" method="get">
 		用户名：<input type="text" name="name"><br> 密码：<input
 			type="password" name="pwd"><br> <input type="submit"
 			value="登录">
 	</form>
-
 </body>
 </html>

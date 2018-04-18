@@ -28,10 +28,10 @@ public interface QuestionMapper {
     
     
     int updateByExampleSelective(@Param("record") Question record, @Param("example") QuestionExample example);
-
+    
     int updateByExample(@Param("record") Question record, @Param("example") QuestionExample example);
 
     int updateByPrimaryKeySelective(Question record);
-
+    
     int updateByPrimaryKey(Question record);
 }

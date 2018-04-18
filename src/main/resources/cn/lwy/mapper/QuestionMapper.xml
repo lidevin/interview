@@ -318,6 +318,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
+
   <update id="updateByPrimaryKeySelective" parameterType="cn.lwy.pojo.Question" >
     update question
     <set >
@@ -337,9 +338,9 @@
         difficult = #{difficult,jdbcType=TINYINT},
       </if>
     </set>
-    where q.id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
- 
+
   <update id="updateByPrimaryKey" parameterType="cn.lwy.pojo.Question" >
     update question
     set title = #{title,jdbcType=VARCHAR},
@@ -347,6 +348,6 @@
       answer = #{answer,jdbcType=VARCHAR},
       score = #{score,jdbcType=TINYINT},
       difficult = #{difficult,jdbcType=TINYINT}
-    where q.id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

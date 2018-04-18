@@ -16,4 +16,7 @@ public interface QuestionService extends BaseService<Question>{
     List<Question> getWithTagByExample(QuestionExample example);
     List<Question> getFullByExample(QuestionExample example);
 	
+    boolean insertFullByIdSelective(Question question);
+    
+    boolean updateFullByIdSelective(Question question);
 }
