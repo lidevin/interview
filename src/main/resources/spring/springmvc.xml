@@ -10,22 +10,21 @@
 	<context:property-placeholder location="classpath:conf/common.properties"/>
 	<!-- 注解扫描 -->
 	<context:component-scan base-package="cn.lwy.web,cn.lwy.exception" />
-	<!-- <context:component-scan base-package="cn.lwy.exception" /> -->
 	<mvc:annotation-driven />
 	<!-- 拦截器 -->
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**"/>
-			<!-- <mvc:mapping path="/web/**"/>
-			<mvc:mapping path="/wx/**"/> -->
-			<!-- <mvc:exclude-mapping path="/*/login"/> -->
-			<mvc:exclude-mapping path="/error/*"/>
+			<mvc:exclude-mapping path="/web"/>
+			<mvc:exclude-mapping path="/web/"/>
+			<mvc:exclude-mapping path="/web/login.do"/>
+			<mvc:exclude-mapping path="/error/error.html"/>
 			<bean class="cn.lwy.web.WebHandlerInterceptor"/>
 		</mvc:interceptor>
 	</mvc:interceptors>
 	
 	<!-- 异常处理类 -->
-	<bean class="cn.lwy.exception.CustomHandleException"/>
+	<bean class="cn.lwy.exception.CustomHandleExceptionResolver"/>
 	
 	<!-- 处理静态资源 -->  
     <mvc:resources location="/css/" mapping="/css/**" />  

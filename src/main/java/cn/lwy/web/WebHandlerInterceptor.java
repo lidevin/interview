@@ -32,18 +32,11 @@ public class WebHandlerInterceptor implements HandlerInterceptor{
 			System.out.println("微信端");
 			return true;
 		}else {//web端
-			if("/".equals(uri)) {//默认根也是登录页面
+			if(request.getSession().getAttribute(sessionUserName) != null) {//存在session,已登录
+				return true;
+			}else {//没登录
 				response.sendRedirect("/web");
 				return false;
-			}else if(uri.matches("^/web/?$") || "/web/login.do".equals(uri)) {//代表登录界面，放行
-				return true;
-			}else {//其他页面
-				if(request.getSession().getAttribute(sessionUserName) != null) {//存在session
-					return true;
-				}else {
-					response.sendRedirect("/web");
-					return false;
-				}
 			}
 		}
 	}

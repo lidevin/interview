@@ -1,3 +1,7 @@
 INFO http-bio-80-exec-6 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
 INFO http-bio-80-exec-2 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
 INFO http-bio-80-exec-2 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-7 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-10 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited

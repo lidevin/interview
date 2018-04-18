@@ -35,7 +35,17 @@
 		<druid.version>1.0.9</druid.version>
 		<!--单元测试包 -->
 		<junit.version>4.12</junit.version>
-  		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
+		<!-- HttpClient -->
+		<httpclient.version>4.3.6</httpclient.version>
+		<httpmime.version>4.3.6</httpmime.version>
+		<!-- JSON -->
+		<jackson-mapper-asl.version>1.9.13</jackson-mapper-asl.version>
+		<!-- XML -->
+		<xstream.version>1.4.7</xstream.version>
+		<!-- IO -->
+		<commons-io.version>2.4</commons-io.version>
 	</properties>
 	<dependencies>
 		<!--日志log4j -->
@@ -110,10 +120,10 @@
 			<version>${springframework.version}</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.aspectj</groupId>
-    		<artifactId>aspectjweaver</artifactId>
-    		<version>${aspectj.aspectjweaver}</version>
-    </dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${aspectj.aspectjweaver}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -183,6 +193,47 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+
+
+
+
+
+
+
+		<!-- HttpClient -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>${httpclient.version}</version>
+		</dependency>
+		<!-- http://mvnrepository.com/artifact/org.apache.httpcomponents/httpmime -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpmime</artifactId>
+			<version>${httpmime.version}</version>
+		</dependency>
+
+		<!-- JSON -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${jackson-mapper-asl.version}</version>
+		</dependency>
+		<!-- XML -->
+		<!-- http://mvnrepository.com/artifact/com.thoughtworks.xstream/xstream -->
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>${xstream.version}</version>
+		</dependency>
+		<!-- IO -->
+		<!-- http://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons-io.version}</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>

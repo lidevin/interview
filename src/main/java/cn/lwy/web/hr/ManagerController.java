@@ -23,8 +23,8 @@ public class ManagerController {
 	private String sessionUserName;
 	
 	/**
+	 * 登录处理
 	 * @param flag  是否记住密码  true为记住密码
-	 * @return
 	 */
 	@RequestMapping("/web/login.do")
 	public String login(HttpServletRequest request,HttpServletResponse response, Manager manager, String flag) {
@@ -45,18 +45,29 @@ public class ManagerController {
 			}
 			//添加到session
 			session.setAttribute(sessionUserName, manager.getName());
-			return "redirect:/web/admin.do";
+			return "redirect:/web/admin";
 		}else {
 			return "redirect:/web";
 		}
 	}
-	
-	@RequestMapping("/web/admin.do")
+	/**
+	 * 处理页面，跳转到后台主页
+	 */
+	@RequestMapping("/web/admin")
 	public String toAdmin() {
 		return "web/admin";
 	}
-	
-	@RequestMapping({"/","/web"})
+	/**
+	 * 把多个web路径重定向到/web
+	 */
+	@RequestMapping({"/", "/web/", "/web/login"})
+	public String toLoginPage() {
+		return "redirect:/web";
+	}
+	/**
+	 * 显示登录界面
+	 */
+	@RequestMapping("/web")
 	public String toLogin() {
 		return "web/login";
 	}
