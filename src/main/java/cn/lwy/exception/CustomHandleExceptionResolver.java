@@ -5,15 +5,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.NoHandlerFoundException;
 
 public class CustomHandleExceptionResolver implements HandlerExceptionResolver{
 
 	@Override
 	public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler,
 			Exception exception) {
-		
-		System.out.println("URL=" + request.getRequestURL());
 		// 定义异常信息
 		String msg;
 		// 判断异常类型
@@ -22,10 +19,6 @@ public class CustomHandleExceptionResolver implements HandlerExceptionResolver{
 			msg = ((GeneralException)exception).getMsg();
 		} else {
 			// 如果是运行时异常，则取错误堆栈，从堆栈中获取异常信息
-			/*Writer out = new StringWriter();
-			PrintWriter s = new PrintWriter(out);
-			exception.printStackTrace(s);
-			msg = out.toString();*/
 			msg = "未知异常";
 		}
 		// 把错误信息发给相关人员,邮件,短信等方式
@@ -36,6 +29,4 @@ public class CustomHandleExceptionResolver implements HandlerExceptionResolver{
 		modelAndView.setViewName("error");
 		return modelAndView;
 	}
-	
-	
 }

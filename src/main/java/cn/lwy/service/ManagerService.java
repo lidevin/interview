@@ -12,6 +12,6 @@ public interface ManagerService extends BaseService<Manager>{
 	 * @param manager
 	 * @return
 	 */
-	boolean getByName(Manager manager);
+	boolean getByName(Manager manager) throws Exception;
 	
 }

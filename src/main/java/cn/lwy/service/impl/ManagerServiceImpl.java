@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cn.lwy.exception.GeneralException;
 import cn.lwy.mapper.ManagerMapper;
 import cn.lwy.pojo.Manager;
 import cn.lwy.pojo.ManagerExample;
@@ -17,7 +18,7 @@ public class ManagerServiceImpl implements ManagerService {
 	private ManagerMapper managerMapper;
 	
 	@Override
-	public boolean getByName(Manager manager){
+	public boolean getByName(Manager manager) throws GeneralException{
 		if(manager == null)
 			return false;
 		String name = manager.getName();
@@ -32,7 +33,6 @@ public class ManagerServiceImpl implements ManagerService {
 		if(real == null || !manager.getPwd().equals(real.getPwd()))
 			return false;
 		return true;
-		
 	}
 
 	@Override

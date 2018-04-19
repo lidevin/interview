@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import cn.lwy.pojo.Manager;
 import cn.lwy.service.ManagerService;
@@ -18,7 +19,13 @@ public class ManagerController {
 
 	@Autowired
 	private ManagerService managerService;
-
+	
+	@Value("${COOKIE.HRNAME}")
+	private String cookieUserName;
+	
+	@Value("${COOKIE.PWD}")
+	private String cookiePwd;
+	
 	@Value("${SESSION.USERNAME}")
 	private String sessionUserName;
 
@@ -27,17 +34,18 @@ public class ManagerController {
 	 * @param flag  是否记住密码  true为记住密码
 	 */
 	@RequestMapping("/web/login.do")
-	public String login(HttpServletRequest request,HttpServletResponse response, Manager manager, String flag) {
+	public String login(HttpServletRequest request,HttpServletResponse response, 
+			Manager manager, String flag, RedirectAttributes attr) throws Exception{
 		flag = "true";
-		boolean loginFlag = managerService.getByName(manager);
+		boolean isLogin = managerService.getByName(manager);
 		HttpSession session = request.getSession();
-		if(loginFlag) {//登录成功
+		if(isLogin) {
 			if(flag != null && "true".equals(flag)) {
 				//用户名
-				Cookie name = new Cookie("HRNAME", manager.getName());
+				Cookie name = new Cookie(cookieUserName, manager.getName());
 				name.setMaxAge(Integer.MAX_VALUE);
 				//密码
-				Cookie pwd = new Cookie("PWD", manager.getName());
+				Cookie pwd = new Cookie(cookiePwd, manager.getPwd());
 				pwd.setMaxAge(Integer.MAX_VALUE);
 				//添加到cookies
 				response.addCookie(name);
@@ -47,6 +55,7 @@ public class ManagerController {
 			session.setAttribute(sessionUserName, manager.getName());
 			return "redirect:/web/index.html";
 		}else {
+			attr.addFlashAttribute("errMsg", "用户名或密码错误");
 			return "redirect:/web/login";
 		}
 	}
@@ -63,7 +72,22 @@ public class ManagerController {
 	 * 显示登录界面
 	 */
 	@RequestMapping("/web/login")
-	public String toLogin() {
+	public String toLogin(HttpServletRequest request,HttpServletResponse response) {
+		Cookie[] cookies = request.getCookies();
+		if(cookies != null) {
+			Cookie name = null;
+			Cookie pwd = null;
+			for (Cookie cookie : cookies) {
+				if(cookieUserName.equals(cookie.getName())) {
+					name = cookie;
+				}else if(cookiePwd.equals(cookie.getName())) {
+					pwd = cookie;
+				}
+			}
+			if(name!=null && pwd!=null) {//cookie中存在name和pwd
+				return "redirect:/web/login.do?name="+name.getValue()+"&pwd="+pwd.getValue()+"&flag=true";
+			}
+		}
 		return "web/login";
 	}
 }
