@@ -15,13 +15,13 @@ import cn.lwy.service.ManagerService;
 
 @Controller
 public class ManagerController {
-	
+
 	@Autowired
 	private ManagerService managerService;
-	
+
 	@Value("${SESSION.USERNAME}")
 	private String sessionUserName;
-	
+
 	/**
 	 * 登录处理
 	 * @param flag  是否记住密码  true为记住密码
@@ -45,29 +45,24 @@ public class ManagerController {
 			}
 			//添加到session
 			session.setAttribute(sessionUserName, manager.getName());
-			return "redirect:/web/admin";
+			return "redirect:/web/index.html";
 		}else {
-			return "redirect:/web";
+			return "redirect:/web/login";
 		}
 	}
+
 	/**
 	 * 处理页面，跳转到后台主页
 	 */
-	@RequestMapping("/web/admin")
-	public String toAdmin() {
-		return "web/admin";
+	@RequestMapping({"/", "/index.html", "/web", "/web/", "/web/index", "/web/index.html"})
+	public String toIndex() {
+		return "web/index";
 	}
-	/**
-	 * 把多个web路径重定向到/web
-	 */
-	@RequestMapping({"/", "/web/", "/web/login"})
-	public String toLoginPage() {
-		return "redirect:/web";
-	}
+
 	/**
 	 * 显示登录界面
 	 */
-	@RequestMapping("/web")
+	@RequestMapping("/web/login")
 	public String toLogin() {
 		return "web/login";
 	}

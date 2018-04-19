@@ -15,8 +15,7 @@
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**"/>
-			<mvc:exclude-mapping path="/web"/>
-			<mvc:exclude-mapping path="/web/"/>
+			<mvc:exclude-mapping path="/web/login"/>
 			<mvc:exclude-mapping path="/web/login.do"/>
 			<mvc:exclude-mapping path="/error/error.html"/>
 			<bean class="cn.lwy.web.WebHandlerInterceptor"/>

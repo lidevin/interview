@@ -35,7 +35,7 @@ public class WebHandlerInterceptor implements HandlerInterceptor{
 			if(request.getSession().getAttribute(sessionUserName) != null) {//存在session,已登录
 				return true;
 			}else {//没登录
-				response.sendRedirect("/web");
+				response.sendRedirect("/web/login");
 				return false;
 			}
 		}
