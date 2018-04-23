@@ -20,3 +20,9 @@ INFO http-bio-80-exec-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} 
 INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
 INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
 INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited

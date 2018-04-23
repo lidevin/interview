@@ -31,22 +31,23 @@ public class ManagerController {
 
 	/**
 	 * 登录处理
-	 * @param flag  是否记住密码  true为记住密码
+	 * @param isRem  是否记住密码  login为记住密码
 	 */
 	@RequestMapping("/web/login.do")
 	public String login(HttpServletRequest request,HttpServletResponse response, 
-			Manager manager, String flag, RedirectAttributes attr) throws Exception{
-		flag = "true";
+			Manager manager, String isRem, RedirectAttributes attr) throws Exception{
 		boolean isLogin = managerService.getByName(manager);
 		HttpSession session = request.getSession();
 		if(isLogin) {
-			if(flag != null && "true".equals(flag)) {
+			if(isRem != null && "login".equals(isRem)) {
 				//用户名
 				Cookie name = new Cookie(cookieUserName, manager.getName());
 				name.setMaxAge(Integer.MAX_VALUE);
+				name.setPath("/web/login.do");
 				//密码
 				Cookie pwd = new Cookie(cookiePwd, manager.getPwd());
 				pwd.setMaxAge(Integer.MAX_VALUE);
+				pwd.setPath("/web/login.do");
 				//添加到cookies
 				response.addCookie(name);
 				response.addCookie(pwd);
@@ -90,4 +91,21 @@ public class ManagerController {
 		}
 		return "web/login";
 	}
+	
+	/**
+	 * 退出功能
+	 */
+	@RequestMapping("/web/quit")
+	public String quit(HttpServletRequest request,HttpServletResponse response) {
+		//清除session
+		request.getSession().removeAttribute(sessionUserName);
+		//清除cookie
+		Cookie name = new Cookie(cookieUserName, null);
+		name.setMaxAge(0);
+		name.setPath("/web/login.do");
+		response.addCookie(name);
+		
+		return "redirect:/web/login";
+	}
+
 }

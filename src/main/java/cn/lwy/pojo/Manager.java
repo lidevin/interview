@@ -49,4 +49,10 @@ public class Manager {
     public void setLevel(Byte level) {
         this.level = level;
     }
+
+	@Override
+	public String toString() {
+		return "Manager [id=" + id + ", name=" + name + ", pwd=" + pwd + ", level=" + level + "]";
+	}
+    
 }

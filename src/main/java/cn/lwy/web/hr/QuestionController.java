@@ -13,21 +13,42 @@ public class QuestionController {
 	@Autowired
 	private QuestionService questionService;
 	
-	@RequestMapping({"/web/question", "/web/question/list"})
-	public String list(int id) {
-		Question question = questionService.getFullById(id);
-		System.out.println(question);
-		return "";
+	/**
+	 * 显示题目
+	 */
+	@RequestMapping("/web/question")
+	public String list() {
+		/*Question question = questionService.getFullById(id);
+		System.out.println(question);*/
+		return "web/question";
 	}
 	
+	/**
+	 * 添加题目
+	 */
+	@RequestMapping("/web/question/add")
+	public String add() {
+		return "web/question/add";
+	}
+	
+	/**
+	 * 编辑题目
+	 */
 	@RequestMapping("/web/question/edit")
-	public String edit(int id) {
-		Question question = questionService.getFullById(id);
+	public String edit() {
+		/*Question question = questionService.getFullById(id);
 		System.out.println(question);
 		question.setTitle(question.getTitle() + "0123456789");
 		questionService.updateFullByIdSelective(question);
-		System.out.println(question);
-		return "";
+		System.out.println(question);*/
+		return "web/question/edit";
 	}
 	
+	/**
+	 * 删除题目
+	 */
+	@RequestMapping("/web/question/del")
+	public String del() {
+		return "web/question/del";
+	}
 }

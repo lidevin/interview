@@ -15,6 +15,7 @@
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**"/>
+			<mvc:exclude-mapping path="/res/**"/>
 			<mvc:exclude-mapping path="/web/login"/>
 			<mvc:exclude-mapping path="/web/login.do"/>
 			<mvc:exclude-mapping path="/error/error.html"/>
@@ -25,9 +26,11 @@
 	<!-- 异常处理类 -->
 	<bean class="cn.lwy.exception.CustomHandleExceptionResolver"/>
 	
-	<!-- 处理静态资源 -->  
-    <mvc:resources location="/css/" mapping="/css/**" />  
-    <mvc:resources location="/js/" mapping="/js/**" />  
+	<!-- 处理静态资源 -->
+    <mvc:resources location="/res/css/" mapping="/res/css/**" />
+    <mvc:resources location="/res/fonts/" mapping="/res/fonts/**" />
+    <mvc:resources location="/res/js/" mapping="/res/js/**" /> 
+    <mvc:resources location="/res/img/" mapping="/res/img/**" />   
 	<mvc:resources location="/error/" mapping="/error/*" />
 	
 	<bean
