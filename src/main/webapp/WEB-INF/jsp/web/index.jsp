@@ -12,7 +12,7 @@
 <!-- VENDOR CSS -->
 <link rel="stylesheet" href="/res/css/bootstrap.min.css">
 <link rel="stylesheet" href="/res/css/font-awesome.min.css">
-<link rel="stylesheet" href="/res/css/style.css">
+
 <link rel="stylesheet" href="/res/css/chartist-custom.css">
 <!-- MAIN CSS -->
 <link rel="stylesheet" href="/res/css/main.css">
@@ -35,7 +35,6 @@
 <script src="/res/js/check.form.js"></script>
 <script src="/res/js/layer.js"></script>
 <link rel="stylesheet" href="/res/css/layer.css" id="layuicss-layer">
-<!--<script src="/Public/his/js/echarts.min.js"></script>-->
 <style>
 .brand {
 	height: 60px !important;
@@ -90,6 +89,19 @@
 .statistic li a {
 	color: #AEB7C2;
 }
+#show{
+	position: fixed;
+	margin-left: 248px;
+	margin-top: -150px;
+	border: 0px;
+}
+#show button{
+	background-color: #00AAFF;
+	border-radius: 50%;
+	border: 0px;
+	outline: none;
+}
+
 </style>
 <script>
 	$(function() {
@@ -104,7 +116,6 @@
 </head>
 
 <body>
-
 	<!-- WRAPPER -->
 	<div id="wrapper">
 		<nav class="navbar navbar-default navbar-fixed-top">
@@ -151,6 +162,11 @@
 
 							<li class="li-menu"><a href="/web/quit" class="menu"> <i class="fa fa-sign-out"></i> <span>退&nbsp;&nbsp;出</span></a>
 							</li>
+						</ul>
+						
+						<div id="show" >
+							<button type="button" class="btn-toggle-fullwidth"><i class="fa fa-toggle-left"></i></button>
+						</div>
 					</nav>
 				</div>
 				<div class="slimScrollBar"
@@ -161,10 +177,10 @@
 		</div>
 		<!-- END LEFT SIDEBAR -->
 		<!--主体右部分-->
-		<iframe src="/web/interview" class="main" name="main" id="main"
-			frameborder="0" scrolling="yes" onload="this.height=100" height="100"
-			style="min-height: 800px;"></iframe>
+		<iframe src="/web/interview" class="main" name="main" id="main"	frameborder="0" scrolling="yes" onload="this.height=100" height="100" style="min-height: 800px;"></iframe>
 	</div>
+	
+	
 	<script type="text/javascript">
 		//左侧导航
 		$(document).on(

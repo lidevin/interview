@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="lwy" uri="http://lwy.cn/common/" %>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -14,7 +15,7 @@
 		<!-- VENDOR CSS -->
 		<link rel="stylesheet" href="/res/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/res/css/font-awesome.min.css">
-		<link rel="stylesheet" href="/res/css/style.css">
+		
 		<link rel="stylesheet" href="/res/css/chartist-custom.css">
 		<!-- MAIN CSS -->
 		<link rel="stylesheet" href="/res/css/main.css">
@@ -83,17 +84,17 @@
 												<td>C++</td>
 												<td>画出继承关系类图</td>
 												<td>
-													<a href="/web/question/edit"><button type="button" uid="3" class="btn btn-success btn-sm doctorEditBtn">编辑</button></a> <button type="button" uid="3" class="btn btn-default btn-sm deleteBtn">删除</button></td>
+													<a href="/web/question/edit"><button type="button" uid="3" class="btn btn-success btn-sm doctorEditBtn">编辑</button></a> <button type="button" class="btn btn-default btn-sm deleteBtn">删除</button></td>
 											</tr>
 										</tbody>
 									</table>
 								</div>
 								<div class="paging mt20 mb20 ftc" id="userListPage"> </div>
 							</li>
-
 						</ul>
 					</div>
 				</div>
+				<lwy:page url="/web/question"></lwy:page>
 			</div>
 			<!-- END MAIN CONTENT -->
 		</div>

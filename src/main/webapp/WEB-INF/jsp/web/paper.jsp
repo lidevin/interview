@@ -14,7 +14,7 @@
 		<!-- VENDOR CSS -->
 		<link rel="stylesheet" href="/res/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/res/css/font-awesome.min.css">
-		<link rel="stylesheet" href="/res/css/style.css">
+		
 		<link rel="stylesheet" href="/res/css/chartist-custom.css">
 		<!-- MAIN CSS -->
 		<link rel="stylesheet" href="/res/css/main.css">
@@ -97,7 +97,7 @@
 												<td>2018-04-14 14:32:10</td>
 												<td>30</td>
 												<td>
-													<a href="/web/paper/qst"><button type="button" uid="3" class="btn btn-success btn-sm doctorEditBtn">详情</button></a> </td>
+													<a href="/web/paper/qst"><button type="button" class="btn btn-success btn-sm doctorEditBtn">详情</button></a> </td>
 											</tr>
 										</tbody>
 									</table>

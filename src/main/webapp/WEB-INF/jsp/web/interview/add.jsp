@@ -14,7 +14,6 @@
 		<!-- VENDOR CSS -->
 		<link rel="stylesheet" href="/res/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/res/css/font-awesome.min.css">
-		<link rel="stylesheet" href="/res/css/style.css">
 		<link rel="stylesheet" href="/res/css/chartist-custom.css">
 
 		<link rel="stylesheet" href="/res/css/main.css">

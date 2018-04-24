@@ -142,11 +142,13 @@
 	}
 </style>
 <script type="text/javascript" src="/res/js/jquery.min.js"></script>
+<script type="text/javascript" src="/res/js/md5.js"></script>
 <script type="text/javascript">
 $(function(){
 	 $("#btnLogin").click(function(){
-		$("#pwd").val($("#inputPwd").val());
+		$("#pwd").val(md5($("#inputPwd").val()));
 	});
+	 //202cb962ac59075b964b07152d234b70
 });
 </script>
 </head>
@@ -165,7 +167,7 @@ $(function(){
 						<input type="hidden" name="pwd" value="" id="pwd">
 						<input type="password" class="form-control" id="inputPwd" placeholder="密码">
 						<i class="fa fa-lock"></i>
-						<a href="#" class="fa fa-question-circle"></a>
+						<!-- <a href="#" class="fa fa-question-circle"></a> -->
 					</div>
 					<c:if test="${empty errMsg}"></c:if>
 					<div class="form-group">

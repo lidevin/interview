@@ -11,7 +11,7 @@
     <!-- VENDOR CSS -->
     <link rel="stylesheet" href="/res/css/bootstrap.min.css">
     <link rel="stylesheet" href="/res/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/res/css/style.css">
+    
     <link rel="stylesheet" href="/res/css/chartist-custom.css">
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="/res/css/main.css">
@@ -74,7 +74,7 @@
                                     <th>操作</th>
                                 </tr>
                                 </thead>
-                                <tbody><tr><td>3</td><td>面试官1</td><td>女</td><td>22</td><td>13578534321</td><td>面试1</td><td>面试官1</td><td>2018-04-14 14:32:10</td><td><a  href="/web/interview/edit"><button type="button" uid="3" class="btn btn-success btn-sm doctorEditBtn">编辑</button></a> <button type="button" uid="3" class="btn btn-default btn-sm deleteBtn">删除</button></td></tr></tbody>
+                                <tbody><tr><td>3</td><td>面试官1</td><td>女</td><td>22</td><td>13578534321</td><td>面试1</td><td>面试官1</td><td>2018-04-14 14:32:10</td><td><a  href="/web/interview/edit"><button type="button" class="btn btn-success btn-sm doctorEditBtn">编辑</button></a> <button type="button" class="btn btn-default btn-sm deleteBtn">删除</button></td></tr></tbody>
                             </table>
                         </div>
                         <div class="paging mt20 mb20 ftc" id="userListPage">  </div>
