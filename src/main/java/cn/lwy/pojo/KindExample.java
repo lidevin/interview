@@ -3,14 +3,14 @@ package cn.lwy.pojo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QstTagExample {
+public class KindExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public QstTagExample() {
+    public KindExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -104,123 +104,133 @@ public class QstTagExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andTidIsNull() {
-            addCriterion("tid is null");
+        public Criteria andIdIsNull() {
+            addCriterion("id is null");
             return (Criteria) this;
         }
 
-        public Criteria andTidIsNotNull() {
-            addCriterion("tid is not null");
+        public Criteria andIdIsNotNull() {
+            addCriterion("id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTidEqualTo(Integer value) {
-            addCriterion("tid =", value, "tid");
+        public Criteria andIdEqualTo(Integer value) {
+            addCriterion("id =", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andTidNotEqualTo(Integer value) {
-            addCriterion("tid <>", value, "tid");
+        public Criteria andIdNotEqualTo(Integer value) {
+            addCriterion("id <>", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andTidGreaterThan(Integer value) {
-            addCriterion("tid >", value, "tid");
+        public Criteria andIdGreaterThan(Integer value) {
+            addCriterion("id >", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andTidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("tid >=", value, "tid");
+        public Criteria andIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("id >=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andTidLessThan(Integer value) {
-            addCriterion("tid <", value, "tid");
+        public Criteria andIdLessThan(Integer value) {
+            addCriterion("id <", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andTidLessThanOrEqualTo(Integer value) {
-            addCriterion("tid <=", value, "tid");
+        public Criteria andIdLessThanOrEqualTo(Integer value) {
+            addCriterion("id <=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andTidIn(List<Integer> values) {
-            addCriterion("tid in", values, "tid");
+        public Criteria andIdIn(List<Integer> values) {
+            addCriterion("id in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andTidNotIn(List<Integer> values) {
-            addCriterion("tid not in", values, "tid");
+        public Criteria andIdNotIn(List<Integer> values) {
+            addCriterion("id not in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andTidBetween(Integer value1, Integer value2) {
-            addCriterion("tid between", value1, value2, "tid");
+        public Criteria andIdBetween(Integer value1, Integer value2) {
+            addCriterion("id between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andTidNotBetween(Integer value1, Integer value2) {
-            addCriterion("tid not between", value1, value2, "tid");
+        public Criteria andIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("id not between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andQidIsNull() {
-            addCriterion("qid is null");
+        public Criteria andKindIsNull() {
+            addCriterion("kind is null");
             return (Criteria) this;
         }
 
-        public Criteria andQidIsNotNull() {
-            addCriterion("qid is not null");
+        public Criteria andKindIsNotNull() {
+            addCriterion("kind is not null");
             return (Criteria) this;
         }
 
-        public Criteria andQidEqualTo(Integer value) {
-            addCriterion("qid =", value, "qid");
+        public Criteria andKindEqualTo(String value) {
+            addCriterion("kind =", value, "kind");
             return (Criteria) this;
         }
 
-        public Criteria andQidNotEqualTo(Integer value) {
-            addCriterion("qid <>", value, "qid");
+        public Criteria andKindNotEqualTo(String value) {
+            addCriterion("kind <>", value, "kind");
             return (Criteria) this;
         }
 
-        public Criteria andQidGreaterThan(Integer value) {
-            addCriterion("qid >", value, "qid");
+        public Criteria andKindGreaterThan(String value) {
+            addCriterion("kind >", value, "kind");
             return (Criteria) this;
         }
 
-        public Criteria andQidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("qid >=", value, "qid");
+        public Criteria andKindGreaterThanOrEqualTo(String value) {
+            addCriterion("kind >=", value, "kind");
             return (Criteria) this;
         }
 
-        public Criteria andQidLessThan(Integer value) {
-            addCriterion("qid <", value, "qid");
+        public Criteria andKindLessThan(String value) {
+            addCriterion("kind <", value, "kind");
             return (Criteria) this;
         }
 
-        public Criteria andQidLessThanOrEqualTo(Integer value) {
-            addCriterion("qid <=", value, "qid");
+        public Criteria andKindLessThanOrEqualTo(String value) {
+            addCriterion("kind <=", value, "kind");
             return (Criteria) this;
         }
 
-        public Criteria andQidIn(List<Integer> values) {
-            addCriterion("qid in", values, "qid");
+        public Criteria andKindLike(String value) {
+            addCriterion("kind like", value, "kind");
             return (Criteria) this;
         }
 
-        public Criteria andQidNotIn(List<Integer> values) {
-            addCriterion("qid not in", values, "qid");
+        public Criteria andKindNotLike(String value) {
+            addCriterion("kind not like", value, "kind");
             return (Criteria) this;
         }
 
-        public Criteria andQidBetween(Integer value1, Integer value2) {
-            addCriterion("qid between", value1, value2, "qid");
+        public Criteria andKindIn(List<String> values) {
+            addCriterion("kind in", values, "kind");
             return (Criteria) this;
         }
 
-        public Criteria andQidNotBetween(Integer value1, Integer value2) {
-            addCriterion("qid not between", value1, value2, "qid");
+        public Criteria andKindNotIn(List<String> values) {
+            addCriterion("kind not in", values, "kind");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindBetween(String value1, String value2) {
+            addCriterion("kind between", value1, value2, "kind");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindNotBetween(String value1, String value2) {
+            addCriterion("kind not between", value1, value2, "kind");
             return (Criteria) this;
         }
     }

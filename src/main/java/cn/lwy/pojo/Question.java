@@ -7,9 +7,15 @@ public class Question {
 
     private String title;
 
-    private Byte type;
+    private Byte qsttype;
 
     private String answer;
+
+    private Integer kid;
+
+    private String kind;
+    
+    private String tags;
 
     private Byte score;
 
@@ -17,26 +23,7 @@ public class Question {
 
     private List<Choice> choices;
     
-    private List<TagType> tags;
-    
-    
-    public List<Choice> getChoices() {
-		return choices;
-	}
-
-	public void setChoices(List<Choice> choices) {
-		this.choices = choices;
-	}
-
-	public List<TagType> getTags() {
-		return tags;
-	}
-
-	public void setTags(List<TagType> tags) {
-		this.tags = tags;
-	}
-
-	public Integer getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -52,12 +39,12 @@ public class Question {
         this.title = title == null ? null : title.trim();
     }
 
-    public Byte getType() {
-        return type;
+    public Byte getQsttype() {
+        return qsttype;
     }
 
-    public void setType(Byte type) {
-        this.type = type;
+    public void setQsttype(Byte qsttype) {
+        this.qsttype = qsttype;
     }
 
     public String getAnswer() {
@@ -66,6 +53,22 @@ public class Question {
 
     public void setAnswer(String answer) {
         this.answer = answer == null ? null : answer.trim();
+    }
+
+    public Integer getKid() {
+        return kid;
+    }
+
+    public void setKid(Integer kid) {
+        this.kid = kid;
+    }
+
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags == null ? null : tags.trim();
     }
 
     public Byte getScore() {
@@ -84,9 +87,28 @@ public class Question {
         this.difficult = difficult;
     }
 
+	public String getKind() {
+		return kind;
+	}
+
+	public void setKind(String kind) {
+		this.kind = kind;
+	}
+
+	public List<Choice> getChoices() {
+		return choices;
+	}
+
+	public void setChoices(List<Choice> choices) {
+		this.choices = choices;
+	}
+
 	@Override
 	public String toString() {
-		return "Question [id=" + id + ", title=" + title + ", type=" + type + ", answer=" + answer + ", score=" + score
-				+ ", difficult=" + difficult + ", choices=" + choices + ", tags=" + tags + "]";
+		return "Question [id=" + id + ", title=" + title + ", qsttype=" + qsttype + ", answer=" + answer + ", kid="
+				+ kid + ", kind=" + kind + ", tags=" + tags + ", score=" + score + ", difficult=" + difficult
+				+ ", choices=" + choices + "]";
 	}
+	
+	
 }

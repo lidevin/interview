@@ -39,20 +39,7 @@
 	</head>
 
 	<body>
-
-		<!-- WRAPPER -->
-		<!-- MAIN -->
-		<div class="main">
-			<!-- MAIN CONTENT -->
-			<div class="main-content">
-				<div class="container-fluid">
-					<div class="">
-
-					</div>
-				</div>
-			</div>
-			<!-- END MAIN CONTENT -->
-		</div>
+		<form action="/wweb/interview/add.do" method="get">
 		<!--添加面试官弹框 start-->
 		<div class="bombBox" id="addDoctorBomb">
 			<div class="bombContent whiteBg addDoctorBomb" style="min-width: 500px;">
@@ -64,7 +51,7 @@
 						<span class="input-group-btn">
 					<span class="btn">姓名：</span>
 						</span>
-						<input class="form-control" type="text" value="" id="true_name" placeholder="请填写姓名">
+						<input class="form-control" type="text" value="" name="" placeholder="请填写姓名">
 					</div>
 					<div class="input-group listSeaForm mt10 wb100">
 						<span class="input-group-btn">
@@ -117,12 +104,13 @@
 					</div>
 				</div>
 				<div class="pd20">
-					<button type="button" class="btn btn-primary wb100" id="addUser">添加</button>
+					<!-- <button type="button" class="btn btn-primary wb100" id="addUser">添加</button> -->
+					<input type="submit" class="btn btn-primary wb100" value="添加">
 				</div>
 			</div>
 			<div class="bombMask"></div>
 		</div>
-
+		</form>
 	</body>
 
 </html>

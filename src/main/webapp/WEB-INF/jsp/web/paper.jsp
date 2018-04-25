@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="lwy" uri="http://lwy.cn/common/" %>
 <!DOCTYPE html>
-
 <html lang="en">
 
 	<head>
@@ -36,8 +36,10 @@
 		<script src="/res/js/check.form.js"></script>
 		<script src="/res/js/layer.js"></script>
 		<link rel="stylesheet" href="/res/css/layer.css" id="layuicss-layer">
-		<style>
-			
+		<style type="text/css">
+			table tbody tr:nth-child(odd) {
+				background-color: #F3F3F3;
+			}
 		</style>
 	</head>
 
@@ -57,8 +59,8 @@
 									<div class="fublBox mr10"><span>类型：</span>
 										<input type="text" id="search-true-name" class="form-control form-itmeB" placeholder="">
 									</div>
-									<button type="button" class="btn btn-primary" id="search-doctor">查询</button>
-									<a href="/web/paper/add"><button type="button" class="btn btn-primary r doctorAddBtn">添加试卷</button></a>
+									<button type="button" class="btn btn-primary" >查询</button>
+									<a href="/web/paper/add"><button type="button" class="btn btn-primary r">添加试卷</button></a>
 
 								</div>
 								<div class="pd10">
@@ -97,7 +99,7 @@
 												<td>2018-04-14 14:32:10</td>
 												<td>30</td>
 												<td>
-													<a href="/web/paper/qst"><button type="button" class="btn btn-success btn-sm doctorEditBtn">详情</button></a> </td>
+													<a href="/web/paper/qst"><button type="button" class="btn btn-success btn-sm">详情</button></a> </td>
 											</tr>
 										</tbody>
 									</table>
@@ -107,6 +109,7 @@
 						</ul>
 					</div>
 				</div>
+				<lwy:page url="/web/paper"></lwy:page>
 			</div>
 			<!-- END MAIN CONTENT -->
 		</div>

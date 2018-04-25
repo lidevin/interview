@@ -3,8 +3,12 @@ package cn.lwy.web.hr;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import cn.lwy.service.InterviewerService;
+
 @Controller
-public class InterviewController {
+public class InterviewerController {
+	
+	private InterviewerService interviewerService;
 	
 	@RequestMapping("/web/interview")
 	public String list() {

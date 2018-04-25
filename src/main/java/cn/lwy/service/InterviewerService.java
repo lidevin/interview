@@ -14,4 +14,6 @@ public interface InterviewerService extends BaseService<Interviewer>{
 	 */
 	boolean getByName(Interviewer interviewer);
 	
+	/*List<Interviewer> getByVo();*/
+	
 }

@@ -43,11 +43,11 @@ public class ManagerController {
 				//用户名
 				Cookie name = new Cookie(cookieUserName, manager.getName());
 				name.setMaxAge(Integer.MAX_VALUE);
-				name.setPath("/web/login.do");
+				name.setPath("/web");
 				//密码
 				Cookie pwd = new Cookie(cookiePwd, manager.getPwd());
 				pwd.setMaxAge(Integer.MAX_VALUE);
-				pwd.setPath("/web/login.do");
+				pwd.setPath("/web");
 				//添加到cookies
 				response.addCookie(name);
 				response.addCookie(pwd);
@@ -102,7 +102,7 @@ public class ManagerController {
 		//清除cookie
 		Cookie name = new Cookie(cookieUserName, null);
 		name.setMaxAge(0);
-		name.setPath("/web/login.do");
+		name.setPath("/web");
 		response.addCookie(name);
 		
 		return "redirect:/web/login";

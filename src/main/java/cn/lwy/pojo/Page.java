@@ -1,4 +1,4 @@
-package cn.lwy.utils;
+package cn.lwy.pojo;
 
 import java.util.List;
 

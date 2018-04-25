@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -163,7 +162,6 @@
 							<li class="li-menu"><a href="/web/quit" class="menu"> <i class="fa fa-sign-out"></i> <span>退&nbsp;&nbsp;出</span></a>
 							</li>
 						</ul>
-						
 						<div id="show" >
 							<button type="button" class="btn-toggle-fullwidth"><i class="fa fa-toggle-left"></i></button>
 						</div>
@@ -177,9 +175,8 @@
 		</div>
 		<!-- END LEFT SIDEBAR -->
 		<!--主体右部分-->
-		<iframe src="/web/interview" class="main" name="main" id="main"	frameborder="0" scrolling="yes" onload="this.height=100" height="100" style="min-height: 800px;"></iframe>
+		<iframe src="/web/question" class="main" name="main" id="main"	frameborder="0" scrolling="yes" onload="this.height=100" height="100" style="min-height: 800px;"></iframe>
 	</div>
-	
 	
 	<script type="text/javascript">
 		//左侧导航

@@ -30,3 +30,1121 @@ INFO http-bio-80-exec-2 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} 
 INFO http-bio-80-exec-4 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
 DEBUG http-bio-80-exec-5 com.alibaba.druid.pool.DruidDataSource - skip not validate connection.
 DEBUG http-bio-80-exec-2 com.alibaba.druid.pool.DruidDataSource - skip not validate connection.
+INFO http-bio-80-exec-1 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-4 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-4 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-4 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-4 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:928)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1323)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1276)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 15 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 15 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 15 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 15 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 15 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 15 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 15 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 15 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 15 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 15 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 15 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 15 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 15 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 15 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 15 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 15 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor36.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 14 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor36.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 14 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor36.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 14 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor36.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 14 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor36.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 14 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor36.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 14 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor36.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 14 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor36.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 14 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor36.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 14 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor36.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 14 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor36.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 14 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor36.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 14 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor36.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 14 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor36.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 14 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor36.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 14 more
+ERROR Druid-ConnectionPool-Create-1470701177 com.alibaba.druid.pool.DruidDataSource - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor36.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1844)
+Caused by: java.net.UnknownHostException: gz-cdb-38p89w7k.sql.tencentcdb.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:928)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1323)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1276)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:188)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 14 more
+INFO http-bio-80-exec-1 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-6 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-4 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-4 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-6 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+DEBUG http-bio-80-exec-8 cn.lwy.web.hr.QuestionController - --> /web/question
+DEBUG http-bio-80-exec-8 cn.lwy.web.hr.QuestionController - ====  1  ======
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - --> /web/question
+DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - ====  1  ======
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - --> /web/question
+DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - ====  1  ======
+DEBUG http-bio-80-exec-8 cn.lwy.web.hr.QuestionController - --> /web/question
+DEBUG http-bio-80-exec-8 cn.lwy.web.hr.QuestionController - ====  1  ======
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+DEBUG http-bio-80-exec-5 cn.lwy.web.hr.QuestionController - --> /web/question
+DEBUG http-bio-80-exec-5 cn.lwy.web.hr.QuestionController - ====  1  ======
+DEBUG http-bio-80-exec-5 cn.lwy.web.hr.QuestionController - question = cn.lwy.pojo.Question@5c0b235a
+DEBUG http-bio-80-exec-5 cn.lwy.web.hr.QuestionController - question = cn.lwy.pojo.Question@61331654
+DEBUG http-bio-80-exec-5 cn.lwy.web.hr.QuestionController - ====  2  ======
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - getById==>Question [id=1, title=你多大了？, qsttype=1, answer=A, kid=1, kind=null, tags=云算法, score=5, difficult=1, choices=null]
+DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - getWithChoiceById==>Question [id=1, title=你多大了？, qsttype=1, answer=A, kid=1, kind=null, tags=云算法, score=5, difficult=1, choices=[Choice [qid=1, content=30], Choice [qid=1, content=10], Choice [qid=1, content=50], Choice [qid=1, content=20]]]
+DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - getWithKindById==>Question [id=1, title=你多大了？, qsttype=1, answer=A, kid=1, kind=java, tags=云算法, score=5, difficult=1, choices=null]
+DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - getFullById==>Question [id=1, title=你多大了？, qsttype=1, answer=A, kid=1, kind=java, tags=云算法, score=5, difficult=1, choices=[Choice [qid=1, content=30], Choice [qid=1, content=10], Choice [qid=1, content=50], Choice [qid=1, content=20]]]
+DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - getByExample==>[Question [id=1, title=你多大了？, qsttype=1, answer=A, kid=1, kind=null, tags=云算法, score=5, difficult=1, choices=null], Question [id=2, title=自增运算法？, qsttype=1, answer=B, kid=1, kind=null, tags=云算法, score=5, difficult=1, choices=null], Question [id=3, title=下列常用的框架, qsttype=2, answer=BCD, kid=1, kind=null, tags=云算法, score=10, difficult=2, choices=null], Question [id=4, title=你是中国人？, qsttype=3, answer=B, kid=1, kind=null, tags=云算法, score=5, difficult=1, choices=null], Question [id=5, title=你知道的框架有？, qsttype=4, answer=spring struct mybatis, kid=1, kind=null, tags=云算法, score=15, difficult=3, choices=null]]
+DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - getWithChoiceByExample==>[Question [id=1, title=你多大了？, qsttype=1, answer=A, kid=1, kind=null, tags=云算法, score=5, difficult=1, choices=[Choice [qid=1, content=30], Choice [qid=1, content=10], Choice [qid=1, content=50], Choice [qid=1, content=20]]], Question [id=2, title=自增运算法？, qsttype=1, answer=B, kid=1, kind=null, tags=云算法, score=5, difficult=1, choices=[Choice [qid=2, content=++1], Choice [qid=2, content=i++], Choice [qid=2, content=i--], Choice [qid=2, content=--i]]], Question [id=3, title=下列常用的框架, qsttype=2, answer=BCD, kid=1, kind=null, tags=云算法, score=10, difficult=2, choices=[Choice [qid=3, content=sdah], Choice [qid=3, content=struct], Choice [qid=3, content=spring], Choice [qid=3, content=hibernate]]], Question [id=4, title=你是中国人？, qsttype=3, answer=B, kid=1, kind=null, tags=云算法, score=5, difficult=1, choices=[Choice [qid=4, content=是], Choice [qid=4, content=否]]], Question [id=5, title=你知道的框架有？, qsttype=4, answer=spring struct mybatis, kid=1, kind=null, tags=云算法, score=15, difficult=3, choices=[]]]
+DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - getWithKindById==>Question [id=1, title=你多大了？, qsttype=1, answer=A, kid=1, kind=java, tags=云算法, score=5, difficult=1, choices=null]
+DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - getFullByExample==>[Question [id=1, title=你多大了？, qsttype=1, answer=A, kid=1, kind=java, tags=云算法, score=5, difficult=1, choices=[Choice [qid=1, content=30], Choice [qid=1, content=10], Choice [qid=1, content=50], Choice [qid=1, content=20]]], Question [id=2, title=自增运算法？, qsttype=1, answer=B, kid=1, kind=java, tags=云算法, score=5, difficult=1, choices=[Choice [qid=2, content=++1], Choice [qid=2, content=i++], Choice [qid=2, content=i--], Choice [qid=2, content=--i]]], Question [id=3, title=下列常用的框架, qsttype=2, answer=BCD, kid=1, kind=java, tags=云算法, score=10, difficult=2, choices=[Choice [qid=3, content=sdah], Choice [qid=3, content=struct], Choice [qid=3, content=spring], Choice [qid=3, content=hibernate]]], Question [id=4, title=你是中国人？, qsttype=3, answer=B, kid=1, kind=java, tags=云算法, score=5, difficult=1, choices=[Choice [qid=4, content=是], Choice [qid=4, content=否]]], Question [id=5, title=你知道的框架有？, qsttype=4, answer=spring struct mybatis, kid=1, kind=java, tags=云算法, score=15, difficult=3, choices=[]]]
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - getById==>Question [id=1, title=你多大了？, qsttype=1, answer=A, kid=1, kind=null, tags=云算法, score=5, difficult=1, choices=null]
+DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - getWithChoiceById==>Question [id=1, title=你多大了？, qsttype=1, answer=A, kid=1, kind=null, tags=云算法, score=5, difficult=1, choices=[Choice [qid=1, content=30], Choice [qid=1, content=10], Choice [qid=1, content=50], Choice [qid=1, content=20]]]
+DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - getWithKindById==>Question [id=1, title=你多大了？, qsttype=1, answer=A, kid=1, kind=java, tags=云算法, score=5, difficult=1, choices=null]
+DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - getFullById==>Question [id=1, title=你多大了？, qsttype=1, answer=A, kid=1, kind=java, tags=云算法, score=5, difficult=1, choices=[Choice [qid=1, content=30], Choice [qid=1, content=10], Choice [qid=1, content=50], Choice [qid=1, content=20]]]
+DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - getByExample==>[Question [id=1, title=你多大了？, qsttype=1, answer=A, kid=1, kind=null, tags=云算法, score=5, difficult=1, choices=null], Question [id=2, title=自增运算法？, qsttype=1, answer=B, kid=1, kind=null, tags=云算法, score=5, difficult=1, choices=null], Question [id=3, title=下列常用的框架, qsttype=2, answer=BCD, kid=1, kind=null, tags=云算法, score=10, difficult=2, choices=null], Question [id=4, title=你是中国人？, qsttype=3, answer=B, kid=1, kind=null, tags=云算法, score=5, difficult=1, choices=null], Question [id=5, title=你知道的框架有？, qsttype=4, answer=spring struct mybatis, kid=1, kind=null, tags=云算法, score=15, difficult=3, choices=null]]
+DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - getWithChoiceByExample==>[Question [id=1, title=你多大了？, qsttype=1, answer=A, kid=1, kind=null, tags=云算法, score=5, difficult=1, choices=[Choice [qid=1, content=30], Choice [qid=1, content=10], Choice [qid=1, content=50], Choice [qid=1, content=20]]], Question [id=2, title=自增运算法？, qsttype=1, answer=B, kid=1, kind=null, tags=云算法, score=5, difficult=1, choices=[Choice [qid=2, content=++1], Choice [qid=2, content=i++], Choice [qid=2, content=i--], Choice [qid=2, content=--i]]], Question [id=3, title=下列常用的框架, qsttype=2, answer=BCD, kid=1, kind=null, tags=云算法, score=10, difficult=2, choices=[Choice [qid=3, content=sdah], Choice [qid=3, content=struct], Choice [qid=3, content=spring], Choice [qid=3, content=hibernate]]], Question [id=4, title=你是中国人？, qsttype=3, answer=B, kid=1, kind=null, tags=云算法, score=5, difficult=1, choices=[Choice [qid=4, content=是], Choice [qid=4, content=否]]], Question [id=5, title=你知道的框架有？, qsttype=4, answer=spring struct mybatis, kid=1, kind=null, tags=云算法, score=15, difficult=3, choices=[]]]
+DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - getWithKindById==>Question [id=1, title=你多大了？, qsttype=1, answer=A, kid=1, kind=java, tags=云算法, score=5, difficult=1, choices=null]
+DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - getFullByExample==>[Question [id=1, title=你多大了？, qsttype=1, answer=A, kid=1, kind=java, tags=云算法, score=5, difficult=1, choices=[Choice [qid=1, content=30], Choice [qid=1, content=10], Choice [qid=1, content=50], Choice [qid=1, content=20]]], Question [id=2, title=自增运算法？, qsttype=1, answer=B, kid=1, kind=java, tags=云算法, score=5, difficult=1, choices=[Choice [qid=2, content=++1], Choice [qid=2, content=i++], Choice [qid=2, content=i--], Choice [qid=2, content=--i]]], Question [id=3, title=下列常用的框架, qsttype=2, answer=BCD, kid=1, kind=java, tags=云算法, score=10, difficult=2, choices=[Choice [qid=3, content=sdah], Choice [qid=3, content=struct], Choice [qid=3, content=spring], Choice [qid=3, content=hibernate]]], Question [id=4, title=你是中国人？, qsttype=3, answer=B, kid=1, kind=java, tags=云算法, score=5, difficult=1, choices=[Choice [qid=4, content=是], Choice [qid=4, content=否]]], Question [id=5, title=你知道的框架有？, qsttype=4, answer=spring struct mybatis, kid=1, kind=java, tags=云算法, score=15, difficult=3, choices=[]]]
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited

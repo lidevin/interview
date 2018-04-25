@@ -20,9 +20,8 @@
 	margin-left: 5px;
 }
 
-table tbody tr:odd {
-	background-color: #F2DEDE;
+#userList th{
+	text-align: center;
 }
-
 
 /*# sourceMappingURL=demo.css.map */

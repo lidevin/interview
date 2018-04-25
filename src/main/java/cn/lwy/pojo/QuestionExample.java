@@ -234,63 +234,63 @@ public class QuestionExample {
             return (Criteria) this;
         }
 
-        public Criteria andTypeIsNull() {
-            addCriterion("type is null");
+        public Criteria andQsttypeIsNull() {
+            addCriterion("qsttype is null");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIsNotNull() {
-            addCriterion("type is not null");
+        public Criteria andQsttypeIsNotNull() {
+            addCriterion("qsttype is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTypeEqualTo(Byte value) {
-            addCriterion("type =", value, "type");
+        public Criteria andQsttypeEqualTo(Byte value) {
+            addCriterion("qsttype =", value, "qsttype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotEqualTo(Byte value) {
-            addCriterion("type <>", value, "type");
+        public Criteria andQsttypeNotEqualTo(Byte value) {
+            addCriterion("qsttype <>", value, "qsttype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeGreaterThan(Byte value) {
-            addCriterion("type >", value, "type");
+        public Criteria andQsttypeGreaterThan(Byte value) {
+            addCriterion("qsttype >", value, "qsttype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeGreaterThanOrEqualTo(Byte value) {
-            addCriterion("type >=", value, "type");
+        public Criteria andQsttypeGreaterThanOrEqualTo(Byte value) {
+            addCriterion("qsttype >=", value, "qsttype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeLessThan(Byte value) {
-            addCriterion("type <", value, "type");
+        public Criteria andQsttypeLessThan(Byte value) {
+            addCriterion("qsttype <", value, "qsttype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeLessThanOrEqualTo(Byte value) {
-            addCriterion("type <=", value, "type");
+        public Criteria andQsttypeLessThanOrEqualTo(Byte value) {
+            addCriterion("qsttype <=", value, "qsttype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIn(List<Byte> values) {
-            addCriterion("type in", values, "type");
+        public Criteria andQsttypeIn(List<Byte> values) {
+            addCriterion("qsttype in", values, "qsttype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotIn(List<Byte> values) {
-            addCriterion("type not in", values, "type");
+        public Criteria andQsttypeNotIn(List<Byte> values) {
+            addCriterion("qsttype not in", values, "qsttype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeBetween(Byte value1, Byte value2) {
-            addCriterion("type between", value1, value2, "type");
+        public Criteria andQsttypeBetween(Byte value1, Byte value2) {
+            addCriterion("qsttype between", value1, value2, "qsttype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotBetween(Byte value1, Byte value2) {
-            addCriterion("type not between", value1, value2, "type");
+        public Criteria andQsttypeNotBetween(Byte value1, Byte value2) {
+            addCriterion("qsttype not between", value1, value2, "qsttype");
             return (Criteria) this;
         }
 
@@ -361,6 +361,136 @@ public class QuestionExample {
 
         public Criteria andAnswerNotBetween(String value1, String value2) {
             addCriterion("answer not between", value1, value2, "answer");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidIsNull() {
+            addCriterion("kid is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidIsNotNull() {
+            addCriterion("kid is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidEqualTo(Integer value) {
+            addCriterion("kid =", value, "kid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidNotEqualTo(Integer value) {
+            addCriterion("kid <>", value, "kid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidGreaterThan(Integer value) {
+            addCriterion("kid >", value, "kid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("kid >=", value, "kid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidLessThan(Integer value) {
+            addCriterion("kid <", value, "kid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidLessThanOrEqualTo(Integer value) {
+            addCriterion("kid <=", value, "kid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidIn(List<Integer> values) {
+            addCriterion("kid in", values, "kid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidNotIn(List<Integer> values) {
+            addCriterion("kid not in", values, "kid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidBetween(Integer value1, Integer value2) {
+            addCriterion("kid between", value1, value2, "kid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidNotBetween(Integer value1, Integer value2) {
+            addCriterion("kid not between", value1, value2, "kid");
+            return (Criteria) this;
+        }
+
+        public Criteria andTagsIsNull() {
+            addCriterion("tags is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTagsIsNotNull() {
+            addCriterion("tags is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTagsEqualTo(String value) {
+            addCriterion("tags =", value, "tags");
+            return (Criteria) this;
+        }
+
+        public Criteria andTagsNotEqualTo(String value) {
+            addCriterion("tags <>", value, "tags");
+            return (Criteria) this;
+        }
+
+        public Criteria andTagsGreaterThan(String value) {
+            addCriterion("tags >", value, "tags");
+            return (Criteria) this;
+        }
+
+        public Criteria andTagsGreaterThanOrEqualTo(String value) {
+            addCriterion("tags >=", value, "tags");
+            return (Criteria) this;
+        }
+
+        public Criteria andTagsLessThan(String value) {
+            addCriterion("tags <", value, "tags");
+            return (Criteria) this;
+        }
+
+        public Criteria andTagsLessThanOrEqualTo(String value) {
+            addCriterion("tags <=", value, "tags");
+            return (Criteria) this;
+        }
+
+        public Criteria andTagsLike(String value) {
+            addCriterion("tags like", value, "tags");
+            return (Criteria) this;
+        }
+
+        public Criteria andTagsNotLike(String value) {
+            addCriterion("tags not like", value, "tags");
+            return (Criteria) this;
+        }
+
+        public Criteria andTagsIn(List<String> values) {
+            addCriterion("tags in", values, "tags");
+            return (Criteria) this;
+        }
+
+        public Criteria andTagsNotIn(List<String> values) {
+            addCriterion("tags not in", values, "tags");
+            return (Criteria) this;
+        }
+
+        public Criteria andTagsBetween(String value1, String value2) {
+            addCriterion("tags between", value1, value2, "tags");
+            return (Criteria) this;
+        }
+
+        public Criteria andTagsNotBetween(String value1, String value2) {
+            addCriterion("tags not between", value1, value2, "tags");
             return (Criteria) this;
         }
 

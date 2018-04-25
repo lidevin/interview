@@ -27,15 +27,8 @@ public class Test {
 		for (Question question : list) {
 			System.out.println(question);
 		}
-		long time2 = System.currentTimeMillis();
-		System.out.println("time: " + (time2-time1));
-		list = questionService.getWithTagByExample(example);
-		System.out.println("tag = " + list.size());
-		for (Question question : list) {
-			System.out.println(question);
-		}
 		long time3 = System.currentTimeMillis();
-		System.out.println("time: " + (time3-time2));
+		System.out.println("time: " + (time3-time1));
 		list = questionService.getWithChoiceByExample(example);
 		System.out.println("choice = " + list.size());
 		for (Question question : list) {
@@ -58,11 +51,7 @@ public class Test {
 		System.out.println(questionService.getById(id));
 		long time2 = System.currentTimeMillis();
 		System.out.println("time: " + (time2-time1));
-		Question list = questionService.getWithTagById(id);
-		long time3 = System.currentTimeMillis();
-		System.out.println("time: " + (time3-time2));
 		System.out.println(questionService.getWithChoiceById(id));
-		System.out.println("time: " + (System.currentTimeMillis()-time3));
-		System.out.println(list);
+		System.out.println("time: " + (System.currentTimeMillis()-time2));
 	}
 }

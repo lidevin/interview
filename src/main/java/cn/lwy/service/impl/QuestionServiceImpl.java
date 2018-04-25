@@ -6,14 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cn.lwy.mapper.ChoiceMapper;
+import cn.lwy.mapper.KindMapper;
 import cn.lwy.mapper.QuestionMapper;
-import cn.lwy.mapper.TagTypeMapper;
 import cn.lwy.pojo.Choice;
 import cn.lwy.pojo.ChoiceExample;
+import cn.lwy.pojo.Page;
 import cn.lwy.pojo.Question;
 import cn.lwy.pojo.QuestionExample;
-import cn.lwy.pojo.TagType;
 import cn.lwy.service.QuestionService;
+import cn.lwy.vo.PageVo;
 
 @Service
 public class QuestionServiceImpl implements QuestionService {
@@ -70,37 +71,45 @@ public class QuestionServiceImpl implements QuestionService {
 	}
 
 	@Override
-	public Question getWithTagById(Integer id) {
-		return questionMapper.selectWithTagByPrimaryKey(id);
-	}
-
-	@Override
 	public Question getWithChoiceById(Integer id) {
-		return questionMapper.selectWithChoiceByPrimaryKey(id);
+		ChoiceExample example = new ChoiceExample();
+		example.createCriteria().andQidEqualTo(id);
+		List<Choice> choices = choiceMapper.selectByExample(example);
+		Question question = this.getById(id);
+		question.setChoices(choices);
+		return question;
 	}
 
 	@Override
 	public Question getFullById(Integer id) {
-		return questionMapper.selectFullByPrimaryKey(id);
+		Question question = getWithChoiceById(id);
+		question.setKind(kindMapper.selectByPrimaryKey(question.getKid()).getKind());
+		return question;
 	}
 	
 	@Override
 	public List<Question> getWithChoiceByExample(QuestionExample example) {
-		return questionMapper.selectWithChoiceByExample(example);
+		List<Question> questions = questionMapper.selectByExample(example);
+		for (Question question : questions) {
+			ChoiceExample e = new ChoiceExample();
+			e.createCriteria().andQidEqualTo(question.getId());
+			List<Choice> choices = choiceMapper.selectByExample(e);
+			question.setChoices(choices);
+			
+		}
+		return questions;
 	}
 
-	@Override
-	public List<Question> getWithTagByExample(QuestionExample example) {
-		return questionMapper.selectWithTagByExample(example);
-	}
 
 	@Override
 	public List<Question> getFullByExample(QuestionExample example) {
-		return questionMapper.selectFullByExample(example);
+		List<Question> questions = this.getWithChoiceByExample(example);
+		for (Question question : questions) {
+			question.setKind(kindMapper.selectByPrimaryKey(question.getKid()).getKind());
+		}
+		return questions;
 	}
 
-	@Autowired
-	private TagTypeMapper tagTypeMapper;
 	@Autowired
 	private ChoiceMapper choiceMapper;
 	
@@ -110,17 +119,7 @@ public class QuestionServiceImpl implements QuestionService {
 			return false;
 		}
 		int count = 0;
-		List<TagType> tags = question.getTags();
-		if(tags != null) {
-			for (TagType tagType : tags) {
-				count += tagTypeMapper.updateByPrimaryKeySelective(tagType);
-			}
-		}
-		if(count != tags.size()) {
-			return false;
-		}
 		List<Choice> choices = question.getChoices();
-		count = 0;
 		if(choices != null) {
 			for (Choice choice : choices) {
 				ChoiceExample example = new ChoiceExample();
@@ -140,17 +139,7 @@ public class QuestionServiceImpl implements QuestionService {
 			return false;
 		}
 		int count = 0;
-		List<TagType> tags = question.getTags();
-		if(tags != null) {
-			for (TagType tagType : tags) {
-				count += tagTypeMapper.insertSelective(tagType);
-			}
-		}
-		if(count != tags.size()) {
-			return false;
-		}
 		List<Choice> choices = question.getChoices();
-		count = 0;
 		if(choices != null) {
 			for (Choice choice : choices) {
 				count += choiceMapper.insertSelective(choice);
@@ -160,5 +149,43 @@ public class QuestionServiceImpl implements QuestionService {
 			return false;
 		}
 		return false;
+	}
+	
+	@Override
+	public Page<Question> getWithKindByExampleAndVo(QuestionExample example, PageVo vo) {
+		Page<Question> page = new Page<Question>();
+		if(vo == null) {
+			vo = new PageVo();
+		}
+		//每页显示行数
+		page.setSize(vo.getSize());
+		vo.setStartRow((vo.getPage()-1)*vo.getSize());
+		page.setTotal(questionMapper.countByExample(example));
+		
+		page.setRows(questionMapper.selectWithKindByExampleAndVo(example,vo));
+		return page;
+	}
+	
+	@Autowired
+	private KindMapper kindMapper;
+	@Override
+	public Question getWithKindById(Integer id) {
+		Question question = this.getById(id);
+		question.setKind(kindMapper.selectByPrimaryKey(question.getKid()).getKind());
+		return question;
+	}
+
+	@Override
+	public List<Question> getWithKindByExample(QuestionExample example) {
+		List<Question> questions = this.getByExample(example);
+		for (Question question : questions) {
+			question.setKind(kindMapper.selectByPrimaryKey(question.getKid()).getKind());
+		}
+		return questions;
+	}
+
+	@Override
+	public Question getById(Integer id) {
+		return questionMapper.selectByPrimaryKey(id);
 	}
 }

@@ -50,165 +50,169 @@
 		<div class="bombBox" id="addDoctorBomb">
 			<div class="bombContent whiteBg addDoctorBomb" style="min-width: 400px;">
 				<div class="bombTit">添加题目	<a class="fa fa-remove" href="/web/question" target="main"></a></div>
-				<div class="pd20">
-					<div class="input-group listSeaForm mt10 wb100">
-						<span class="input-group-btn">
-					<span class="btn">标题：</span>
-						</span>
-						<input class="form-control" type="text" value="" id="true_name" placeholder="请填写标题">
+				<form action="/web/question/add" method="get">
+					<div class="pd20">
+						<div class="input-group listSeaForm mt10 wb100">
+							<span class="input-group-btn">
+						<span class="btn">标题：</span>
+							</span>
+							<input class="form-control" type="text" name="title" placeholder="请填写标题">
+						</div>
+						<div class="input-group listSeaForm mt10 wb100">
+							<span class="input-group-btn">
+								<span class="btn">类型：</span>
+							</span>
+							<select class="form-control" id="choice_select" name="type">
+								<option value="1">单选</option>
+								<option value="2">多选</option>
+								<option value="3">判断</option>
+								<option value="4">主观</option>
+							</select>
+						</div>
+						<div class="input-group listSeaForm mt10 wb100">
+							<span class="input-group-btn">
+								<span class="btn">选项：(在左边设定答案)</span>
+							</span>
+						</div>
+						<ul id="choice_ul">
+							<li >
+								<div class="input-group listSeaForm mt10 wb100">
+									<span class="input-group-btn">
+								<span class="btn">
+									<input type="radio" name="answer1"/>
+									A 、 </span>
+									</span>
+									<input class="form-control" type="text" value="" placeholder="请填写选项">
+								</div>
+								<div class="input-group listSeaForm mt10 wb100">
+									<span class="input-group-btn">
+								<span class="btn">
+									<input type="radio" name="choice"/>
+									B 、 </span>
+									</span>
+									<input class="form-control" type="text" value="" placeholder="请填写选项">
+								</div>
+								<div class="input-group listSeaForm mt10 wb100">
+									<span class="input-group-btn">
+								<span class="btn">
+									<input type="radio" name="choice"/>
+									C 、 </span>
+									</span>
+									<input class="form-control" type="text" value="" placeholder="请填写选项">
+								</div>
+								<div class="input-group listSeaForm mt10 wb100">
+									<span class="input-group-btn">
+								<span class="btn">
+									<input type="radio" name="choice"/>
+									D 、 </span>
+									</span>
+									<input class="form-control" type="text" value="" placeholder="请填写选项">
+								</div>
+							</li>
+							<li class="hidden">
+								<div class="input-group listSeaForm mt10 wb100">
+									<span class="input-group-btn">
+								<span class="btn">
+									<input type="checkbox" name="answer2"/>
+									A 、 </span>
+									</span>
+									<input class="form-control" type="text" value="" placeholder="请填写选项">
+								</div>
+								<div class="input-group listSeaForm mt10 wb100">
+									<span class="input-group-btn">
+								<span class="btn">
+									<input type="checkbox" name="choice"/>
+									B 、 </span>
+									</span>
+									<input class="form-control" type="text" value="" placeholder="请填写选项">
+								</div>
+								<div class="input-group listSeaForm mt10 wb100">
+									<span class="input-group-btn">
+								<span class="btn">
+									<input type="checkbox" name="choice"/>
+									C 、 </span>
+									</span>
+									<input class="form-control" type="text" value="" placeholder="请填写选项">
+								</div>
+								<div class="input-group listSeaForm mt10 wb100">
+									<span class="input-group-btn">
+								<span class="btn">
+									<input type="checkbox" name="choice"/>
+									D 、 </span>
+									</span>
+									<input class="form-control" type="text" value="" placeholder="请填写选项">
+								</div>
+							</li>
+							<li class="hidden">
+								<div class="input-group listSeaForm mt10 wb100">
+									<span class="input-group-btn">
+								<span class="btn">
+									<input type="radio" name="answer3"/>
+									A 、 </span>
+									</span>
+									<input class="form-control" type="text" value="" placeholder="请填写选项">
+								</div>
+								<div class="input-group listSeaForm mt10 wb100">
+									<span class="input-group-btn">
+								<span class="btn">
+									<input type="radio" name="answer"/>
+									B 、 </span>
+									</span>
+									<input class="form-control" type="text" value="" placeholder="请填写选项">
+								</div>
+								
+							</li>
+							<li class="hidden">
+								<div class="input-group listSeaForm mt10 wb100">
+									<span class="input-group-btn">
+									</span>
+									<input class="form-control" type="text" value="" placeholder="请编辑答案">
+								</div>
+							</li>
+						</ul>
+						<div class="input-group listSeaForm mt10 wb100">
+							<span class="input-group-btn">
+						<span class="btn">分数：</span>
+							</span>
+							<input class="form-control" type="number" id="a-age" min="1" max="150" value="">
+						</div>
+						<div class="input-group listSeaForm mt10 wb100">
+							<span class="input-group-btn">
+						<span class="btn">难度等级：</span>
+							</span>
+							<select class="form-control" name="difficult">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
+						</div>
+						<div class="input-group listSeaForm mt10 wb100">
+							<span class="input-group-btn">
+						<span class="btn">类型：</span>
+							</span>
+							<!--从数据库查数据-->
+							<select class="form-control" id="tags.type">
+								<option value="">-请选择类型-</option>
+								<option value="C++">C++</option>
+								<option value="java">java</option>
+							</select>
+						</div>
+						<div class="input-group listSeaForm mt10 wb100">
+							<span class="input-group-btn">
+						<span class="btn">标签：</span>
+							</span>
+							<input class="form-control" type="text" name="" placeholder="编辑标签,多个用空格隔开">	
+						</div>
 					</div>
-					<div class="input-group listSeaForm mt10 wb100">
-						<span class="input-group-btn">
-							<span class="btn">类型：</span>
-						</span>
-						<select class="form-control" id="choice_select">
-							<option value="1">单选</option>
-							<option value="2">多选</option>
-							<option value="3">判断</option>
-							<option value="4">主观</option>
-						</select>
+					<div class="pd20">
+						<input type="submit" class="btn btn-primary wb100" value="添加">
+						<!-- <button type="button" class="btn btn-primary wb100" id="addUser">添加</button> -->
 					</div>
-					<div class="input-group listSeaForm mt10 wb100">
-						<span class="input-group-btn">
-							<span class="btn">选项：(在左边设定答案)</span>
-						</span>
-					</div>
-					<ul id="choice_ul">
-						<li >
-							<div class="input-group listSeaForm mt10 wb100">
-								<span class="input-group-btn">
-							<span class="btn">
-								<input type="radio" name="choice"/>
-								A 、 </span>
-								</span>
-								<input class="form-control" type="text" value="" placeholder="请填写选项">
-							</div>
-							<div class="input-group listSeaForm mt10 wb100">
-								<span class="input-group-btn">
-							<span class="btn">
-								<input type="radio" name="choice"/>
-								B 、 </span>
-								</span>
-								<input class="form-control" type="text" value="" placeholder="请填写选项">
-							</div>
-							<div class="input-group listSeaForm mt10 wb100">
-								<span class="input-group-btn">
-							<span class="btn">
-								<input type="radio" name="choice"/>
-								C 、 </span>
-								</span>
-								<input class="form-control" type="text" value="" placeholder="请填写选项">
-							</div>
-							<div class="input-group listSeaForm mt10 wb100">
-								<span class="input-group-btn">
-							<span class="btn">
-								<input type="radio" name="choice"/>
-								D 、 </span>
-								</span>
-								<input class="form-control" type="text" value="" placeholder="请填写选项">
-							</div>
-						</li>
-						<li class="hidden">
-							<div class="input-group listSeaForm mt10 wb100">
-								<span class="input-group-btn">
-							<span class="btn">
-								<input type="checkbox" name="choice"/>
-								A 、 </span>
-								</span>
-								<input class="form-control" type="text" value="" placeholder="请填写选项">
-							</div>
-							<div class="input-group listSeaForm mt10 wb100">
-								<span class="input-group-btn">
-							<span class="btn">
-								<input type="checkbox" name="choice"/>
-								B 、 </span>
-								</span>
-								<input class="form-control" type="text" value="" placeholder="请填写选项">
-							</div>
-							<div class="input-group listSeaForm mt10 wb100">
-								<span class="input-group-btn">
-							<span class="btn">
-								<input type="checkbox" name="choice"/>
-								C 、 </span>
-								</span>
-								<input class="form-control" type="text" value="" placeholder="请填写选项">
-							</div>
-							<div class="input-group listSeaForm mt10 wb100">
-								<span class="input-group-btn">
-							<span class="btn">
-								<input type="checkbox" name="choice"/>
-								D 、 </span>
-								</span>
-								<input class="form-control" type="text" value="" placeholder="请填写选项">
-							</div>
-						</li>
-						<li class="hidden">
-							<div class="input-group listSeaForm mt10 wb100">
-								<span class="input-group-btn">
-							<span class="btn">
-								<input type="radio" name="choice"/>
-								A 、 </span>
-								</span>
-								<input class="form-control" type="text" value="" placeholder="请填写选项">
-							</div>
-							<div class="input-group listSeaForm mt10 wb100">
-								<span class="input-group-btn">
-							<span class="btn">
-								<input type="radio" name="choice"/>
-								B 、 </span>
-								</span>
-								<input class="form-control" type="text" value="" placeholder="请填写选项">
-							</div>
-							
-						</li>
-						<li class="hidden">
-							<div class="input-group listSeaForm mt10 wb100">
-								<span class="input-group-btn">
-								</span>
-								<input class="form-control" type="text" value="" placeholder="请编辑答案">
-							</div>
-						</li>
-					</ul>
-
-					<div class="input-group listSeaForm mt10 wb100">
-						<span class="input-group-btn">
-					<span class="btn">分数：</span>
-						</span>
-						<input class="form-control" type="number" id="a-age" min="1" max="150" value="">
-					</div>
-					<div class="input-group listSeaForm mt10 wb100">
-						<span class="input-group-btn">
-					<span class="btn">难度等级：</span>
-						</span>
-						<select class="form-control" id="department_id">
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-						</select>
-					</div>
-					<div class="input-group listSeaForm mt10 wb100">
-						<span class="input-group-btn">
-					<span class="btn">类型：</span>
-						</span>
-						<!--从数据库查数据-->
-						<select class="form-control" id="rank">
-							<option value="">-请选择类型-</option>
-							<option value="C++">C++</option>
-							<option value="java">java</option>
-						</select>
-					</div>
-					<div class="input-group listSeaForm mt10 wb100">
-						<span class="input-group-btn">
-					<span class="btn">标签：</span>
-						</span>
-						<input class="form-control" type="text" value="" placeholder="编辑标签,多个用空格隔开">	
-					</div>
-				</div>
-				<div class="pd20">
-					<button type="button" class="btn btn-primary wb100" id="addUser">添加</button>
-				</div>
+				</form>
+				
+				
 			</div>
 			<div class="bombMask"></div>
 		</div>

@@ -12,6 +12,7 @@
     <result column="score" property="score" jdbcType="TINYINT" />
     <result column="candidate_score" property="candidateScore" jdbcType="TINYINT" />
     <result column="marking" property="marking" jdbcType="TINYINT" />
+    <result column="kid" property="kid" jdbcType="INTEGER" />
     <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
     <result column="time" property="time" jdbcType="TINYINT" />
   </resultMap>
@@ -75,7 +76,7 @@
   </sql>
   <sql id="Base_Column_List" >
     id, type, single_count, multiple_count, judge_count, subject_count, difficult, score, 
-    candidate_score, marking, start_time, time
+    candidate_score, marking, kid, start_time, time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.lwy.pojo.PaperExample" >
     select
@@ -111,13 +112,13 @@
     insert into paper (id, type, single_count, 
       multiple_count, judge_count, subject_count, 
       difficult, score, candidate_score, 
-      marking, start_time, time
-      )
+      marking, kid, start_time, 
+      time)
     values (#{id,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, #{singleCount,jdbcType=TINYINT}, 
       #{multipleCount,jdbcType=TINYINT}, #{judgeCount,jdbcType=TINYINT}, #{subjectCount,jdbcType=TINYINT}, 
       #{difficult,jdbcType=TINYINT}, #{score,jdbcType=TINYINT}, #{candidateScore,jdbcType=TINYINT}, 
-      #{marking,jdbcType=TINYINT}, #{startTime,jdbcType=TIMESTAMP}, #{time,jdbcType=TINYINT}
-      )
+      #{marking,jdbcType=TINYINT}, #{kid,jdbcType=INTEGER}, #{startTime,jdbcType=TIMESTAMP}, 
+      #{time,jdbcType=TINYINT})
   </insert>
   <insert id="insertSelective" parameterType="cn.lwy.pojo.Paper" >
     insert into paper
@@ -151,6 +152,9 @@
       </if>
       <if test="marking != null" >
         marking,
+      </if>
+      <if test="kid != null" >
+        kid,
       </if>
       <if test="startTime != null" >
         start_time,
@@ -189,6 +193,9 @@
       </if>
       <if test="marking != null" >
         #{marking,jdbcType=TINYINT},
+      </if>
+      <if test="kid != null" >
+        #{kid,jdbcType=INTEGER},
       </if>
       <if test="startTime != null" >
         #{startTime,jdbcType=TIMESTAMP},
@@ -237,6 +244,9 @@
       <if test="record.marking != null" >
         marking = #{record.marking,jdbcType=TINYINT},
       </if>
+      <if test="record.kid != null" >
+        kid = #{record.kid,jdbcType=INTEGER},
+      </if>
       <if test="record.startTime != null" >
         start_time = #{record.startTime,jdbcType=TIMESTAMP},
       </if>
@@ -260,6 +270,7 @@
       score = #{record.score,jdbcType=TINYINT},
       candidate_score = #{record.candidateScore,jdbcType=TINYINT},
       marking = #{record.marking,jdbcType=TINYINT},
+      kid = #{record.kid,jdbcType=INTEGER},
       start_time = #{record.startTime,jdbcType=TIMESTAMP},
       time = #{record.time,jdbcType=TINYINT}
     <if test="_parameter != null" >
@@ -296,6 +307,9 @@
       <if test="marking != null" >
         marking = #{marking,jdbcType=TINYINT},
       </if>
+      <if test="kid != null" >
+        kid = #{kid,jdbcType=INTEGER},
+      </if>
       <if test="startTime != null" >
         start_time = #{startTime,jdbcType=TIMESTAMP},
       </if>
@@ -316,6 +330,7 @@
       score = #{score,jdbcType=TINYINT},
       candidate_score = #{candidateScore,jdbcType=TINYINT},
       marking = #{marking,jdbcType=TINYINT},
+      kid = #{kid,jdbcType=INTEGER},
       start_time = #{startTime,jdbcType=TIMESTAMP},
       time = #{time,jdbcType=TINYINT}
     where id = #{id,jdbcType=INTEGER}

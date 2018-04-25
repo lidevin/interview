@@ -715,6 +715,66 @@ public class PaperExample {
             return (Criteria) this;
         }
 
+        public Criteria andKidIsNull() {
+            addCriterion("kid is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidIsNotNull() {
+            addCriterion("kid is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidEqualTo(Integer value) {
+            addCriterion("kid =", value, "kid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidNotEqualTo(Integer value) {
+            addCriterion("kid <>", value, "kid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidGreaterThan(Integer value) {
+            addCriterion("kid >", value, "kid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("kid >=", value, "kid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidLessThan(Integer value) {
+            addCriterion("kid <", value, "kid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidLessThanOrEqualTo(Integer value) {
+            addCriterion("kid <=", value, "kid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidIn(List<Integer> values) {
+            addCriterion("kid in", values, "kid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidNotIn(List<Integer> values) {
+            addCriterion("kid not in", values, "kid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidBetween(Integer value1, Integer value2) {
+            addCriterion("kid between", value1, value2, "kid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKidNotBetween(Integer value1, Integer value2) {
+            addCriterion("kid not between", value1, value2, "kid");
+            return (Criteria) this;
+        }
+
         public Criteria andStartTimeIsNull() {
             addCriterion("start_time is null");
             return (Criteria) this;

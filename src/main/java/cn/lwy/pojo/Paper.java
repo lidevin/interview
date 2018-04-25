@@ -23,6 +23,8 @@ public class Paper {
 
     private Byte marking;
 
+    private Integer kid;
+
     private Date startTime;
 
     private Byte time;
@@ -105,6 +107,14 @@ public class Paper {
 
     public void setMarking(Byte marking) {
         this.marking = marking;
+    }
+
+    public Integer getKid() {
+        return kid;
+    }
+
+    public void setKid(Integer kid) {
+        this.kid = kid;
     }
 
     public Date getStartTime() {
