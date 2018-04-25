@@ -159,7 +159,7 @@ $(function(){
 			<div class="col-md-offset-3 col-md-6">
 				<form class="form-horizontal" action="/web/login.do" method="post">
 					<span class="heading">HR 后台管理</span>
-					<div class="form-group">
+					<div class="form-group"> 
 						<input type="text" name="name" class="form-control" placeholder="用户名">
 						<i class="fa fa-user"></i>
 					</div>
