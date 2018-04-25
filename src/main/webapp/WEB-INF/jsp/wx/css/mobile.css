@@ -1,0 +1,121 @@
+@charset "utf-8";
+body {
+	/*总体风格*/
+	margin:0px;
+	width:100%;
+	height:100%;
+	background-color: rgb(248, 248, 248);
+	color: rgb(30, 30, 30);
+	/*文字风格*/
+	font-family: "Microsoft YaHei";
+	font-size: 14px;
+	line-height: 1.8em;
+}
+td {
+	font-family: "Microsoft YaHei";
+	font-size: 14px;
+	line-height: 1.8em;
+}
+a {
+	color: blue;
+	text-decoration: none;
+}
+a:hover  {
+	color: #C8C8C8;
+	text-decoration: none;
+}
+.tablelist tr:hover{
+	background-color:rgb(248, 248, 248);
+}
+
+/* 顶部标题 */
+.proj_name{
+	font-size: 16px; line-height: 1.8em; text-align:center; background-color: #1bb0db; color: #fff; padding:5px 0px;
+}
+
+/* 科目名称 */
+.test_name{
+	margin: 0px; padding: 5px 10px; min-height:25px; color: #333;  font-size: 14px; border-radius: 2px;
+	background-color: rgb(255, 255, 255); border: 1px solid rgb(199, 199, 199); word-wrap: break-word !important;
+}
+
+/* 作答提示 */
+.answer_tips{
+	margin: 0px; padding: 5px; min-width:300px; line-height: 1.5em; font-size: 12px; border: 0px solid rgb(255, 128, 0);
+	word-wrap: break-word !important;
+	color: #ff0000;border-radius: 2px;
+}
+
+/* 试题 */
+.ques_no{
+	margin: 10px 0px 0px 0px; padding: 5px 5px; line-height: 1.2em; font-size: 12px; background-color: #ccc; border-radius: 2px;
+	width:90px; color: #fff; text-align:center;
+}
+
+/* 试题 */
+.ques_info{
+	margin: 10px 0px 30px 0px; line-height: 2em; font-size: 14px; background-color: #fff; border: 1px solid #ccc; border-radius: 2px;
+	width:100%; color: #333 ;
+}
+
+/* 试题 */
+.ques_body{
+	margin: 0px 0px; padding: 10px; font-weight:bold;
+}
+
+/* 试题 */
+.ques_answer{
+	margin: 0px 0px; padding: 10px; border-top: 1px solid #eee;
+}
+.ques_answer:hover{
+	background-color:rgba(27, 176, 219, 0.15);
+}
+
+.btn{
+	margin: 0px; padding: 0px; border: 0px; height: 35px; line-height: 35px; border-radius: 3px;
+	background-color: #FE9A11; color:#fff; cursor:pointer; text-align:center;
+}
+.btn_area{
+	margin: 10px 0px; padding:0px 0px 20px 0px; min-width:300px;
+}
+.start{
+	margin: 0px; padding:3px 6px; border: 0px; height: 30px; line-height: 30px; border-radius: 3px;
+	background-color: rgb(27, 176, 219); color:#fff; cursor:pointer; text-align:center;
+}
+.finish{
+	margin: 0px; padding:3px 6px; border: 0px; height: 30px; line-height: 30px; border-radius: 3px;
+	background-color: rgb(200, 200, 200); color:#fff; cursor:pointer; text-align:center;
+}
+
+input[type="text"]{
+	border: 1px solid #999;
+	background-color:#fff;
+	padding:5px;
+	height: 32px;
+	font-size:14px;
+	font-family: "Microsoft YaHei";
+}
+input[type="password"]{
+	border: 1px solid #999;
+	background-color:#fff;
+	padding:5px;
+	height: 32px;
+	font-size:14px;
+	font-family: "Microsoft YaHei";
+}
+select{
+	border: 1px solid #999;
+	background-color:#fff;
+	padding:5px;
+	height: 32px;
+	font-size:14px;
+	font-family: "Microsoft YaHei";
+}
+textarea{
+	border: 1px solid #999;
+	background-color:#fff;
+	padding:5px;
+	height: 120px;
+	font-size:14px;
+	font-family: "Microsoft YaHei";
+}

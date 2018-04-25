@@ -30,7 +30,7 @@ public class WebHandlerInterceptor implements HandlerInterceptor{
 		String uri = request.getRequestURI();
 		if(uri.matches("^/wx.*")) {//微信端
 			System.out.println("微信端");
-			return true;
+			return true;//测试使用true，上线更改
 		}else {//web端
 			if(request.getSession().getAttribute(sessionUserName) != null) {//存在session,已登录
 				return true;

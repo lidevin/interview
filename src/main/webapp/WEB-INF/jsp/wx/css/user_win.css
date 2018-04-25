@@ -1,0 +1,107 @@
+@charset "utf-8";
+body {
+	margin:0px;
+	width:100%;
+	height:100%;
+	text-align: left;
+	font-size: 14px;
+	line-height: 1.5em;
+	font-family:"Microsoft Yahei",arial; 
+	color: #4c4c4c;
+}
+
+td {
+	text-align: left;
+	font-family: "Microsoft Yahei";
+	font-size: 14px;
+	line-height: 1.5em;
+	color: black;
+	padding: 3px;
+}
+
+input, select {
+	padding:5px;
+}
+
+.tablelist tr:hover {
+	background:#EEEEEE;
+}
+
+img {
+  border: 0;
+}
+
+a{
+	color: blue;
+	font-size:14px;
+	text-decoration: none ;
+}
+a:hover{
+	color: blue;
+	font-size:14px;
+	text-decoration: underline ;
+}
+
+.gray12{
+	text-align: left;
+	font-family: "Microsoft Yahei";
+	font-size: 12px;
+	line-height: 1.5em;
+	color: #aaaaaa;
+}
+
+.blue12{
+	text-align: left;
+	font-family: "Microsoft Yahei";
+	font-size: 12px;
+	line-height: 1.5em;
+	color: blue;
+}
+
+.red12{
+	text-align: left;
+	font-family: "Microsoft Yahei";
+	font-size: 12px;
+	line-height: 1.5em;
+	color: red;
+}
+
+.black12{
+	font-family: "Microsoft Yahei";
+	font-size: 12px;
+	line-height: 2em;
+	color: black;
+}
+
+.grayhr{
+	border-bottom: 1px solid #999;
+	margin: 6px 0 7px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-family: "Microsoft Yahei";
+}
+.btn-jkl {background-color: #1bb0db;line-height: 22px;margin-top: 15px;color: #fff;outline: none;border-radius: 3px;outline: none;}
+.btn-jkl:hover{color: #fff;background-color: #0E94BB;}
+.btn-jkl:active {color: #fff;outline: none;}
+.btn-back{line-height: 22px;margin-top: 15px; outline: none;border-radius: 3px;outline: none; color: #4C4C4C;}
+.btn-back:hover{background-color: #bbb;}

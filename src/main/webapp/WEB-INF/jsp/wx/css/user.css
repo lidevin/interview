@@ -1,0 +1,145 @@
+body {background-color: #fff;font-family:"Microsoft Yahei",arial;font-size: 14px;color: #4c4c4c;}
+ol,ul,dl {list-style: none;margin: 0;}
+a{color:blue; text-decoration: none;}
+a:hover {text-decoration: underline; color:blue;}
+.lastdiv {clear: both;}
+
+.btn-jkl {background-color: #1bb0db;line-height: 22px;margin-top: 15px;color: #fff;outline: none;border-radius: 3px;outline: none;}
+.btn-jkl:hover{color: #fff;background-color: #0E94BB;}
+.btn-jkl:active {color: #fff;outline: none;}
+.btn-back{line-height: 22px;margin-top: 15px; outline: none;border-radius: 3px;outline: none;}
+.btn-back:hover{background-color: #bbb;}
+
+nav {min-width: 1080px;height: 58px;background-color: #1bb0db;}
+nav span {margin-left:0px;color: #fff;line-height: 58px;}
+nav a {color:#fff;}
+nav a:hover {color:#fff;text-decoration: none;}
+nav .navtext:hover {background-color: #0E94BB; }
+nav .leftlm {float: left;height: 58px;}
+nav .leftlm li {float:left;}
+nav .rightlm {float: right;height: 58px;}
+nav .rightlm li {float:right;width: 110px;}
+
+.main {width: 1080px;margin-left: auto;margin-right: auto; }
+.tips {background-color: #fff; height: 35px;line-height: 35px;width: 100%;margin-top: 10px;padding-left: 0; padding-left:0px;}
+
+.tablearea {width: 1080px; border: 1px solid  rgb(199, 199, 199); margin-top: 10px; padding-bottom: 10px;}
+.tablearea tr {height:30px;}
+.tablearea td {padding:5px; text-align:left;}
+.tbodyarea tr:hover { background:rgba(210, 210, 210, 0.3); }
+
+.ico_result{margin:0px 2px; width:16px; height:16px; }
+
+.newstitle {color:#aaa; }
+.newstitle a {color:#1bb0db; }
+.newstitle a:hover {color:#1bb0db;text-decoration: underline;}
+
+.whitelink a {color:#fff;text-decoration: none;}
+.whitelink a:hover {color: #fff; }
+
+.gray12{
+	text-align: left;
+	font-family: "Microsoft Yahei";
+	font-size: 12px;
+	line-height: 1.5em;
+	color: #aaaaaa;
+}
+.func-info {
+    background-color: #f3fbfa;
+    border: 1px solid #79dff5;
+    padding: 8px;
+    line-height: 20px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    color: #9598a0;
+}
+.func-info .title{
+	font-weight: bold;
+}
+
+
+
+.imain-box{
+    width:100%;height: auto;
+    overflow: hidden;
+    border-bottom:1px solid #ccc;
+    margin:20px 0;
+}
+.imain-list{
+    width:100px;height: 40px;
+    line-height: 40px;
+    float: left;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+.imain-active{
+    /*background-color: #09c;*/
+    border-bottom: 1px solid #09c;
+    color: #09c;
+}
+.imain-content{
+    width:100%;height: auto;
+    overflow: hidden;
+}
+.imain-content-list{
+    width:100%;height: auto;
+    overflow: hidden;
+}
+.imain-sel{
+    width:100%;height: auto;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.imain-type{
+    height: 30px;width:90px;
+    line-height: 30px;
+    font-size: 14px;
+    float: left;
+}
+.imain-select{
+    display: block;
+    float: left;
+    border:1px solid #ccc;
+    width:150px;height: 28px;
+}
+.imain-btn{
+    display: block;
+    width:135px;height: 35px;
+    margin-left: 90px;
+    line-height: 35px;
+    text-align: center;
+    /*border:1px solid #ccc;*/
+    padding:0;
+    border-radius: 4px;
+    background: #1bb0db;
+    color: #fff;
+    border:0;
+}
+.imain-btn:hover{
+    color: #fff;
+    background-color:#0E94BB;
+}
+.imain-tab{
+    width:1080px;height: auto;
+    overflow: hidden;
+    margin-top: 40px;
+}
+.imain-table{
+    /*display: block;*/
+    width:100%;height: auto;
+    border: 1px solid rgb(199, 199, 199);
+}
+.imain-tr{
+    display: block;
+    width:100%;height: auto;
+    line-height: 30px;
+}
+.imain-th{
+    width:100%;height: 30px;
+    background: #ddd;
+} 
+.imain-td{
+    padding-left: 15px;
+}
+

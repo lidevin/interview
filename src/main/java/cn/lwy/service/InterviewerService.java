@@ -12,7 +12,7 @@ public interface InterviewerService extends BaseService<Interviewer>{
 	 * @param interviewer
 	 * @return
 	 */
-	boolean getByName(Interviewer interviewer);
+	boolean getByName(Interviewer interviewer) throws Exception;
 	
 	/*List<Interviewer> getByVo();*/
 	
