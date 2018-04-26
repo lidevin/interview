@@ -83,7 +83,7 @@
 									<tbody>
 										<c:forEach items="${interviewers }" var="interviewer" varStatus="status">
 											<tr>
-												<td>${status.count }</td>
+												<td>${interviewer.id }</td>
 												<td>${interviewer.name }</td>
 												<td>${interviewer.sex }</td>
 												<td>${interviewer.department }</td>
@@ -111,13 +111,15 @@
 									</tbody>
 								</table>
 							</div>
-							<div class="paging mt20 mb20 ftc" id="userListPage"></div>
+							<div class="paging mt20 mb20 ftc" id="userListPage">
+								<lwy:page url="/web/interview"></lwy:page>
+							</div>
 						</li>
 
 					</ul>
 				</div>
 			</div>
-			<lwy:page url="/web/interview"></lwy:page>
+			
 		</div>
 		<!-- END MAIN CONTENT -->
 	</div>

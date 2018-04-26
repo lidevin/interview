@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -46,6 +47,9 @@
 		</script>
 	</head>
 	<body>
+		<c:if test="${!empty add}">
+			<c:redirect url="/web/interview"></c:redirect>
+		</c:if>
 		<!--添加面试官弹框 start-->
 		<div class="bombBox" id="addDoctorBomb">
 			<div class="bombContent whiteBg addDoctorBomb" style="min-width: 400px;">
@@ -62,7 +66,7 @@
 							<span class="input-group-btn">
 								<span class="btn">类型：</span>
 							</span>
-							<select class="form-control" id="choice_select" name="type">
+							<select class="form-control" id="choice_select" name="qsttype">
 								<option value="1">单选</option>
 								<option value="2">多选</option>
 								<option value="3">判断</option>
@@ -193,17 +197,17 @@
 						<span class="btn">类型：</span>
 							</span>
 							<!--从数据库查数据-->
-							<select class="form-control" id="tags.type">
-								<option value="">-请选择类型-</option>
-								<option value="C++">C++</option>
-								<option value="java">java</option>
+							<select class="form-control" id="kid">
+								<option value="-1">-请选择类型-</option>
+								<option value="0">C++</option>
+								<option value="1">java</option>
 							</select>
 						</div>
 						<div class="input-group listSeaForm mt10 wb100">
 							<span class="input-group-btn">
 						<span class="btn">标签：</span>
 							</span>
-							<input class="form-control" type="text" name="" placeholder="编辑标签,多个用空格隔开">	
+							<input class="form-control" type="text" name="tags" placeholder="编辑标签,多个用空格隔开">	
 						</div>
 					</div>
 					<div class="pd20">

@@ -1,6 +1,9 @@
 package cn.lwy.service;
 
+import java.util.List;
+
 import cn.lwy.pojo.Interviewer;
+import cn.lwy.pojo.InterviewerExample;
 
 /**
  * 面试官的业务类
@@ -14,6 +17,6 @@ public interface InterviewerService extends BaseService<Interviewer>{
 	 */
 	boolean getByName(Interviewer interviewer) throws Exception;
 	
-	/*List<Interviewer> getByVo();*/
+	List<Interviewer> getByExample(InterviewerExample example);
 	
 }

@@ -28,31 +28,14 @@ public class QuestionController {
 	 */
 	@RequestMapping("/web/question")
 	public String list(Model model,PageVo vo, String title) {
-		//用于测试
-//		int id = 1;
-//		logger.debug("getById==>" + questionService.getById(id));
-//		logger.debug("getWithChoiceById==>"+questionService.getWithChoiceById(id));
-//		logger.debug("getWithKindById==>" + questionService.getWithKindById(id));
-//		logger.debug("getFullById==>" + questionService.getFullById(id));
-//		
-//		
-//		QuestionExample example = new QuestionExample();
-//		logger.debug("getByExample==>" + questionService.getByExample(example));
-//		logger.debug("getWithChoiceByExample==>" + questionService.getWithChoiceByExample(example));
-//		logger.debug("getWithKindById==>" + questionService.getWithKindById(id));
-//		logger.debug("getFullByExample==>" + questionService.getFullByExample(example));
-		
-		
-		
-		
 		vo.setSize(Integer.valueOf(pageSizeStr));
-		
 		QuestionExample example = new QuestionExample();
 		if(title == null || "".equals(title.trim())) {
 			example.createCriteria().andDifficultIsNotNull();//永真
 		}else {
 			example.createCriteria().andTitleLike("%"+ title +"%");
 			model.addAttribute("title", title);
+			System.out.println("查询");
 		}
 		Page<Question> page = questionService.getWithKindByExampleAndVo(example, vo);
 		model.addAttribute("page", page);
@@ -63,9 +46,11 @@ public class QuestionController {
 	 * 添加题目
 	 */
 	@RequestMapping("/web/question/add")
-	public String add(Question question) {
+	public String add(Model model, Question question) {
 		logger.debug("==>" + question);
-		
+		if(question != null) {
+			model.addAttribute("add", true);
+		}
 		return "web/question/add";
 	}
 	

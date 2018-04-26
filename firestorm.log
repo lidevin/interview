@@ -1148,3 +1148,17 @@ DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - getWithChoiceByExam
 DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - getWithKindById==>Question [id=1, title=你多大了？, qsttype=1, answer=A, kid=1, kind=java, tags=云算法, score=5, difficult=1, choices=null]
 DEBUG http-bio-80-exec-10 cn.lwy.web.hr.QuestionController - getFullByExample==>[Question [id=1, title=你多大了？, qsttype=1, answer=A, kid=1, kind=java, tags=云算法, score=5, difficult=1, choices=[Choice [qid=1, content=30], Choice [qid=1, content=10], Choice [qid=1, content=50], Choice [qid=1, content=20]]], Question [id=2, title=自增运算法？, qsttype=1, answer=B, kid=1, kind=java, tags=云算法, score=5, difficult=1, choices=[Choice [qid=2, content=++1], Choice [qid=2, content=i++], Choice [qid=2, content=i--], Choice [qid=2, content=--i]]], Question [id=3, title=下列常用的框架, qsttype=2, answer=BCD, kid=1, kind=java, tags=云算法, score=10, difficult=2, choices=[Choice [qid=3, content=sdah], Choice [qid=3, content=struct], Choice [qid=3, content=spring], Choice [qid=3, content=hibernate]]], Question [id=4, title=你是中国人？, qsttype=3, answer=B, kid=1, kind=java, tags=云算法, score=5, difficult=1, choices=[Choice [qid=4, content=是], Choice [qid=4, content=否]]], Question [id=5, title=你知道的框架有？, qsttype=4, answer=spring struct mybatis, kid=1, kind=java, tags=云算法, score=15, difficult=3, choices=[]]]
 INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+DEBUG http-bio-80-exec-1 cn.lwy.web.hr.QuestionController - ==>Question [id=null, title=null, qsttype=null, answer=null, kid=null, kind=null, tags=null, score=null, difficult=null, choices=null]
+DEBUG http-bio-80-exec-1 cn.lwy.web.hr.QuestionController - ==>Question [id=null, title=1234, qsttype=null, answer=null, kid=null, kind=null, tags=12423 14 1423, score=null, difficult=1, choices=null]
+DEBUG http-bio-80-exec-3 cn.lwy.web.hr.QuestionController - ==>Question [id=null, title=1234, qsttype=null, answer=null, kid=null, kind=null, tags=1243, score=null, difficult=1, choices=null]
+DEBUG http-bio-80-exec-2 cn.lwy.web.hr.QuestionController - ==>Question [id=null, title=null, qsttype=null, answer=null, kid=null, kind=null, tags=null, score=null, difficult=null, choices=null]

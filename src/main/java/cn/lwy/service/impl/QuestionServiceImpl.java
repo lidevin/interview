@@ -159,9 +159,13 @@ public class QuestionServiceImpl implements QuestionService {
 		}
 		//每页显示行数
 		page.setSize(vo.getSize());
+		//设置当前页数
+		page.setPage(vo.getPage());
+		//计算当前的记录数
 		vo.setStartRow((vo.getPage()-1)*vo.getSize());
+		//设置所有记录数
 		page.setTotal(questionMapper.countByExample(example));
-		
+		//设置查出的记录
 		page.setRows(questionMapper.selectWithKindByExampleAndVo(example,vo));
 		return page;
 	}
