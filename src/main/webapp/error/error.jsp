@@ -59,10 +59,8 @@ h3 {
 	<div id="content">
 		<div class="content-container">
 			<fieldset>
-				<h2>${errorMsg }</h2>
+				<h3>${errorMsg }</h3>
 				<c:remove var="errorMsg"/>
-				<%-- <%session.removeAttribute("errorMsg");%> --%>
-				<h2>---${errorMsg }---</h2>
 			</fieldset>
 		</div>
 	</div>

@@ -1,5 +1,7 @@
 package cn.lwy.service.impl;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +16,9 @@ import cn.lwy.pojo.Page;
 import cn.lwy.pojo.Question;
 import cn.lwy.pojo.QuestionExample;
 import cn.lwy.service.QuestionService;
+import cn.lwy.utils.CommonUtils;
 import cn.lwy.vo.PageVo;
+import cn.lwy.vo.QuestionVo;
 
 @Service
 public class QuestionServiceImpl implements QuestionService {
@@ -134,21 +138,82 @@ public class QuestionServiceImpl implements QuestionService {
 	}
 
 	@Override
-	public boolean insertFullByIdSelective(Question question) {
-		if(question == null || question.getId() == null) {
+	public boolean insertFullByIdSelective(Question question, QuestionVo vo) {
+		if(question == null || vo == null) {
 			return false;
 		}
+		Integer id = -1;
+		List<Choice> choices = new ArrayList<Choice>();
+		switch (question.getQsttype()) {
+			
+			case 1://单选
+				{
+					question.setAnswer(vo.getAnswers1());
+					int count = questionMapper.insertSelective(question);
+					if(count != 1)	return false;
+					id = question.getId();
+					String[] choiceArr = vo.getChoices1();
+					for(int i = 0; i < choiceArr.length; i++) {
+						Choice choice = new Choice();
+						choice.setContent(choiceArr[i]);
+						choice.setQid(id);
+						choices.add(choice);
+					}
+				}
+				break;
+			case 2://多选
+				{
+					question.setAnswer(CommonUtils.arrToString(vo.getAnswers2()));
+					int count = questionMapper.insertSelective(question);
+					if(count != 1)	return false;
+					id = question.getId();
+					String[] choiceArr = vo.getChoices2();
+					for(int i = 0; i < choiceArr.length; i++) {
+						Choice choice = new Choice();
+						choice.setContent(choiceArr[i]);
+						choice.setQid(id);
+						choices.add(choice);
+					}
+				}
+				break;
+			case 3://判断
+				{
+					question.setAnswer(vo.getAnswers3());
+					int count = questionMapper.insertSelective(question);
+					if(count != 1)	return false;
+					id = question.getId();
+					String[] choiceArr = vo.getChoices3();
+					for(int i = 0; i < choiceArr.length; i++) {
+						Choice choice = new Choice();
+						choice.setContent(choiceArr[i]);
+						choice.setQid(id);
+						choices.add(choice);
+					}
+				}
+				break;
+			case 4://主观
+				{
+					question.setAnswer(vo.getAnswers4());
+					int count = questionMapper.insertSelective(question);
+					if(count != 1)	return false;
+				}
+				break;
+			default:
+				return false;
+			}
+		
 		int count = 0;
-		List<Choice> choices = question.getChoices();
-		if(choices != null) {
+		int size = choices.size();
+		//添加选项
+		if(size != 0) {
 			for (Choice choice : choices) {
 				count += choiceMapper.insertSelective(choice);
 			}
+			if(count != choices.size()) {
+				return false;
+			}
 		}
-		if(count != choices.size()) {
-			return false;
-		}
-		return false;
+		return true;
 	}
 	
 	@Override

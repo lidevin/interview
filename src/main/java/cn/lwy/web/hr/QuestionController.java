@@ -12,6 +12,7 @@ import cn.lwy.pojo.Question;
 import cn.lwy.pojo.QuestionExample;
 import cn.lwy.service.QuestionService;
 import cn.lwy.vo.PageVo;
+import cn.lwy.vo.QuestionVo;
 
 @Controller
 public class QuestionController {
@@ -46,10 +47,36 @@ public class QuestionController {
 	 * 添加题目
 	 */
 	@RequestMapping("/web/question/add")
-	public String add(Model model, Question question) {
-		logger.debug("==>" + question);
-		if(question != null) {
-			model.addAttribute("add", true);
+	public String add(Model model, Question question, QuestionVo vo) {
+		if(question==null || question.getTitle()==null) {//首次加载页面
+			logger.debug("null==>" + question);
+			model.addAttribute("add", 0);
+		}else {
+			logger.debug("123==>" + question);
+			logger.debug("1 == > " + vo.getAnswers1());
+			logger.debug("1 == > " + vo.getChoices1().length);
+			logger.debug("2 == > " + vo.getAnswers2().length);
+			logger.debug("2 == > " + vo.getChoices2().length);
+			logger.debug("3 == > " + vo.getAnswers3());
+			logger.debug("3 == > " + vo.getChoices3().length);
+			logger.debug("4 == > " + vo.getAnswers4());
+//			question.setKid(1);
+//			question.setQsttype((byte)1);
+//			question.setScore((byte)10);
+//			question.setTags("test t abc");
+//			question.setAnswer("A");
+//			List<Choice> choices = new ArrayList<Choice>();
+//			Choice choice = new Choice();
+//			choice.setQid(1);
+//			choice.setContent("123");
+//			choices.add(choice);
+//			question.setChoices(choices);
+			boolean flag = questionService.insertFullByIdSelective(question, vo);
+			if(flag) {//插入成功
+				model.addAttribute("add", 1);
+			}else {//插入失败
+				model.addAttribute("add", 2);
+			}
 		}
 		return "web/question/add";
 	}

@@ -107,12 +107,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
     limit #{vo.startRow},#{vo.size};
-    
   </select>
-  
-  
-  
-  
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from question
@@ -124,7 +119,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cn.lwy.pojo.Question" >
+  <insert id="insert" parameterType="cn.lwy.pojo.Question" keyProperty="id" useGeneratedKeys="true">
     insert into question (id, title, qsttype, 
       answer, kid, tags, 
       score, difficult)
@@ -132,7 +127,7 @@
       #{answer,jdbcType=VARCHAR}, #{kid,jdbcType=INTEGER}, #{tags,jdbcType=VARCHAR}, 
       #{score,jdbcType=TINYINT}, #{difficult,jdbcType=TINYINT})
   </insert>
-  <insert id="insertSelective" parameterType="cn.lwy.pojo.Question" >
+  <insert id="insertSelective" parameterType="cn.lwy.pojo.Question" keyProperty="id" useGeneratedKeys="true" >
     insert into question
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >

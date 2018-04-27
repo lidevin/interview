@@ -43,8 +43,21 @@ public class Question {
         return qsttype;
     }
 
+    /**
+     * 试卷类型1-4
+     * 1：单选题
+     * 2：多选题
+     * 3：判断题
+     * 4：主观题 
+     */
     public void setQsttype(Byte qsttype) {
-        this.qsttype = qsttype;
+    	if(qsttype < 1) {
+    		this.qsttype = 1;
+    	}else if(qsttype > 4) {
+    		this.qsttype = 4;
+    	}else {
+    		this.qsttype = qsttype;
+    	}
     }
 
     public String getAnswer() {
@@ -75,10 +88,23 @@ public class Question {
         return score;
     }
 
+    /**
+     * 试卷分数0-120
+     */
     public void setScore(Byte score) {
-        this.score = score;
+    	if(score < 0) {
+    		this.score = 0;
+    	}else if(score > 120) {
+    		this.score = 120;
+    	}else {
+    		this.score = score;
+    	}
     }
 
+    /**
+     * 困难等级1-5
+     * 1最易   5最难
+     */
     public Byte getDifficult() {
         return difficult;
     }

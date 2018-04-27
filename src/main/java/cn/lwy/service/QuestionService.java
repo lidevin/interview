@@ -6,6 +6,7 @@ import cn.lwy.pojo.Page;
 import cn.lwy.pojo.Question;
 import cn.lwy.pojo.QuestionExample;
 import cn.lwy.vo.PageVo;
+import cn.lwy.vo.QuestionVo;
 
 public interface QuestionService extends BaseService<Question>{
 
@@ -45,7 +46,8 @@ public interface QuestionService extends BaseService<Question>{
     /**
      * 插入所有数据
      */
-    boolean insertFullByIdSelective(Question question);
+    boolean insertFullByIdSelective(Question question, QuestionVo vo);
+    
     /**
      * 更新所有数据
      */
