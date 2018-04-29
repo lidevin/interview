@@ -2,6 +2,10 @@ package cn.lwy.pojo;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import cn.lwy.utils.CommonUtils;
+
 public class Interviewer {
     private String id;
 
@@ -17,9 +21,21 @@ public class Interviewer {
 
     private String position;
 
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date time;
 
-    public String getId() {
+    private String timeStr;
+    
+    public String getTimeStr() {
+    	this.timeStr = CommonUtils.toDateStr(time);
+		return timeStr;
+	}
+
+	public void setTimeStr(String timeStr) {
+		this.timeStr = timeStr;
+	}
+
+	public String getId() {
         return id;
     }
 
@@ -78,8 +94,13 @@ public class Interviewer {
     public Date getTime() {
         return time;
     }
-
     public void setTime(Date time) {
         this.time = time;
     }
+
+	@Override
+	public String toString() {
+		return "Interviewer [id=" + id + ", name=" + name + ", nickname=" + nickname + ", pwd=" + pwd + ", sex=" + sex
+				+ ", department=" + department + ", position=" + position + ", time=" + time + "]";
+	}
 }

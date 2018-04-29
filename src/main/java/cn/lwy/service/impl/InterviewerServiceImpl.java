@@ -8,9 +8,10 @@ import org.springframework.stereotype.Service;
 import cn.lwy.mapper.InterviewerMapper;
 import cn.lwy.pojo.Interviewer;
 import cn.lwy.pojo.InterviewerExample;
-import cn.lwy.pojo.Manager;
-import cn.lwy.pojo.ManagerExample;
+import cn.lwy.pojo.Page;
 import cn.lwy.service.InterviewerService;
+import cn.lwy.utils.CommonUtils;
+import cn.lwy.vo.PageVo;
 
 @Service
 public class InterviewerServiceImpl implements InterviewerService {
@@ -33,6 +34,7 @@ public class InterviewerServiceImpl implements InterviewerService {
 
 	@Override
 	public boolean insert(Interviewer entity) {
+		entity.setId(CommonUtils.getId10());
 		if(interviewerMapper.insert(entity) == 1) {
 			return true;
 		}
@@ -41,6 +43,7 @@ public class InterviewerServiceImpl implements InterviewerService {
 
 	@Override
 	public boolean insertSelective(Interviewer entity) {
+		entity.setId(CommonUtils.getId10());
 		if(interviewerMapper.insertSelective(entity) == 1) {
 			return true;
 		}
@@ -62,16 +65,15 @@ public class InterviewerServiceImpl implements InterviewerService {
 		}
 		return false;
 	}
-
 	@Override
-	public boolean getByName(Interviewer interviewer) throws Exception {
+	public boolean getByNickname(Interviewer interviewer){
 		if(interviewer == null)
 			return false;
-		String name = interviewer.getName();
-		if(name == null || "".equals(name))
+		String nickname = interviewer.getNickname();
+		if(nickname == null || "".equals(nickname))
 			return false;
 		InterviewerExample example = new InterviewerExample();
-		example.createCriteria().andNameEqualTo(name);
+		example.createCriteria().andNicknameEqualTo(nickname);
 		List<Interviewer> list = interviewerMapper.selectByExample(example);
 		if(list == null || list.size() == 0)
 			return false;
@@ -84,5 +86,31 @@ public class InterviewerServiceImpl implements InterviewerService {
 	@Override
 	public List<Interviewer> getByExample(InterviewerExample example) {
 		return interviewerMapper.selectByExample(example);
+	}
+
+	@Override
+	public Page<Interviewer> getByExampleAndVo(InterviewerExample example, PageVo vo) {
+		Page<Interviewer> page = new Page<Interviewer>();
+		//每页显示行数
+		page.setSize(vo.getSize());
+		//设置当前页数
+		page.setPage(vo.getPage());
+		//计算当前的记录数
+		vo.setStartRow((vo.getPage()-1)*vo.getSize());
+		//设置所有记录数
+		page.setTotal(interviewerMapper.countByExample(example));
+		//设置查出的记录
+		page.setRows(interviewerMapper.selectByExampleAndVo(example, vo));
+		return page;
+	}
+
+	@Override
+	public int countByNickname(String nickName) {
+		if(nickName == null || "null".equals(nickName.trim()) || "".equals(nickName.trim())) {
+			return 1;
+		}
+		InterviewerExample example = new InterviewerExample();
+		example.createCriteria().andNicknameEqualTo(nickName);
+		return interviewerMapper.countByExample(example);
 	}
 }

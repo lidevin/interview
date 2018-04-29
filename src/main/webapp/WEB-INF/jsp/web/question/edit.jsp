@@ -110,7 +110,6 @@
 		</script>
 	</head>
 	<body>
-	${question.id }---
 		<c:choose>
 			<c:when test="${1 == edit}">
 				<script type="text/javascript">

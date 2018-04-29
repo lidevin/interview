@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="lwy" uri="http://lwy.cn/common/"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -46,6 +47,18 @@
 </style>
 </head>
 <body>
+	<c:choose>
+			<c:when test="${del == 1}">
+				<script type="text/javascript">
+					alert("删除成功！");
+				</script>
+			</c:when>
+			<c:when test="${del == 0}">
+				<script type="text/javascript">
+					alert("删除失败！");
+				</script>
+			</c:when>
+		</c:choose>
 	<div class="main">
 		<!-- MAIN CONTENT -->
 		<div class="main-content">
@@ -53,18 +66,19 @@
 				<div class="">
 					<ul class="tabBtn clearfix" style="width: 50%; margin: auto;">
 						<li class="on">面试官列表</li>
-
 					</ul>
 					<ul class="tabBox panel mt10">
 						<li class="on">
 							<div class="pd10 grayBg2">
-								<div class="fublBox mr10">
-									<span>姓名：</span> <input type="text" id="search-true-name"
-										class="form-control form-itmeB" placeholder="">
-								</div>
-								<button type="button" class="btn btn-primary">查询</button>
-								<a href="/web/interview/add"><button type="button"
+								<form action="/web/interview" method="get">
+									<div class="fublBox mr10">
+										<span>姓名：</span> <input type="text" name="name"
+											value="${name }"class="form-control form-itmeB" placeholder="">
+									</div>
+									<input type="submit" class="btn btn-primary" value="查询">
+									<a href="/web/interview/add"><button type="button"
 										class="btn btn-primary r">添加面试官</button></a>
+								</form>
 
 							</div>
 							<div class="pd10">
@@ -73,6 +87,7 @@
 										<tr>
 											<th>编号</th>
 											<th>姓名</th>
+											<th>用户名</th>
 											<th>性别</th>
 											<th>部门</th>
 											<th>职位</th>
@@ -81,20 +96,20 @@
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach items="${interviewers }" var="interviewer" varStatus="status">
+										<c:forEach items="${page.rows }" var="interviewer" varStatus="status">
 											<tr>
 												<td>${interviewer.id }</td>
 												<td>${interviewer.name }</td>
+												<td>${interviewer.nickname }</td>
 												<td>${interviewer.sex }</td>
 												<td>${interviewer.department }</td>
 												<td>${interviewer.position }</td>
-												<td>${interviewer.time }</td>
-												<td><a href="/web/interview/edit"><button
+												<td>${interviewer.timeStr }</td>
+												<td><a href="/web/interview/edit?id=${interviewer.id }"><button
 														type="button" class="btn btn-success btn-sm">编辑</button></a>
-												<button type="button"
-													class="btn btn-default btn-sm deleteBtn">删除</button></td>
+												<a href="/web/interview/del.do?id=${interviewer.id }"><button type="button"
+													class="btn btn-default btn-sm deleteBtn">删除</button></a></td>
 											</tr>
-											
 										</c:forEach>
 										<!-- <tr>
 											<td>3</td>

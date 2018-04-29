@@ -9,7 +9,7 @@
     <result column="sex" property="sex" jdbcType="CHAR" />
     <result column="department" property="department" jdbcType="VARCHAR" />
     <result column="position" property="position" jdbcType="VARCHAR" />
-    <result column="time" property="time" jdbcType="TIMESTAMP" />
+    <result column="time" property="time" jdbcType="DATE" javaType="java.util.Date"/>
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -92,6 +92,21 @@
     from interviewer
     where id = #{id,jdbcType=CHAR}
   </select>
+
+  <select id="selectByExampleAndVo" resultMap="BaseResultMap">
+    select
+    <if test="example.distinct" >
+      example.distinct 
+    </if>
+    <include refid="Base_Column_List"/>
+    from interviewer
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+    limit #{vo.startRow},#{vo.size};
+  </select>
+
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from interviewer
     where id = #{id,jdbcType=CHAR}
@@ -108,7 +123,7 @@
       time)
     values (#{id,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
       #{pwd,jdbcType=CHAR}, #{sex,jdbcType=CHAR}, #{department,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, 
-      #{time,jdbcType=TIMESTAMP})
+      #{time,jdbcType=DATE})
   </insert>
   <insert id="insertSelective" parameterType="cn.lwy.pojo.Interviewer" >
     insert into interviewer
@@ -134,7 +149,7 @@
       <if test="position != null" >
         position,
       </if>
-      <if test="time != null" >
+     <if test="time != null" >
         time,
       </if>
     </trim>
@@ -161,7 +176,7 @@
         #{position,jdbcType=VARCHAR},
       </if>
       <if test="time != null" >
-        #{time,jdbcType=TIMESTAMP},
+        #{time,jdbcType=DATE},
       </if>
     </trim>
   </insert>
@@ -196,7 +211,7 @@
         position = #{record.position,jdbcType=VARCHAR},
       </if>
       <if test="record.time != null" >
-        time = #{record.time,jdbcType=TIMESTAMP},
+        time = #{record.time,jdbcType=DATE},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -212,7 +227,7 @@
       sex = #{record.sex,jdbcType=CHAR},
       department = #{record.department,jdbcType=VARCHAR},
       position = #{record.position,jdbcType=VARCHAR},
-      time = #{record.time,jdbcType=TIMESTAMP}
+      time = #{record.time,jdbcType=DATE}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -239,7 +254,7 @@
         position = #{position,jdbcType=VARCHAR},
       </if>
       <if test="time != null" >
-        time = #{time,jdbcType=TIMESTAMP},
+        time = #{time,jdbcType=DATE},
       </if>
     </set>
     where id = #{id,jdbcType=CHAR}
@@ -252,7 +267,7 @@
       sex = #{sex,jdbcType=CHAR},
       department = #{department,jdbcType=VARCHAR},
       position = #{position,jdbcType=VARCHAR},
-      time = #{time,jdbcType=TIMESTAMP}
+      time = #{time,jdbcType=DATE}
     where id = #{id,jdbcType=CHAR}
   </update>
 </mapper>

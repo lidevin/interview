@@ -119,7 +119,7 @@
 	<div id="wrapper">
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand">
-				<img src="/res/img/doctor_def.jpg" style="display: inline-block;">
+				<img src="/res/img/def.jpg" style="display: inline-block;">
 				<div>
 					<span>用户名：<label>admin</label></span> <span>角色：<label>系统管理员</label></span>
 				</div>
@@ -175,60 +175,31 @@
 		</div>
 		<!-- END LEFT SIDEBAR -->
 		<!--主体右部分-->
-		<iframe src="/web/content" class="main" name="main" id="main"	frameborder="0" scrolling="yes" onload="this.height=100" height="100" style="min-height: 700px;"></iframe>
+		<iframe src="/web/content" class="main" name="main" id="main"	frameborder="0" scrolling="yes" onload="this.height=100" height="100" style="min-height: 500px;"></iframe>
 	</div>
 	
 	<script type="text/javascript">
+		//iframe高度自适应
+		 $(function(){
+			 $("#main").load(function(){
+				var iframe = document.getElementById("main");
+				try {
+					var bHeight = iframe.contentWindow.document.body.scrollHeight;
+					var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+					iframe.height = Math.max(bHeight, dHeight);
+				} catch (ex) {					} 
+			 });
+		 });
 		//左侧导航
 		$(document).on(
-				'click',
-				'#menu-nav li a',
-				function(data) {
-
-					//pageLoad();
-					$(this).addClass('active').closest('li').siblings('li')
-							.find('a').removeClass('active');
-				})
-		/* //修改密码弹框
-		$(document).on('click', '.revisePwd', function() {
-			//iframe层
-			layer.open({
-				type: 2,
-				title: '修改密码',
-				shadeClose: true,
-				shade: 0.8,
-				area: ['500px', '400px'],
-				content: '/Index/editPassword' //iframe的url
-			});
-		}); */
-
-		//iframe高度自适应
-		 function reinitIframe() {
-			var iframe = document.getElementById("main");
-			try {
-				var bHeight = iframe.contentWindow.document.body.scrollHeight;
-				var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
-				var height = Math.max(bHeight, dHeight);
-				iframe.height = height;
-			} catch (ex) {
-			}
-		}
-		/*  window.setInterval("reinitIframe()", 200);
-		  function pageLoad() {
-			load_idx = layer.load(2, {
-				shade : [ 0.65, '#FFF' ]
-			});
-		}
-		function endLoad() {
-			layer.close(load_idx);
-		}   */
+		'click',
+		'#menu-nav li a',
+		function(data) {
+			$(this).addClass('active').closest('li').siblings('li')
+					.find('a').removeClass('active');
+		});
 	</script>
 	<!-- END WRAPPER -->
-	<script type="text/javascript">
-		if (parent.endLoad) {
-			parent.endLoad();
-		}
-	</script>
-	<div class="layui-layer-move"></div>
+	<!-- <div class="layui-layer-move"></div> -->
 </body>
 </html>

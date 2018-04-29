@@ -1,6 +1,8 @@
 package cn.lwy.utils;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
@@ -12,7 +14,7 @@ import cn.lwy.vo.PaperVo;
 public class CommonUtils {
 
 	/**
-	 * 获取10位的id
+	 * 生成10位的id
 	 */
 	public static String getId10() {
 		StringBuilder str = new StringBuilder(String.valueOf(UUID.randomUUID().toString().hashCode()));
@@ -46,7 +48,20 @@ public class CommonUtils {
 		}
 		return sb.toString();
 	}
-
+	/**
+	 * 将date类转成日期字符串
+	 */
+	public static String toDateStr(Date date) {
+        SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
+        return sf.format(date);
+	}
+	/**
+	 * 将date类转成日期和时间字符串
+	 */
+	public static String toDatetimeStr(Date date) {
+        SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        return sf.format(date);
+	}
 	/**
 	 * 生成试卷
 	 * @param paper  试卷信息

@@ -31,6 +31,7 @@ public class QuestionController {
 	 */
 	@RequestMapping("/web/question")
 	public String list(Model model,PageVo vo, String title) {
+		if(vo == null)	vo = new PageVo();
 		vo.setSize(Integer.valueOf(pageSizeStr));
 		QuestionExample example = new QuestionExample();
 		if(title == null || "".equals(title.trim())) {

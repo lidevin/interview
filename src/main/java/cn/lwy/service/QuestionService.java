@@ -23,7 +23,9 @@ public interface QuestionService extends BaseService<Question>{
 	 * 获取题目信息包含kind字段和选项
 	 */
 	Question getFullById(Integer id);
-	
+	/**
+	 * 根据条件 获取题目信息
+	 */
 	List<Question> getByExample(QuestionExample example);
 	/**
 	 * 根据条件 获取题目信息包含kind字段
@@ -34,7 +36,7 @@ public interface QuestionService extends BaseService<Question>{
 	 */
 	List<Question> getWithChoiceByExample(QuestionExample example);
 	/**
-	 * 根据条件查询
+	 * 根据条件查询  分页查询
 	 * @param example   基本条件
 	 * @param vo   分页条件
 	 */

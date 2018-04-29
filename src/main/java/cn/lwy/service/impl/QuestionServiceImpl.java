@@ -255,9 +255,6 @@ public class QuestionServiceImpl implements QuestionService {
 	@Override
 	public Page<Question> getWithKindByExampleAndVo(QuestionExample example, PageVo vo) {
 		Page<Question> page = new Page<Question>();
-		if(vo == null) {
-			vo = new PageVo();
-		}
 		//每页显示行数
 		page.setSize(vo.getSize());
 		//设置当前页数

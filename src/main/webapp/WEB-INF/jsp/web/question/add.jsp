@@ -4,28 +4,21 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
 		<title>添加题目</title>
-
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		<!-- VENDOR CSS -->
 		<link rel="stylesheet" href="/res/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/res/css/font-awesome.min.css">
-		
 		<link rel="stylesheet" href="/res/css/chartist-custom.css">
-
 		<link rel="stylesheet" href="/res/css/main.css">
 		<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
 		<link rel="stylesheet" href="/res/css/demo.css">
 		<!-- public -->
 		<link rel="stylesheet" href="/res/css/public.css">
-
 		<link rel="stylesheet" type="text/css" href="/res/css/jquery.datetimepicker.css">
-
 		<script src="/res/js/jquery.min.js"></script>
 		<script src="/res/js/bootstrap.min.js"></script>
 		<script src="/res/js/jquery.slimscroll.min.js"></script>
@@ -38,8 +31,9 @@
 		<script src="/res/js/layer.js"></script>
 		<link rel="stylesheet" href="/res/css/layer.css" id="layuicss-layer">
 		<style type="text/css">
-			intput{
-				autoComplete:off;
+			body{
+				height:700px;
+				
 			}
 		</style>
 		<script>
@@ -115,8 +109,8 @@
 			</c:when>
 		</c:choose>
 		<!--添加面试官弹框 start-->
-		<div class="bombBox" id="addDoctorBomb">
-			<div class="bombContent whiteBg addDoctorBomb" style="min-width: 400px;">
+		<div class="bombBox" >
+			<div class="bombContent whiteBg" style="min-width: 400px;">
 				<div class="bombTit">添加题目	<a class="fa fa-remove" href="/web/question" target="main"></a></div>
 				<form action="/web/question/add.do" method="get" id="addForm">
 					<div class="pd20">

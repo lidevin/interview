@@ -1,9 +1,12 @@
 package cn.lwy.mapper;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
 import cn.lwy.pojo.Interviewer;
 import cn.lwy.pojo.InterviewerExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import cn.lwy.vo.PageVo;
 
 public interface InterviewerMapper {
     int countByExample(InterviewerExample example);
@@ -17,7 +20,9 @@ public interface InterviewerMapper {
     int insertSelective(Interviewer record);
 
     List<Interviewer> selectByExample(InterviewerExample example);
-
+    
+    List<Interviewer> selectByExampleAndVo(@Param("example")InterviewerExample example,@Param("vo")PageVo vo);
+    
     Interviewer selectByPrimaryKey(String id);
 
     int updateByExampleSelective(@Param("record") Interviewer record, @Param("example") InterviewerExample example);

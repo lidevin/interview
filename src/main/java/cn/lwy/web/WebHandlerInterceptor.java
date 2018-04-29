@@ -22,7 +22,7 @@ public class WebHandlerInterceptor implements HandlerInterceptor{
 	
 	@Value("${SESSION.USERNAME}")
 	private String sessionUserName;
-	
+
 	//该方法在目标方法之前被调用
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
