@@ -175,7 +175,7 @@
 		</div>
 		<!-- END LEFT SIDEBAR -->
 		<!--主体右部分-->
-		<iframe src="/web/question" class="main" name="main" id="main"	frameborder="0" scrolling="yes" onload="this.height=100" height="100" style="min-height: 800px;"></iframe>
+		<iframe src="/web/content" class="main" name="main" id="main"	frameborder="0" scrolling="yes" onload="this.height=100" height="100" style="min-height: 700px;"></iframe>
 	</div>
 	
 	<script type="text/javascript">

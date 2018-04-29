@@ -3,6 +3,7 @@
 <mapper namespace="cn.lwy.mapper.ChoiceMapper" >
   <resultMap id="BaseResultMap" type="cn.lwy.pojo.Choice" >
     <result column="qid" property="qid" jdbcType="INTEGER" />
+    <result column="num" property="num" jdbcType="TINYINT" />
     <result column="content" property="content" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -64,7 +65,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    qid, content
+    qid, num, content
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.lwy.pojo.ChoiceExample" >
     select
@@ -87,14 +88,19 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.lwy.pojo.Choice" >
-    insert into choice (qid, content)
-    values (#{qid,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR})
+    insert into choice (qid, num, content
+      )
+    values (#{qid,jdbcType=INTEGER}, #{num,jdbcType=TINYINT}, #{content,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="cn.lwy.pojo.Choice" >
     insert into choice
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="qid != null" >
         qid,
+      </if>
+      <if test="num != null" >
+        num,
       </if>
       <if test="content != null" >
         content,
@@ -103,6 +109,9 @@
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="qid != null" >
         #{qid,jdbcType=INTEGER},
+      </if>
+      <if test="num != null" >
+        #{num,jdbcType=TINYINT},
       </if>
       <if test="content != null" >
         #{content,jdbcType=VARCHAR},
@@ -121,6 +130,9 @@
       <if test="record.qid != null" >
         qid = #{record.qid,jdbcType=INTEGER},
       </if>
+      <if test="record.num != null" >
+        num = #{record.num,jdbcType=TINYINT},
+      </if>
       <if test="record.content != null" >
         content = #{record.content,jdbcType=VARCHAR},
       </if>
@@ -132,6 +144,7 @@
   <update id="updateByExample" parameterType="map" >
     update choice
     set qid = #{record.qid,jdbcType=INTEGER},
+      num = #{record.num,jdbcType=TINYINT},
       content = #{record.content,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />

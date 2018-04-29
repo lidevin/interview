@@ -1,12 +1,12 @@
 package cn.lwy.service.impl;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cn.lwy.exception.GeneralException;
 import cn.lwy.mapper.ChoiceMapper;
 import cn.lwy.mapper.KindMapper;
 import cn.lwy.mapper.QuestionMapper;
@@ -41,7 +41,6 @@ public class QuestionServiceImpl implements QuestionService {
 		}
 		return false;
 	}
-
 	@Override
 	public boolean insert(Question entity) {
 		if(questionMapper.insert(entity) == 1) {
@@ -118,45 +117,81 @@ public class QuestionServiceImpl implements QuestionService {
 	private ChoiceMapper choiceMapper;
 	
 	@Override
-	public boolean updateFullByIdSelective(Question question) {
-		if(question == null || question.getId() == null) {
-			return false;
+	public void updateFullByIdSelective(Question question, QuestionVo vo) throws GeneralException{
+		Integer id = question.getId();
+		if(question == null || id == null) {
+			throw new GeneralException("question或id为null");
 		}
-		int count = 0;
-		List<Choice> choices = question.getChoices();
-		if(choices != null) {
+		List<Choice> choices = new ArrayList<Choice>();
+		String[] choiceArr = null;
+		//设置answer, 从vo中提取选项
+		switch (question.getQsttype()) {
+			case 1://单选
+				question.setAnswer(vo.getAnswers1());
+				choiceArr = vo.getChoices1();
+				break;
+			case 2://多选
+				question.setAnswer(CommonUtils.arrToString(vo.getAnswers2()));
+				choiceArr = vo.getChoices2();
+				break;
+			case 3://判断
+				question.setAnswer(vo.getAnswers3());
+				choiceArr = vo.getChoices3();
+				break;
+			case 4://主观
+				question.setAnswer(vo.getAnswers4());
+				break;
+			default:
+				throw new GeneralException("题目类型有误");
+		}
+		int count = questionMapper.updateByPrimaryKeySelective(question);//更新数据
+		if(count != 1)	throw new GeneralException("更新question对象有误");
+		if(choiceArr != null) {//非主观题
+			//获取所有选项
+			for(int i = 0; i < choiceArr.length; i++) {
+				Choice choice = new Choice();
+				choice.setContent(choiceArr[i]);
+				choice.setQid(id);
+				choice.setNum((byte)i);
+				choices.add(choice);
+			}
+			
+			//更新所有选项
+			count = 0;
 			for (Choice choice : choices) {
 				ChoiceExample example = new ChoiceExample();
-				example.createCriteria().andQidEqualTo(question.getId());
-				count += choiceMapper.updateByExampleSelective(choice, example);
+				example.createCriteria().andQidEqualTo(id).andNumEqualTo(choice.getNum());
+				int i = choiceMapper.updateByExampleSelective(choice, example);
+				count += i;
+			}
+			if(count != choices.size()) {
+				throw new GeneralException("更新选项有误");
 			}
 		}
-		if(count != choices.size()) {
-			return false;
-		}
-		return true;
 	}
 
 	@Override
-	public boolean insertFullByIdSelective(Question question, QuestionVo vo) {
+	public void insertFullByIdSelective(Question question, QuestionVo vo) throws GeneralException{
 		if(question == null || vo == null) {
-			return false;
+			throw new GeneralException("question或vo为null");
 		}
+		//更具difficult和qsttype计算分数
+		question.setScore();
 		Integer id = -1;
 		List<Choice> choices = new ArrayList<Choice>();
 		switch (question.getQsttype()) {
-			
 			case 1://单选
 				{
 					question.setAnswer(vo.getAnswers1());
 					int count = questionMapper.insertSelective(question);
-					if(count != 1)	return false;
+					if(count != 1)	throw new GeneralException("添加question对象有误");
 					id = question.getId();
 					String[] choiceArr = vo.getChoices1();
 					for(int i = 0; i < choiceArr.length; i++) {
 						Choice choice = new Choice();
 						choice.setContent(choiceArr[i]);
 						choice.setQid(id);
+						choice.setNum((byte)i);
 						choices.add(choice);
 					}
 				}
@@ -165,13 +200,14 @@ public class QuestionServiceImpl implements QuestionService {
 				{
 					question.setAnswer(CommonUtils.arrToString(vo.getAnswers2()));
 					int count = questionMapper.insertSelective(question);
-					if(count != 1)	return false;
+					if(count != 1)	throw new GeneralException("添加question对象有误");
 					id = question.getId();
 					String[] choiceArr = vo.getChoices2();
 					for(int i = 0; i < choiceArr.length; i++) {
 						Choice choice = new Choice();
 						choice.setContent(choiceArr[i]);
 						choice.setQid(id);
+						choice.setNum((byte)i);
 						choices.add(choice);
 					}
 				}
@@ -180,13 +216,14 @@ public class QuestionServiceImpl implements QuestionService {
 				{
 					question.setAnswer(vo.getAnswers3());
 					int count = questionMapper.insertSelective(question);
-					if(count != 1)	return false;
+					if(count != 1)	throw new GeneralException("添加question对象有误");
 					id = question.getId();
 					String[] choiceArr = vo.getChoices3();
 					for(int i = 0; i < choiceArr.length; i++) {
 						Choice choice = new Choice();
 						choice.setContent(choiceArr[i]);
 						choice.setQid(id);
+						choice.setNum((byte)i);
 						choices.add(choice);
 					}
 				}
@@ -195,11 +232,11 @@ public class QuestionServiceImpl implements QuestionService {
 				{
 					question.setAnswer(vo.getAnswers4());
 					int count = questionMapper.insertSelective(question);
-					if(count != 1)	return false;
+					if(count != 1)	throw new GeneralException("添加question对象有误");
 				}
 				break;
 			default:
-				return false;
+				throw new GeneralException("题目类型有误");
 			}
 		
 		int count = 0;
@@ -210,10 +247,9 @@ public class QuestionServiceImpl implements QuestionService {
 				count += choiceMapper.insertSelective(choice);
 			}
 			if(count != choices.size()) {
-				return false;
+				throw new GeneralException("添加选项有误");
 			}
 		}
-		return true;
 	}
 	
 	@Override
@@ -251,10 +287,5 @@ public class QuestionServiceImpl implements QuestionService {
 			question.setKind(kindMapper.selectByPrimaryKey(question.getKid()).getKind());
 		}
 		return questions;
-	}
-
-	@Override
-	public Question getById(Integer id) {
-		return questionMapper.selectByPrimaryKey(id);
 	}
 }

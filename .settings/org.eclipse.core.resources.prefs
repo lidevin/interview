@@ -3,6 +3,7 @@ encoding//src/main/java=UTF-8
 encoding//src/main/resources=UTF-8
 encoding//src/main/resources/conf/common.properties=UTF-8
 encoding//src/main/resources/conf/db.properties=UTF-8
+encoding//src/main/resources/log4j.properties=UTF-8
 encoding//src/main/webapp/WEB-INF/jsp/web/index.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/jsp/wx/boss.jsp=utf-8
 encoding//src/main/webapp/WEB-INF/jsp/wx/boss_index.jsp=utf-8

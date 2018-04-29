@@ -3,6 +3,8 @@ package cn.lwy.pojo;
 public class Choice {
     private Integer qid;
 
+    private Byte num;
+
     private String content;
 
     public Integer getQid() {
@@ -13,6 +15,14 @@ public class Choice {
         this.qid = qid;
     }
 
+    public Byte getNum() {
+        return num;
+    }
+
+    public void setNum(Byte num) {
+        this.num = num;
+    }
+
     public String getContent() {
         return content;
     }
@@ -20,10 +30,4 @@ public class Choice {
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
     }
-
-	@Override
-	public String toString() {
-		return "Choice [qid=" + qid + ", content=" + content + "]";
-	}
-    
 }

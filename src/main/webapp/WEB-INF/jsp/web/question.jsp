@@ -37,6 +37,19 @@
 		</style>
 	</head>
 	<body>
+		<c:choose>
+			<c:when test="${del == 1}">
+				<script type="text/javascript">
+					alert("删除成功！");
+				</script>
+			</c:when>
+			<c:when test="${del == 0}">
+				<script type="text/javascript">
+					alert("删除失败！");
+				</script>
+			</c:when>
+		</c:choose>
+		
 		<div class="main">
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
@@ -81,7 +94,7 @@
 													<td>${question.kind }</td>
 													<td>${question.tags }</td>
 													<td>${question.answer }</td>
-													<td><a href="/web/question/edit?id=${question.id }"><button type="button" class="btn btn-success btn-sm">编辑</button></a> <a href="/web/question/del?id=${question.id }"><button type="button" class="btn btn-default btn-sm deleteBtn">删除</button></a></td>
+													<td><a href="/web/question/edit?id=${question.id }"><button type="button" class="btn btn-success btn-sm">编辑</button></a> <a href="/web/question/del.do?id=${question.id }"><button type="button" class="btn btn-default btn-sm deleteBtn">删除</button></a></td>
 												</tr>
 											</c:forEach>
 										</tbody>

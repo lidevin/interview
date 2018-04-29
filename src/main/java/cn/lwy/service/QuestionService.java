@@ -2,6 +2,7 @@ package cn.lwy.service;
 
 import java.util.List;
 
+import cn.lwy.exception.GeneralException;
 import cn.lwy.pojo.Page;
 import cn.lwy.pojo.Question;
 import cn.lwy.pojo.QuestionExample;
@@ -10,7 +11,6 @@ import cn.lwy.vo.QuestionVo;
 
 public interface QuestionService extends BaseService<Question>{
 
-	Question getById(Integer id);
 	/**
 	 * 获取题目信息包含kind字段
 	 */
@@ -46,11 +46,12 @@ public interface QuestionService extends BaseService<Question>{
     /**
      * 插入所有数据
      */
-    boolean insertFullByIdSelective(Question question, QuestionVo vo);
+    void insertFullByIdSelective(Question question, QuestionVo vo) throws GeneralException;
     
     /**
      * 更新所有数据
+     * @throws GeneralException 
      */
-    boolean updateFullByIdSelective(Question question);
+    void updateFullByIdSelective(Question question, QuestionVo vo) throws GeneralException;
 	
 }

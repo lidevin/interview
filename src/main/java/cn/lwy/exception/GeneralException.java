@@ -15,7 +15,9 @@ public class GeneralException extends Exception{
 	
 	public GeneralException() {
 	}
-
+	public GeneralException(String msg) {
+		this.msg = msg;
+	}
 	public GeneralException(int code, String msg) {
 		this.code = code;
 		this.msg = msg;

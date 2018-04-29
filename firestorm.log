@@ -475,3 +475,20 @@ DEBUG http-bio-80-exec-6 cn.lwy.web.hr.QuestionController - 2 == > 4
 DEBUG http-bio-80-exec-6 cn.lwy.web.hr.QuestionController - 3 == > A
 DEBUG http-bio-80-exec-6 cn.lwy.web.hr.QuestionController - 3 == > 2
 DEBUG http-bio-80-exec-6 cn.lwy.web.hr.QuestionController - 4 == > 
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-3 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO http-bio-80-exec-8 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited

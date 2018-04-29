@@ -68,7 +68,11 @@ public class ManagerController {
 	public String toIndex() {
 		return "web/index";
 	}
-
+	
+	@RequestMapping("/web/content")
+	public String toContent() {
+		return "web/content";
+	}
 	/**
 	 * 显示登录界面
 	 */

@@ -38,8 +38,8 @@
 		<script src="/res/js/layer.js"></script>
 		<link rel="stylesheet" href="/res/css/layer.css" id="layuicss-layer">
 		<style type="text/css">
-			div{
-				border-color: 
+			intput{
+				autoComplete:off;
 			}
 		</style>
 		<script>
@@ -65,7 +65,7 @@
 				/*表单提交验证*/
 				$("form").submit(function(){
 					
-					if(!check($("#title")) || !check($("#tags")) || !check($("#score"))){
+					if(!check($("#title")) || !check($("#tags"))){
 						return false;
 					}
 					var i = $("#choice_select").val();
@@ -106,7 +106,7 @@
 					}
 				</script>
 			</c:when>
-			<c:when test="${2 == add}">
+			<c:when test="${0 == add}">
 				<script type="text/javascript">
 					if(confirm("添加失败！\n确定要重新添加？") == false){
 						window.location.href='/web/question';
@@ -118,7 +118,7 @@
 		<div class="bombBox" id="addDoctorBomb">
 			<div class="bombContent whiteBg addDoctorBomb" style="min-width: 400px;">
 				<div class="bombTit">添加题目	<a class="fa fa-remove" href="/web/question" target="main"></a></div>
-				<form action="/web/question/add" method="get" id="addForm">
+				<form action="/web/question/add.do" method="get" id="addForm">
 					<div class="pd20">
 						<div class="input-group listSeaForm mt10 wb100">
 							<span class="input-group-btn">
@@ -237,12 +237,6 @@
 								</div>
 							</li>
 						</ul>
-						<div class="input-group listSeaForm mt10 wb100">
-							<span class="input-group-btn">
-						<span class="btn">分数：</span>
-							</span>
-							<input class="form-control" id="score" name="score" type="number" min="0" max="20">
-						</div>
 						<div class="input-group listSeaForm mt10 wb100">
 							<span class="input-group-btn">
 						<span class="btn">难度等级：</span>

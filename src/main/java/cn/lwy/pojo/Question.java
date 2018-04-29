@@ -89,15 +89,38 @@ public class Question {
     }
 
     /**
-     * 试卷分数0-120
+     *难度系数: 1	2	3	4	5
+     * 	单选题：1 	2	3	4 	5
+     *	多选题：3 	5	7	9	10
+     *	判断题：2 	3	4	5	6
+     *	主观题：5 	10	12	16 	20 
      */
-    public void setScore(Byte score) {
-    	if(score < 0) {
-    		this.score = 0;
-    	}else if(score > 120) {
-    		this.score = 120;
-    	}else {
-    		this.score = score;
+    public void setScore() {
+    	switch(this.qsttype) {
+	    	case 1://单选题
+	    		this.score = this.difficult;
+	    		break;
+	    	case 2://多选题
+	    		if(this.difficult == 5) {
+	    			this.score = 10;
+	    		}else {
+	    			this.score = (byte) (2 * this.difficult + 1);
+	    		}
+	    		break;
+	    	case 3://判断题
+	    		this.score = (byte) (2 * this.difficult);
+	    		break;
+	    	case 4://主观题
+	    		if(this.difficult < 3) {
+	    			this.score = (byte) (5 * this.difficult);
+	    		}else if(this.difficult == 3) {
+	    			this.score = 12;
+	    		}else if(this.difficult == 4) {
+	    			this.score = 16;
+	    		}else if(this.difficult == 5) {
+	    			this.score = 20;
+	    		}
+	    		break;
     	}
     }
 
