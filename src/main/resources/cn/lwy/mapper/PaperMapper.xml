@@ -96,6 +96,20 @@
     from paper
     where id = #{id,jdbcType=INTEGER}
   </select>
+  
+  <select id="selectByExampleAndVo" resultMap="BaseResultMap">
+    select
+    <if test="example.distinct" >
+      example.distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from paper
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+    limit #{vo.startRow},#{vo.size};
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from paper
     where id = #{id,jdbcType=INTEGER}
@@ -106,7 +120,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cn.lwy.pojo.Paper" >
+  <insert id="insert" parameterType="cn.lwy.pojo.Paper" keyProperty="id" useGeneratedKeys="true">
     insert into paper (id, type, single_count, 
       multiple_count, judge_count, subject_count, 
       difficult, score, kid, 
@@ -116,7 +130,7 @@
       #{difficult,jdbcType=TINYINT}, #{score,jdbcType=SMALLINT}, #{kid,jdbcType=INTEGER}, 
       #{startTime,jdbcType=TIMESTAMP}, #{time,jdbcType=SMALLINT})
   </insert>
-  <insert id="insertSelective" parameterType="cn.lwy.pojo.Paper" >
+  <insert id="insertSelective" parameterType="cn.lwy.pojo.Paper" keyProperty="id" useGeneratedKeys="true">
     insert into paper
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >

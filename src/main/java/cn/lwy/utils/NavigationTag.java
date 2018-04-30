@@ -31,7 +31,8 @@ public class NavigationTag extends TagSupport {
     public int doStartTag() throws JspException {
         JspWriter writer = pageContext.getOut();
         HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
-        Page page = (Page)request.getAttribute(bean);
+        @SuppressWarnings("rawtypes")
+		Page page = (Page)request.getAttribute(bean);
         if (page == null)
             return SKIP_BODY;
         url = resolveUrl(url, pageContext);
@@ -41,7 +42,7 @@ public class NavigationTag extends TagSupport {
         	if (page.getTotal() % page.getSize() > 0) {
         		pageCount++;
         	}
-        	writer.print("<nav><ul class=\"pagination\">");
+        	writer.print("<nav><ul class=\"pagination\"><li><span>有" + page.getTotal() + "条记录  共" + pageCount + "页</span></li>");
             //显示“上一页”按钮
         	if (page.getPage() > 1) {
                 String preUrl = append(url, "page", page.getPage() - 1);
@@ -110,7 +111,8 @@ public class NavigationTag extends TagSupport {
      */
     private String resolveUrl(String url, javax.servlet.jsp.PageContext pageContext) throws JspException{
     	//UrlSupport.resolveUrl(url, context, pageContext)
-    	Map params = pageContext.getRequest().getParameterMap();
+    	@SuppressWarnings("rawtypes")
+		Map params = pageContext.getRequest().getParameterMap();
     	for (Object key:params.keySet()) {
     		if ("page".equals(key) || "rows".equals(key)) continue;
     		Object value = params.get(key);

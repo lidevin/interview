@@ -134,6 +134,7 @@
 .tit1{ font-size: 20px; text-align: center;}
 .wepBox{ min-width: 1000px; }
 /*导航*/
+nav {-webkit-user-select: none;	-moz-user-select: none;	-ms-user-select: none;	user-select: none;}
 .webNav{ font-size: 16px; overflow: hidden;}
 .webNav .btn{ height: 53px; line-height: 40px; float: left; border-radius: 0!important; border: 0; box-shadow: none; }
 /*input*/

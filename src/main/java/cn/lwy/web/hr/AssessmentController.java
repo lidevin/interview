@@ -7,9 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.lwy.pojo.Assessment;
+import cn.lwy.pojo.AssessmentExample;
+import cn.lwy.pojo.AssessmentExample.Criteria;
 import cn.lwy.pojo.Page;
-import cn.lwy.pojo.PaperExample;
-import cn.lwy.pojo.QuestionExample;
 import cn.lwy.service.AssessmentService;
 import cn.lwy.vo.PageVo;
 
@@ -23,34 +23,34 @@ public class AssessmentController {
 	private String pageSizeStr;
 	
 	@RequestMapping("/web/statistic/paper")
-	public String paper(Model model, String name, PageVo vo) {
+	public String paper(Model model, String query, PageVo vo) {
 		if(vo == null)	vo = new PageVo();
 		vo.setSize(Integer.valueOf(pageSizeStr));
-		PaperExample example = new PaperExample();
-		if(name == null || "".equals(name.trim())) {//查询所有
-			example.createCriteria().andDifficultIsNotNull();//永真
-		}else {
-			example.createCriteria().andTypeLike("%" + name + "%");
-			model.addAttribute("title", name);
+		AssessmentExample example = new AssessmentExample();
+		Criteria criteria = example.createCriteria();
+		criteria.andPidIsNotNull();
+		if(query != null && !"".equals(query.trim())) {
+			criteria.andQueryLike("%" + query + "%");
+			model.addAttribute("name", query);
 		}
-		Page<Assessment> page = assessmenService.getPaper(example, vo);
+		Page<Assessment> page = assessmenService.getByExampleAndVo(example, vo,2);
 		model.addAttribute("page", page);
 		return "web/statistic/paper";
 	}
 	
 	
 	@RequestMapping("/web/statistic/question")
-	public String question(Model model, String name, PageVo vo) {
+	public String question(Model model, String query, PageVo vo) {
 		if(vo == null)	vo = new PageVo();
 		vo.setSize(Integer.valueOf(pageSizeStr));
-		QuestionExample example = new QuestionExample();
-		if(name == null || "".equals(name.trim())) {//查询所有
-			example.createCriteria().andDifficultIsNotNull();//永真
-		}else {
-			example.createCriteria().andTitleLike("%" + name + "%");
-			model.addAttribute("title", name);
+		AssessmentExample example = new AssessmentExample();
+		Criteria criteria = example.createCriteria();
+		criteria.andQidIsNotNull();
+		if(query != null && !"".equals(query.trim())) {
+			criteria.andQueryLike("%" + query + "%");
+			model.addAttribute("title", query);
 		}
-		Page<Assessment> page = assessmenService.getQuestion(example, vo);
+		Page<Assessment> page = assessmenService.getByExampleAndVo(example, vo, 1);
 		model.addAttribute("page", page);
 		return "web/statistic/question";
 	}

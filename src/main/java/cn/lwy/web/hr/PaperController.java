@@ -1,5 +1,7 @@
 package cn.lwy.web.hr;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import cn.lwy.pojo.Page;
 import cn.lwy.pojo.Paper;
 import cn.lwy.pojo.PaperExample;
+import cn.lwy.pojo.Question;
 import cn.lwy.service.PaperService;
 import cn.lwy.vo.PageVo;
 
@@ -52,42 +55,32 @@ public class PaperController {
 	public String toAdd() {
 		return "web/paper/add";
 	}
+	
 	/**
 	 * 添加试卷
 	 */
 	@RequestMapping("/web/paper/add.do")
 	public String add(Model model, Paper paper) {
-		boolean flag = paperService.insertSelective(paper);
-		if(flag) {
-			System.out.println("id === " + paper.getId());
-			model.addAttribute("add", 1);
-			model.addAttribute("id", paper.getId());
-		}else {
+		try {
+			paperService.insertWithQstSelective(paper);
+		} catch (Exception e) {
 			model.addAttribute("add", 0);
+			return "web/paper/add";
 		}
+		model.addAttribute("add", 1);
+		model.addAttribute("id", paper.getId());
 		return "web/paper/add";
-	}
-	@RequestMapping("/web/paper/create")
-	public void create(Integer id) {
-		System.out.println("--------->  /web/paper/create");
+		
 	}
 	/**
 	 * 显示试卷题目
 	 * @return
 	 */
 	@RequestMapping("/web/paper/qst")
-	public String qst() {
-		
+	public String qst(Model model,Integer pid) {
+		List<Question> questions = paperService.getQstList(pid);
+		model.addAttribute("questions", questions);
 		return "web/paper/qst";
-	}
-	/**
-	 * 添加试卷题目
-	 * @return
-	 */
-	@RequestMapping("/web/paper/addqst")
-	public String addqst() {
-		
-		return "web/paper/addqst";
 	}
 	
 	/**
@@ -95,8 +88,13 @@ public class PaperController {
 	 * @return
 	 */
 	@RequestMapping("/web/paper/del")
-	public String del() {
-		
+	public String del(Model model, Integer id) {
+		boolean flag = paperService.deleteById(id);
+		if(flag) {
+			model.addAttribute("del", 1);
+		}else {
+			model.addAttribute("del", 0);
+		}
 		return "web/paper";
 	}
 }

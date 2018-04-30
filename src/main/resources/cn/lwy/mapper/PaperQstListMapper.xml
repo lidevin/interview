@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.lwy.mapper.AssessmentMapper" >
-  <resultMap id="BaseResultMap" type="cn.lwy.pojo.Assessment" >
-    <result column="qid" property="qid" jdbcType="INTEGER" />
+<mapper namespace="cn.lwy.mapper.PaperQstListMapper" >
+  <resultMap id="BaseResultMap" type="cn.lwy.pojo.PaperQstList" >
     <result column="pid" property="pid" jdbcType="INTEGER" />
-    <result column="query" property="query" jdbcType="VARCHAR" />
-    <result column="avgerage" property="avgerage" jdbcType="REAL" />
-    <result column="accuracy" property="accuracy" jdbcType="REAL" />
+    <result column="qid" property="qid" jdbcType="INTEGER" />
+    <result column="qsttype" property="qsttype" jdbcType="TINYINT" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -67,15 +65,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    qid, pid, query, avgerage, accuracy
+    pid, qid, qsttype
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.lwy.pojo.AssessmentExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.lwy.pojo.PaperQstListExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from assessment
+    from paper_qst_list
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -83,98 +81,60 @@
       order by ${orderByClause}
     </if>
   </select>
-  
-  
-  <select id="selectByExampleAndVo" resultMap="BaseResultMap">
-    select
-    <if test="example.distinct" >
-      example.distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from assessment
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-    limit #{vo.startRow},#{vo.size};
-  </select>
-  
-  
-  
-  
-  
-  
-  <delete id="deleteByExample" parameterType="cn.lwy.pojo.AssessmentExample" >
-    delete from assessment
+  <delete id="deleteByExample" parameterType="cn.lwy.pojo.PaperQstListExample" >
+    delete from paper_qst_list
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cn.lwy.pojo.Assessment" >
-    insert into assessment (qid, pid, query, 
-      avgerage, accuracy)
-    values (#{qid,jdbcType=INTEGER}, #{pid,jdbcType=INTEGER}, #{query,jdbcType=VARCHAR}, 
-      #{avgerage,jdbcType=REAL}, #{accuracy,jdbcType=REAL})
+  <insert id="insert" parameterType="cn.lwy.pojo.PaperQstList" >
+    insert into paper_qst_list (pid, qid, qsttype
+      )
+    values (#{pid,jdbcType=INTEGER}, #{qid,jdbcType=INTEGER}, #{qsttype,jdbcType=TINYINT}
+      )
   </insert>
-  <insert id="insertSelective" parameterType="cn.lwy.pojo.Assessment" >
-    insert into assessment
+  <insert id="insertSelective" parameterType="cn.lwy.pojo.PaperQstList" >
+    insert into paper_qst_list
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="qid != null" >
-        qid,
-      </if>
       <if test="pid != null" >
         pid,
       </if>
-      <if test="query != null" >
-        query,
+      <if test="qid != null" >
+        qid,
       </if>
-      <if test="avgerage != null" >
-        avgerage,
-      </if>
-      <if test="accuracy != null" >
-        accuracy,
+      <if test="qsttype != null" >
+        qsttype,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="qid != null" >
-        #{qid,jdbcType=INTEGER},
-      </if>
       <if test="pid != null" >
         #{pid,jdbcType=INTEGER},
       </if>
-      <if test="query != null" >
-        #{query,jdbcType=VARCHAR},
+      <if test="qid != null" >
+        #{qid,jdbcType=INTEGER},
       </if>
-      <if test="avgerage != null" >
-        #{avgerage,jdbcType=REAL},
-      </if>
-      <if test="accuracy != null" >
-        #{accuracy,jdbcType=REAL},
+      <if test="qsttype != null" >
+        #{qsttype,jdbcType=TINYINT},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="cn.lwy.pojo.AssessmentExample" resultType="java.lang.Integer" >
-    select count(*) from assessment
+  <select id="countByExample" parameterType="cn.lwy.pojo.PaperQstListExample" resultType="java.lang.Integer" >
+    select count(*) from paper_qst_list
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update assessment
+    update paper_qst_list
     <set >
-      <if test="record.qid != null" >
-        qid = #{record.qid,jdbcType=INTEGER},
-      </if>
       <if test="record.pid != null" >
         pid = #{record.pid,jdbcType=INTEGER},
       </if>
-      <if test="record.query != null" >
-        query = #{record.query,jdbcType=VARCHAR},
+      <if test="record.qid != null" >
+        qid = #{record.qid,jdbcType=INTEGER},
       </if>
-      <if test="record.avgerage != null" >
-        avgerage = #{record.avgerage,jdbcType=REAL},
-      </if>
-      <if test="record.accuracy != null" >
-        accuracy = #{record.accuracy,jdbcType=REAL},
+      <if test="record.qsttype != null" >
+        qsttype = #{record.qsttype,jdbcType=TINYINT},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -182,12 +142,10 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update assessment
-    set qid = #{record.qid,jdbcType=INTEGER},
-      pid = #{record.pid,jdbcType=INTEGER},
-      query = #{record.query,jdbcType=VARCHAR},
-      avgerage = #{record.avgerage,jdbcType=REAL},
-      accuracy = #{record.accuracy,jdbcType=REAL}
+    update paper_qst_list
+    set pid = #{record.pid,jdbcType=INTEGER},
+      qid = #{record.qid,jdbcType=INTEGER},
+      qsttype = #{record.qsttype,jdbcType=TINYINT}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>

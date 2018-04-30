@@ -1,8 +1,11 @@
 package cn.lwy.service;
 
+import java.util.List;
+
 import cn.lwy.pojo.Page;
 import cn.lwy.pojo.Paper;
 import cn.lwy.pojo.PaperExample;
+import cn.lwy.pojo.Question;
 import cn.lwy.vo.PageVo;
 
 public interface PaperService extends BaseService<Paper> {
@@ -15,6 +18,15 @@ public interface PaperService extends BaseService<Paper> {
 	 */
 	Page<Paper> getByExampleAndVo(PaperExample example, PageVo vo);
 
-	boolean insertSelective(Paper paper, Integer id);
+	List<Paper> getByExample(PaperExample example);
+
+	/**
+	 * 查询题目集合
+	 */
+	List<Question> getQstList(Integer pid);
 	
+	/**
+	 * 插入试卷信息包括题目集
+	 */
+	void insertWithQstSelective(Paper paper) throws Exception;
 }

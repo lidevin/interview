@@ -11,7 +11,27 @@ public class Assessment {
 
     private Float accuracy;
 
-    public Integer getQid() {
+    private Question qst;
+    
+    private Paper paper;
+    
+    public Question getQst() {
+		return qst;
+	}
+
+	public void setQst(Question qst) {
+		this.qst = qst;
+	}
+
+	public Paper getPaper() {
+		return paper;
+	}
+
+	public void setPaper(Paper paper) {
+		this.paper = paper;
+	}
+
+	public Integer getQid() {
         return qid;
     }
 
@@ -50,4 +70,10 @@ public class Assessment {
     public void setAccuracy(Float accuracy) {
         this.accuracy = accuracy;
     }
+
+	@Override
+	public String toString() {
+		return "Assessment [qid=" + qid + ", pid=" + pid + ", query=" + query + ", avgerage=" + avgerage + ", accuracy="
+				+ accuracy + ", qst=" + qst + ", paper=" + paper + "]";
+	}
 }

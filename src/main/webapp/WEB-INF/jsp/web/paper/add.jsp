@@ -65,7 +65,6 @@ body {
 		$("form").submit(function(){
 			var str = $("#time").val().replace("T"," ");
 			$("#startTime").val(str);
-			alert($("#startTime").val());
 			return true;
 		});
 	});

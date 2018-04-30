@@ -104,6 +104,9 @@ public class Paper {
     }
 
     public Short getScore() {
+    	if(this.singleCount == null && this.multipleCount==null && this.judgeCount==null && this.subjectCount==null) {
+    		return null;
+    	}
     	score = 0;
     	score = (short) (score + this.getSingleCount() * CommonUtils.score[0][this.getDifficult()]);
     	score = (short) (score + this.getMultipleCount() * CommonUtils.score[1][this.getDifficult()]);

@@ -1,28 +1,57 @@
 package cn.lwy.service.impl;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cn.lwy.mapper.AssessmentMapper;
+import cn.lwy.mapper.PaperMapper;
+import cn.lwy.mapper.QuestionMapper;
 import cn.lwy.pojo.Assessment;
+import cn.lwy.pojo.AssessmentExample;
 import cn.lwy.pojo.Page;
-import cn.lwy.pojo.PaperExample;
-import cn.lwy.pojo.QuestionExample;
 import cn.lwy.service.AssessmentService;
 import cn.lwy.vo.PageVo;
 
 @Service
 public class AssessmentServiceImpl implements AssessmentService{
 
+	@Autowired
+	private AssessmentMapper assessmentMapper;
+	@Autowired
+	private QuestionMapper questionMapper;
+	@Autowired
+	private PaperMapper paperMapper;
+	
 	@Override
-	public Page<Assessment> getPaper(PaperExample example, PageVo vo) {
-		// TODO Auto-generated method stub
-		return null;
+	public Page<Assessment> getByExampleAndVo(AssessmentExample example, PageVo vo,int type) {
+		Page<Assessment> page = new Page<Assessment>();
+		//每页显示行数
+		page.setSize(vo.getSize());
+		//设置当前页数
+		page.setPage(vo.getPage());
+		//计算当前的记录数
+		vo.setStartRow((vo.getPage()-1)*vo.getSize());
+		//设置所有记录数
+		page.setTotal(assessmentMapper.countByExample(example));
+		//设置查出的记录
+		List<Assessment> list = assessmentMapper.selectByExampleAndVo(example, vo);
+		if(list != null) {
+			if(type==1) {//题目
+				for (Assessment assessment : list) {
+					assessment.setQst(questionMapper.selectByPrimaryKey(assessment.getQid()));
+				}
+			}else {//试卷
+				for (Assessment assessment : list) {
+					assessment.setPaper(paperMapper.selectByPrimaryKey(assessment.getPid()));
+				}
+			}
+		}
+		page.setRows(list);
+		return page;
 	}
 
-	@Override
-	public Page<Assessment> getQuestion(QuestionExample example, PageVo vo) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 //	@Autowired
 //	private AssessmentMapper assessmentMapper;
 //	@Autowired
@@ -75,11 +104,4 @@ public class AssessmentServiceImpl implements AssessmentService{
 //		
 //		return page;
 //	}
-//
-//	@Override
-//	public Page<Assessment> getQuestion(QuestionExample example, PageVo vo) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-
 }

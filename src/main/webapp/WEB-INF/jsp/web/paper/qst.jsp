@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-
 <html lang="en">
-
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -31,8 +30,25 @@
 		<script src="/res/js/check.form.js"></script>
 		<script src="/res/js/layer.js"></script>
 		<link rel="stylesheet" href="/res/css/layer.css" id="layuicss-layer">
+		<style>
+			tbody tr:nth-child(odd) {
+				background-color: #F3F3F3;
+			}
+		</style>
 	</head>
 	<body>
+	
+<!-- 	.fa-step-backward:before {
+	content: "\f048"
+}
+
+.fa-fast-backward:before {
+	content: "\f049"
+}
+
+.fa-backward:before {
+	content: "\f04a"
+} -->
 		<div class="main">
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
@@ -40,7 +56,11 @@
 					<div class="">
 						<ul class="tabBtn clearfix" style="width: 50%; margin: auto;">
 							<li class="on">试卷题目列表</li>
-
+						</ul>
+						<ul class="tabBtn clearfix" style="width: 30%; ">
+							<li class="li-menu"><a href="/web/paper"
+										class="menu" target="main"> <i class="fa fa-backward"></i> <span>返回</span></a>
+									</li>
 						</ul>
 						<ul class="tabBox panel mt10">
 							<li class="on">
@@ -52,27 +72,39 @@
 										<thead>
 											<tr>
 												<th>编号</th>
+												<th>题型</th>
 												<th>标题</th>
 												<th>分数</th>
 												<th>难度等级</th>
 												<th>标签</th>
-												<th>类型</th>
-												<th>详情</th>
-												<!-- <th>操作</th> -->
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>3</td>
-												<td>试题1</td>
-												<td>10</td>
-												<td>一般</td>
-												<td>继承</td>
-												<td>C++</td>
-												<td>画出继承关系类图</td>
-												<!-- <td>
-													<a href="/web/question/edit"></a> <button type="button"  class="btn btn-default btn-sm deleteBtn">删除</button></td> -->
-											</tr>
+											<c:forEach items="${questions }" var="qst">
+												<tr>
+													<td>${qst.id }</td>
+													<td>${qst.title }</td>
+													<td>
+														<c:choose>
+															<c:when test="${1 == qst.qsttype }">
+																单选题
+															</c:when>
+															<c:when test="${2 == qst.qsttype }">
+																多选题
+															</c:when>
+															<c:when test="${3 == qst.qsttype }">
+																判断题
+															</c:when>
+															<c:when test="${4 == qst.qsttype }">
+																主观题
+															</c:when>
+														</c:choose>
+													</td>
+													<td>${qst.score }</td>
+													<td>${qst.difficult }</td>
+													<td>${qst.tags }</td>
+												</tr>
+											</c:forEach>
 										</tbody>
 									</table>
 								</div>

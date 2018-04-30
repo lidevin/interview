@@ -81,24 +81,19 @@ public class CommonUtils {
 	 */
 	public static List<Question> createPaper(Paper paper,PaperVo vo) {
 		List<Question> res = new ArrayList<Question>();
-		
-		List<Question> t = createPaperDetail(vo.getSingle(), paper.getSingleCount());
-		if(t == null)	return null;
-		res.addAll(t);
-		
-		t = createPaperDetail(vo.getMutil(), paper.getMultipleCount());
-		if(t == null)	return null;
-		res.addAll(t);
-		
-		t = createPaperDetail(vo.getJudge(), paper.getJudgeCount());
-		if(t == null)	return null;
-		res.addAll(t);
-		
-		t = createPaperDetail(vo.getSubject(), paper.getSubjectCount());
-		if(t == null)	return null;
-		res.addAll(t);
-		
-		return null;
+		List<Question> t1 = createPaperDetail(vo.getSingle(), paper.getSingleCount());
+		if(t1 == null) return null;
+		res.addAll(t1);
+		List<Question> t2 = createPaperDetail(vo.getMutil(), paper.getMultipleCount());
+		if(t2 == null) return null;
+		res.addAll(t2);
+		List<Question> t3 = createPaperDetail(vo.getJudge(), paper.getJudgeCount());
+		if(t3 == null) return null;
+		res.addAll(t3);
+		List<Question> t4 = createPaperDetail(vo.getSubject(), paper.getSubjectCount());
+		if(t4 == null) return null;
+		res.addAll(t4);
+		return res;
 	}
 	/**
 	 * 创建试卷细节
@@ -108,13 +103,18 @@ public class CommonUtils {
 	 */
 	private static List<Question> createPaperDetail(List<Question> questions, Byte count) {
 		if(questions == null || count==null)	return null;
+		System.out.println("list:" + questions);
 		List<Question> res = new ArrayList<Question>();
-		if(res.size() < count) {
+		if(count == 0) {
+			return res;
+		}
+		//题目不够
+		if(questions.size() < count) {
 			return null;
 		}
 		Random random = new Random();
 		for(int i = 0; i < count; i++) {
-			int index = random.nextInt(res.size());
+			int index = random.nextInt(questions.size());
 			res.add(questions.get(index));
 			questions.remove(index);
 		}

@@ -8,6 +8,7 @@ public class PageVo {
 	private Integer size = 10; 
 	//开始行
 	private Integer startRow = 0;
+	
 	public Integer getPage() {
 		return page;
 	}

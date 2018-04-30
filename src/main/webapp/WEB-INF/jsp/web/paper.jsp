@@ -45,7 +45,18 @@
 	</head>
 
 	<body>
-
+		<c:choose>
+			<c:when test="${del == 1}">
+				<script type="text/javascript">
+					alert("删除成功！");
+				</script>
+			</c:when>
+			<c:when test="${del == 0}">
+				<script type="text/javascript">
+					alert("删除失败！");
+				</script>
+			</c:when>
+		</c:choose>
 		<div class="main">
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
@@ -97,7 +108,7 @@
 													<td>${paper.startTimeStr }</td>
 													<td>${paper.time }</td>
 													<td>
-														<a href="/web/paper/qst?id=${paper.id }"><button type="button" class="btn btn-success btn-sm">题目详情</button></a> </td>
+														<a href="/web/paper/qst?pid=${paper.id }"><button type="button" class="btn btn-success btn-sm">题目详情</button></a> </td>
 													<td>
 														<a href="/web/paper/del.do?id=${paper.id }"><button type="button" class="btn btn-success btn-sm">删除</button></a>
 													</td>
