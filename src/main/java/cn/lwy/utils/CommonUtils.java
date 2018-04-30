@@ -14,6 +14,16 @@ import cn.lwy.vo.PaperVo;
 public class CommonUtils {
 
 	/**
+	 * 根据题目难度给定分数
+	 */
+	public static byte[][] score = {
+			{1,2,3,4},//单选题
+			{3,4,7,6,10},//多选题
+			{2,3,4,5,6},//判断题
+			{5,10,12,16,20}//主观题
+	};
+	
+	/**
 	 * 生成10位的id
 	 */
 	public static String getId10() {
@@ -52,6 +62,7 @@ public class CommonUtils {
 	 * 将date类转成日期字符串
 	 */
 	public static String toDateStr(Date date) {
+		if(date==null) return null;
         SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
         return sf.format(date);
 	}
@@ -59,6 +70,7 @@ public class CommonUtils {
 	 * 将date类转成日期和时间字符串
 	 */
 	public static String toDatetimeStr(Date date) {
+		if(date==null) return null;
         SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         return sf.format(date);
 	}

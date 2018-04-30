@@ -2,6 +2,8 @@ package cn.lwy.pojo;
 
 import java.util.List;
 
+import cn.lwy.utils.CommonUtils;
+
 public class Question {
     private Integer id;
 
@@ -40,7 +42,7 @@ public class Question {
     }
 
     public Byte getQsttype() {
-        return qsttype;
+        return qsttype==null?4:qsttype;
     }
 
     /**
@@ -52,12 +54,11 @@ public class Question {
      */
     public void setQsttype(Byte qsttype) {
     	if(qsttype < 1) {
-    		this.qsttype = 1;
+    		qsttype = 1;
     	}else if(qsttype > 4) {
-    		this.qsttype = 4;
-    	}else {
-    		this.qsttype = qsttype;
+    		qsttype = 4;
     	}
+    	this.qsttype = qsttype;
     }
 
     public String getAnswer() {
@@ -83,11 +84,6 @@ public class Question {
     public void setTags(String tags) {
         this.tags = tags == null ? null : tags.trim();
     }
-
-    public Byte getScore() {
-        return score;
-    }
-
     /**
      *难度系数: 1	2	3	4	5
      * 	单选题：1 	2	3	4 	5
@@ -95,33 +91,13 @@ public class Question {
      *	判断题：2 	3	4	5	6
      *	主观题：5 	10	12	16 	20 
      */
-    public void setScore() {
-    	switch(this.qsttype) {
-	    	case 1://单选题
-	    		this.score = this.difficult;
-	    		break;
-	    	case 2://多选题
-	    		if(this.difficult == 5) {
-	    			this.score = 10;
-	    		}else {
-	    			this.score = (byte) (2 * this.difficult + 1);
-	    		}
-	    		break;
-	    	case 3://判断题
-	    		this.score = (byte) (2 * this.difficult);
-	    		break;
-	    	case 4://主观题
-	    		if(this.difficult < 3) {
-	    			this.score = (byte) (5 * this.difficult);
-	    		}else if(this.difficult == 3) {
-	    			this.score = 12;
-	    		}else if(this.difficult == 4) {
-	    			this.score = 16;
-	    		}else if(this.difficult == 5) {
-	    			this.score = 20;
-	    		}
-	    		break;
-    	}
+    public Byte getScore() {
+    	this.score = CommonUtils.score[this.getQsttype()-1][this.getDifficult()-1];
+        return score;
+    }
+
+    public void setScore(Byte score) {
+    	this.score = score;
     }
 
     /**
@@ -129,10 +105,15 @@ public class Question {
      * 1最易   5最难
      */
     public Byte getDifficult() {
-        return difficult;
+        return difficult == null ? 1 : difficult;
     }
 
     public void setDifficult(Byte difficult) {
+    	if(difficult < 1) {
+    		difficult = 1;
+    	}else if(difficult > 5) {
+    		difficult = 5;
+    	}
         this.difficult = difficult;
     }
 

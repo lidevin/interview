@@ -224,253 +224,193 @@ public class AssessmentExample {
             return (Criteria) this;
         }
 
-        public Criteria andCidIsNull() {
-            addCriterion("cid is null");
+        public Criteria andQueryIsNull() {
+            addCriterion("query is null");
             return (Criteria) this;
         }
 
-        public Criteria andCidIsNotNull() {
-            addCriterion("cid is not null");
+        public Criteria andQueryIsNotNull() {
+            addCriterion("query is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCidEqualTo(String value) {
-            addCriterion("cid =", value, "cid");
+        public Criteria andQueryEqualTo(String value) {
+            addCriterion("query =", value, "query");
             return (Criteria) this;
         }
 
-        public Criteria andCidNotEqualTo(String value) {
-            addCriterion("cid <>", value, "cid");
+        public Criteria andQueryNotEqualTo(String value) {
+            addCriterion("query <>", value, "query");
             return (Criteria) this;
         }
 
-        public Criteria andCidGreaterThan(String value) {
-            addCriterion("cid >", value, "cid");
+        public Criteria andQueryGreaterThan(String value) {
+            addCriterion("query >", value, "query");
             return (Criteria) this;
         }
 
-        public Criteria andCidGreaterThanOrEqualTo(String value) {
-            addCriterion("cid >=", value, "cid");
+        public Criteria andQueryGreaterThanOrEqualTo(String value) {
+            addCriterion("query >=", value, "query");
             return (Criteria) this;
         }
 
-        public Criteria andCidLessThan(String value) {
-            addCriterion("cid <", value, "cid");
+        public Criteria andQueryLessThan(String value) {
+            addCriterion("query <", value, "query");
             return (Criteria) this;
         }
 
-        public Criteria andCidLessThanOrEqualTo(String value) {
-            addCriterion("cid <=", value, "cid");
+        public Criteria andQueryLessThanOrEqualTo(String value) {
+            addCriterion("query <=", value, "query");
             return (Criteria) this;
         }
 
-        public Criteria andCidLike(String value) {
-            addCriterion("cid like", value, "cid");
+        public Criteria andQueryLike(String value) {
+            addCriterion("query like", value, "query");
             return (Criteria) this;
         }
 
-        public Criteria andCidNotLike(String value) {
-            addCriterion("cid not like", value, "cid");
+        public Criteria andQueryNotLike(String value) {
+            addCriterion("query not like", value, "query");
             return (Criteria) this;
         }
 
-        public Criteria andCidIn(List<String> values) {
-            addCriterion("cid in", values, "cid");
+        public Criteria andQueryIn(List<String> values) {
+            addCriterion("query in", values, "query");
             return (Criteria) this;
         }
 
-        public Criteria andCidNotIn(List<String> values) {
-            addCriterion("cid not in", values, "cid");
+        public Criteria andQueryNotIn(List<String> values) {
+            addCriterion("query not in", values, "query");
             return (Criteria) this;
         }
 
-        public Criteria andCidBetween(String value1, String value2) {
-            addCriterion("cid between", value1, value2, "cid");
+        public Criteria andQueryBetween(String value1, String value2) {
+            addCriterion("query between", value1, value2, "query");
             return (Criteria) this;
         }
 
-        public Criteria andCidNotBetween(String value1, String value2) {
-            addCriterion("cid not between", value1, value2, "cid");
+        public Criteria andQueryNotBetween(String value1, String value2) {
+            addCriterion("query not between", value1, value2, "query");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIsNull() {
-            addCriterion("type is null");
+        public Criteria andAvgerageIsNull() {
+            addCriterion("avgerage is null");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIsNotNull() {
-            addCriterion("type is not null");
+        public Criteria andAvgerageIsNotNull() {
+            addCriterion("avgerage is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTypeEqualTo(Byte value) {
-            addCriterion("type =", value, "type");
+        public Criteria andAvgerageEqualTo(Float value) {
+            addCriterion("avgerage =", value, "avgerage");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotEqualTo(Byte value) {
-            addCriterion("type <>", value, "type");
+        public Criteria andAvgerageNotEqualTo(Float value) {
+            addCriterion("avgerage <>", value, "avgerage");
             return (Criteria) this;
         }
 
-        public Criteria andTypeGreaterThan(Byte value) {
-            addCriterion("type >", value, "type");
+        public Criteria andAvgerageGreaterThan(Float value) {
+            addCriterion("avgerage >", value, "avgerage");
             return (Criteria) this;
         }
 
-        public Criteria andTypeGreaterThanOrEqualTo(Byte value) {
-            addCriterion("type >=", value, "type");
+        public Criteria andAvgerageGreaterThanOrEqualTo(Float value) {
+            addCriterion("avgerage >=", value, "avgerage");
             return (Criteria) this;
         }
 
-        public Criteria andTypeLessThan(Byte value) {
-            addCriterion("type <", value, "type");
+        public Criteria andAvgerageLessThan(Float value) {
+            addCriterion("avgerage <", value, "avgerage");
             return (Criteria) this;
         }
 
-        public Criteria andTypeLessThanOrEqualTo(Byte value) {
-            addCriterion("type <=", value, "type");
+        public Criteria andAvgerageLessThanOrEqualTo(Float value) {
+            addCriterion("avgerage <=", value, "avgerage");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIn(List<Byte> values) {
-            addCriterion("type in", values, "type");
+        public Criteria andAvgerageIn(List<Float> values) {
+            addCriterion("avgerage in", values, "avgerage");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotIn(List<Byte> values) {
-            addCriterion("type not in", values, "type");
+        public Criteria andAvgerageNotIn(List<Float> values) {
+            addCriterion("avgerage not in", values, "avgerage");
             return (Criteria) this;
         }
 
-        public Criteria andTypeBetween(Byte value1, Byte value2) {
-            addCriterion("type between", value1, value2, "type");
+        public Criteria andAvgerageBetween(Float value1, Float value2) {
+            addCriterion("avgerage between", value1, value2, "avgerage");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotBetween(Byte value1, Byte value2) {
-            addCriterion("type not between", value1, value2, "type");
+        public Criteria andAvgerageNotBetween(Float value1, Float value2) {
+            addCriterion("avgerage not between", value1, value2, "avgerage");
             return (Criteria) this;
         }
 
-        public Criteria andScoreIsNull() {
-            addCriterion("score is null");
+        public Criteria andAccuracyIsNull() {
+            addCriterion("accuracy is null");
             return (Criteria) this;
         }
 
-        public Criteria andScoreIsNotNull() {
-            addCriterion("score is not null");
+        public Criteria andAccuracyIsNotNull() {
+            addCriterion("accuracy is not null");
             return (Criteria) this;
         }
 
-        public Criteria andScoreEqualTo(Byte value) {
-            addCriterion("score =", value, "score");
+        public Criteria andAccuracyEqualTo(Float value) {
+            addCriterion("accuracy =", value, "accuracy");
             return (Criteria) this;
         }
 
-        public Criteria andScoreNotEqualTo(Byte value) {
-            addCriterion("score <>", value, "score");
+        public Criteria andAccuracyNotEqualTo(Float value) {
+            addCriterion("accuracy <>", value, "accuracy");
             return (Criteria) this;
         }
 
-        public Criteria andScoreGreaterThan(Byte value) {
-            addCriterion("score >", value, "score");
+        public Criteria andAccuracyGreaterThan(Float value) {
+            addCriterion("accuracy >", value, "accuracy");
             return (Criteria) this;
         }
 
-        public Criteria andScoreGreaterThanOrEqualTo(Byte value) {
-            addCriterion("score >=", value, "score");
+        public Criteria andAccuracyGreaterThanOrEqualTo(Float value) {
+            addCriterion("accuracy >=", value, "accuracy");
             return (Criteria) this;
         }
 
-        public Criteria andScoreLessThan(Byte value) {
-            addCriterion("score <", value, "score");
+        public Criteria andAccuracyLessThan(Float value) {
+            addCriterion("accuracy <", value, "accuracy");
             return (Criteria) this;
         }
 
-        public Criteria andScoreLessThanOrEqualTo(Byte value) {
-            addCriterion("score <=", value, "score");
+        public Criteria andAccuracyLessThanOrEqualTo(Float value) {
+            addCriterion("accuracy <=", value, "accuracy");
             return (Criteria) this;
         }
 
-        public Criteria andScoreIn(List<Byte> values) {
-            addCriterion("score in", values, "score");
+        public Criteria andAccuracyIn(List<Float> values) {
+            addCriterion("accuracy in", values, "accuracy");
             return (Criteria) this;
         }
 
-        public Criteria andScoreNotIn(List<Byte> values) {
-            addCriterion("score not in", values, "score");
+        public Criteria andAccuracyNotIn(List<Float> values) {
+            addCriterion("accuracy not in", values, "accuracy");
             return (Criteria) this;
         }
 
-        public Criteria andScoreBetween(Byte value1, Byte value2) {
-            addCriterion("score between", value1, value2, "score");
+        public Criteria andAccuracyBetween(Float value1, Float value2) {
+            addCriterion("accuracy between", value1, value2, "accuracy");
             return (Criteria) this;
         }
 
-        public Criteria andScoreNotBetween(Byte value1, Byte value2) {
-            addCriterion("score not between", value1, value2, "score");
-            return (Criteria) this;
-        }
-
-        public Criteria andRealscoreIsNull() {
-            addCriterion("realscore is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andRealscoreIsNotNull() {
-            addCriterion("realscore is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andRealscoreEqualTo(Byte value) {
-            addCriterion("realscore =", value, "realscore");
-            return (Criteria) this;
-        }
-
-        public Criteria andRealscoreNotEqualTo(Byte value) {
-            addCriterion("realscore <>", value, "realscore");
-            return (Criteria) this;
-        }
-
-        public Criteria andRealscoreGreaterThan(Byte value) {
-            addCriterion("realscore >", value, "realscore");
-            return (Criteria) this;
-        }
-
-        public Criteria andRealscoreGreaterThanOrEqualTo(Byte value) {
-            addCriterion("realscore >=", value, "realscore");
-            return (Criteria) this;
-        }
-
-        public Criteria andRealscoreLessThan(Byte value) {
-            addCriterion("realscore <", value, "realscore");
-            return (Criteria) this;
-        }
-
-        public Criteria andRealscoreLessThanOrEqualTo(Byte value) {
-            addCriterion("realscore <=", value, "realscore");
-            return (Criteria) this;
-        }
-
-        public Criteria andRealscoreIn(List<Byte> values) {
-            addCriterion("realscore in", values, "realscore");
-            return (Criteria) this;
-        }
-
-        public Criteria andRealscoreNotIn(List<Byte> values) {
-            addCriterion("realscore not in", values, "realscore");
-            return (Criteria) this;
-        }
-
-        public Criteria andRealscoreBetween(Byte value1, Byte value2) {
-            addCriterion("realscore between", value1, value2, "realscore");
-            return (Criteria) this;
-        }
-
-        public Criteria andRealscoreNotBetween(Byte value1, Byte value2) {
-            addCriterion("realscore not between", value1, value2, "realscore");
+        public Criteria andAccuracyNotBetween(Float value1, Float value2) {
+            addCriterion("accuracy not between", value1, value2, "accuracy");
             return (Criteria) this;
         }
     }

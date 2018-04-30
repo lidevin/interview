@@ -545,173 +545,53 @@ public class PaperExample {
             return (Criteria) this;
         }
 
-        public Criteria andScoreEqualTo(Byte value) {
+        public Criteria andScoreEqualTo(Short value) {
             addCriterion("score =", value, "score");
             return (Criteria) this;
         }
 
-        public Criteria andScoreNotEqualTo(Byte value) {
+        public Criteria andScoreNotEqualTo(Short value) {
             addCriterion("score <>", value, "score");
             return (Criteria) this;
         }
 
-        public Criteria andScoreGreaterThan(Byte value) {
+        public Criteria andScoreGreaterThan(Short value) {
             addCriterion("score >", value, "score");
             return (Criteria) this;
         }
 
-        public Criteria andScoreGreaterThanOrEqualTo(Byte value) {
+        public Criteria andScoreGreaterThanOrEqualTo(Short value) {
             addCriterion("score >=", value, "score");
             return (Criteria) this;
         }
 
-        public Criteria andScoreLessThan(Byte value) {
+        public Criteria andScoreLessThan(Short value) {
             addCriterion("score <", value, "score");
             return (Criteria) this;
         }
 
-        public Criteria andScoreLessThanOrEqualTo(Byte value) {
+        public Criteria andScoreLessThanOrEqualTo(Short value) {
             addCriterion("score <=", value, "score");
             return (Criteria) this;
         }
 
-        public Criteria andScoreIn(List<Byte> values) {
+        public Criteria andScoreIn(List<Short> values) {
             addCriterion("score in", values, "score");
             return (Criteria) this;
         }
 
-        public Criteria andScoreNotIn(List<Byte> values) {
+        public Criteria andScoreNotIn(List<Short> values) {
             addCriterion("score not in", values, "score");
             return (Criteria) this;
         }
 
-        public Criteria andScoreBetween(Byte value1, Byte value2) {
+        public Criteria andScoreBetween(Short value1, Short value2) {
             addCriterion("score between", value1, value2, "score");
             return (Criteria) this;
         }
 
-        public Criteria andScoreNotBetween(Byte value1, Byte value2) {
+        public Criteria andScoreNotBetween(Short value1, Short value2) {
             addCriterion("score not between", value1, value2, "score");
-            return (Criteria) this;
-        }
-
-        public Criteria andCandidateScoreIsNull() {
-            addCriterion("candidate_score is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCandidateScoreIsNotNull() {
-            addCriterion("candidate_score is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCandidateScoreEqualTo(Byte value) {
-            addCriterion("candidate_score =", value, "candidateScore");
-            return (Criteria) this;
-        }
-
-        public Criteria andCandidateScoreNotEqualTo(Byte value) {
-            addCriterion("candidate_score <>", value, "candidateScore");
-            return (Criteria) this;
-        }
-
-        public Criteria andCandidateScoreGreaterThan(Byte value) {
-            addCriterion("candidate_score >", value, "candidateScore");
-            return (Criteria) this;
-        }
-
-        public Criteria andCandidateScoreGreaterThanOrEqualTo(Byte value) {
-            addCriterion("candidate_score >=", value, "candidateScore");
-            return (Criteria) this;
-        }
-
-        public Criteria andCandidateScoreLessThan(Byte value) {
-            addCriterion("candidate_score <", value, "candidateScore");
-            return (Criteria) this;
-        }
-
-        public Criteria andCandidateScoreLessThanOrEqualTo(Byte value) {
-            addCriterion("candidate_score <=", value, "candidateScore");
-            return (Criteria) this;
-        }
-
-        public Criteria andCandidateScoreIn(List<Byte> values) {
-            addCriterion("candidate_score in", values, "candidateScore");
-            return (Criteria) this;
-        }
-
-        public Criteria andCandidateScoreNotIn(List<Byte> values) {
-            addCriterion("candidate_score not in", values, "candidateScore");
-            return (Criteria) this;
-        }
-
-        public Criteria andCandidateScoreBetween(Byte value1, Byte value2) {
-            addCriterion("candidate_score between", value1, value2, "candidateScore");
-            return (Criteria) this;
-        }
-
-        public Criteria andCandidateScoreNotBetween(Byte value1, Byte value2) {
-            addCriterion("candidate_score not between", value1, value2, "candidateScore");
-            return (Criteria) this;
-        }
-
-        public Criteria andMarkingIsNull() {
-            addCriterion("marking is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andMarkingIsNotNull() {
-            addCriterion("marking is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andMarkingEqualTo(Byte value) {
-            addCriterion("marking =", value, "marking");
-            return (Criteria) this;
-        }
-
-        public Criteria andMarkingNotEqualTo(Byte value) {
-            addCriterion("marking <>", value, "marking");
-            return (Criteria) this;
-        }
-
-        public Criteria andMarkingGreaterThan(Byte value) {
-            addCriterion("marking >", value, "marking");
-            return (Criteria) this;
-        }
-
-        public Criteria andMarkingGreaterThanOrEqualTo(Byte value) {
-            addCriterion("marking >=", value, "marking");
-            return (Criteria) this;
-        }
-
-        public Criteria andMarkingLessThan(Byte value) {
-            addCriterion("marking <", value, "marking");
-            return (Criteria) this;
-        }
-
-        public Criteria andMarkingLessThanOrEqualTo(Byte value) {
-            addCriterion("marking <=", value, "marking");
-            return (Criteria) this;
-        }
-
-        public Criteria andMarkingIn(List<Byte> values) {
-            addCriterion("marking in", values, "marking");
-            return (Criteria) this;
-        }
-
-        public Criteria andMarkingNotIn(List<Byte> values) {
-            addCriterion("marking not in", values, "marking");
-            return (Criteria) this;
-        }
-
-        public Criteria andMarkingBetween(Byte value1, Byte value2) {
-            addCriterion("marking between", value1, value2, "marking");
-            return (Criteria) this;
-        }
-
-        public Criteria andMarkingNotBetween(Byte value1, Byte value2) {
-            addCriterion("marking not between", value1, value2, "marking");
             return (Criteria) this;
         }
 
@@ -845,52 +725,52 @@ public class PaperExample {
             return (Criteria) this;
         }
 
-        public Criteria andTimeEqualTo(Byte value) {
+        public Criteria andTimeEqualTo(Short value) {
             addCriterion("time =", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andTimeNotEqualTo(Byte value) {
+        public Criteria andTimeNotEqualTo(Short value) {
             addCriterion("time <>", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andTimeGreaterThan(Byte value) {
+        public Criteria andTimeGreaterThan(Short value) {
             addCriterion("time >", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andTimeGreaterThanOrEqualTo(Byte value) {
+        public Criteria andTimeGreaterThanOrEqualTo(Short value) {
             addCriterion("time >=", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andTimeLessThan(Byte value) {
+        public Criteria andTimeLessThan(Short value) {
             addCriterion("time <", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andTimeLessThanOrEqualTo(Byte value) {
+        public Criteria andTimeLessThanOrEqualTo(Short value) {
             addCriterion("time <=", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andTimeIn(List<Byte> values) {
+        public Criteria andTimeIn(List<Short> values) {
             addCriterion("time in", values, "time");
             return (Criteria) this;
         }
 
-        public Criteria andTimeNotIn(List<Byte> values) {
+        public Criteria andTimeNotIn(List<Short> values) {
             addCriterion("time not in", values, "time");
             return (Criteria) this;
         }
 
-        public Criteria andTimeBetween(Byte value1, Byte value2) {
+        public Criteria andTimeBetween(Short value1, Short value2) {
             addCriterion("time between", value1, value2, "time");
             return (Criteria) this;
         }
 
-        public Criteria andTimeNotBetween(Byte value1, Byte value2) {
+        public Criteria andTimeNotBetween(Short value1, Short value2) {
             addCriterion("time not between", value1, value2, "time");
             return (Criteria) this;
         }

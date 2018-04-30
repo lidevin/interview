@@ -175,8 +175,8 @@ public class QuestionServiceImpl implements QuestionService {
 		if(question == null || vo == null) {
 			throw new GeneralException("question或vo为null");
 		}
-		//更具difficult和qsttype计算分数
-		question.setScore();
+		//根据difficult和qsttype计算分数
+		question.getScore();
 		Integer id = -1;
 		List<Choice> choices = new ArrayList<Choice>();
 		switch (question.getQsttype()) {

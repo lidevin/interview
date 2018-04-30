@@ -187,7 +187,7 @@
 					var bHeight = iframe.contentWindow.document.body.scrollHeight;
 					var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
 					iframe.height = Math.max(bHeight, dHeight);
-				} catch (ex) {					} 
+				} catch (ex) {	alert("ex" + iframe.height);				}
 			 });
 		 });
 		//左侧导航

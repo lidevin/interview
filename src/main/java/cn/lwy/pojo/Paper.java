@@ -2,6 +2,10 @@ package cn.lwy.pojo;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import cn.lwy.utils.CommonUtils;
+
 public class Paper {
     private Integer id;
 
@@ -17,19 +21,27 @@ public class Paper {
 
     private Byte difficult;
 
-    private Byte score;
-
-    private Byte candidateScore;
-
-    private Byte marking;
+    private Short score;
 
     private Integer kid;
 
+    @DateTimeFormat(pattern= "yyyy-MM-dd HH:mm")
     private Date startTime;
 
-    private Byte time;
+    private String startTimeStr;
+    
+    private Short time;
 
-    public Integer getId() {
+    public String getStartTimeStr() {
+    	startTimeStr = CommonUtils.toDatetimeStr(startTime);
+		return startTimeStr;
+	}
+
+	public void setStartTimeStr(String startTimeStr) {
+		this.startTimeStr = startTimeStr;
+	}
+
+	public Integer getId() {
         return id;
     }
 
@@ -78,35 +90,30 @@ public class Paper {
     }
 
     public Byte getDifficult() {
-        return difficult;
+    	return difficult == null ? 1 : difficult;
     }
 
     public void setDifficult(Byte difficult) {
-        this.difficult = difficult;
+    	if(difficult < 1) {
+    		this.difficult = 1;
+    	}else if(difficult > 5) {
+    		this.difficult = 5;
+    	}else {
+    		this.difficult = difficult;
+    	}
     }
 
-    public Byte getScore() {
+    public Short getScore() {
+    	score = 0;
+    	score = (short) (score + this.getSingleCount() * CommonUtils.score[0][this.getDifficult()]);
+    	score = (short) (score + this.getMultipleCount() * CommonUtils.score[1][this.getDifficult()]);
+    	score = (short) (score + this.getJudgeCount() * CommonUtils.score[2][this.getDifficult()]);
+    	score = (short) (score + this.getSubjectCount() * CommonUtils.score[3][this.getDifficult()]);
         return score;
     }
 
-    public void setScore(Byte score) {
+    public void setScore(Short score) {
         this.score = score;
-    }
-
-    public Byte getCandidateScore() {
-        return candidateScore;
-    }
-
-    public void setCandidateScore(Byte candidateScore) {
-        this.candidateScore = candidateScore;
-    }
-
-    public Byte getMarking() {
-        return marking;
-    }
-
-    public void setMarking(Byte marking) {
-        this.marking = marking;
     }
 
     public Integer getKid() {
@@ -125,11 +132,19 @@ public class Paper {
         this.startTime = startTime;
     }
 
-    public Byte getTime() {
+    public Short getTime() {
         return time;
     }
 
-    public void setTime(Byte time) {
+    public void setTime(Short time) {
         this.time = time;
     }
+    
+	@Override
+	public String toString() {
+		return "Paper [id=" + id + ", type=" + type + ", singleCount=" + singleCount + ", multipleCount="
+				+ multipleCount + ", judgeCount=" + judgeCount + ", subjectCount=" + subjectCount + ", difficult="
+				+ difficult + ", score=" + score + ", kid=" + kid + ", startTime=" + startTime + ", startTimeStr="
+				+ startTimeStr + ", time=" + time + "]";
+	}
 }

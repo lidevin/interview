@@ -4,8 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cn.lwy.mapper.PaperMapper;
+import cn.lwy.pojo.Page;
 import cn.lwy.pojo.Paper;
+import cn.lwy.pojo.PaperExample;
+import cn.lwy.pojo.Question;
 import cn.lwy.service.PaperService;
+import cn.lwy.vo.PageVo;
 
 @Service
 public class PaperServiceImpl implements PaperService {
@@ -55,6 +59,28 @@ public class PaperServiceImpl implements PaperService {
 		if(paperMapper.updateByPrimaryKey(entity) == 1) {
 			return true;
 		}
+		return false;
+	}
+
+	@Override
+	public Page<Paper> getByExampleAndVo(PaperExample example, PageVo vo) {
+		Page<Paper> page = new Page<Paper>();
+		//每页显示行数
+		page.setSize(vo.getSize());
+		//设置当前页数
+		page.setPage(vo.getPage());
+		//计算当前的记录数
+		vo.setStartRow((vo.getPage()-1)*vo.getSize());
+		//设置所有记录数
+		page.setTotal(paperMapper.countByExample(example));
+		//设置查出的记录
+		page.setRows(paperMapper.selectByExampleAndVo(example,vo));
+		return page;
+	}
+
+	@Override
+	public boolean insertSelective(Paper paper, Integer id) {
+		// TODO Auto-generated method stub
 		return false;
 	}
 

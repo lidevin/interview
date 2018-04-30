@@ -43,7 +43,6 @@
 		$(function(){
 			//验证用户名
 			var flag = false;
-			alert(1);
 			$("#nickname").on("input", function(){
 				var name = $("#nickname").val();
 				if(name == ""){

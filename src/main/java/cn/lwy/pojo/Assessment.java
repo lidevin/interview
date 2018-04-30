@@ -5,13 +5,11 @@ public class Assessment {
 
     private Integer pid;
 
-    private String cid;
+    private String query;
 
-    private Byte type;
+    private Float avgerage;
 
-    private Byte score;
-
-    private Byte realscore;
+    private Float accuracy;
 
     public Integer getQid() {
         return qid;
@@ -29,35 +27,27 @@ public class Assessment {
         this.pid = pid;
     }
 
-    public String getCid() {
-        return cid;
+    public String getQuery() {
+        return query;
     }
 
-    public void setCid(String cid) {
-        this.cid = cid == null ? null : cid.trim();
+    public void setQuery(String query) {
+        this.query = query == null ? null : query.trim();
     }
 
-    public Byte getType() {
-        return type;
+    public Float getAvgerage() {
+        return avgerage;
     }
 
-    public void setType(Byte type) {
-        this.type = type;
+    public void setAvgerage(Float avgerage) {
+        this.avgerage = avgerage;
     }
 
-    public Byte getScore() {
-        return score;
+    public Float getAccuracy() {
+        return accuracy;
     }
 
-    public void setScore(Byte score) {
-        this.score = score;
-    }
-
-    public Byte getRealscore() {
-        return realscore;
-    }
-
-    public void setRealscore(Byte realscore) {
-        this.realscore = realscore;
+    public void setAccuracy(Float accuracy) {
+        this.accuracy = accuracy;
     }
 }

@@ -4,10 +4,9 @@
   <resultMap id="BaseResultMap" type="cn.lwy.pojo.Assessment" >
     <result column="qid" property="qid" jdbcType="INTEGER" />
     <result column="pid" property="pid" jdbcType="INTEGER" />
-    <result column="cid" property="cid" jdbcType="CHAR" />
-    <result column="type" property="type" jdbcType="TINYINT" />
-    <result column="score" property="score" jdbcType="TINYINT" />
-    <result column="realscore" property="realscore" jdbcType="TINYINT" />
+    <result column="query" property="query" jdbcType="VARCHAR" />
+    <result column="avgerage" property="avgerage" jdbcType="REAL" />
+    <result column="accuracy" property="accuracy" jdbcType="REAL" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -68,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    qid, pid, cid, type, score, realscore
+    qid, pid, query, avgerage, accuracy
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.lwy.pojo.AssessmentExample" >
     select
@@ -91,10 +90,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.lwy.pojo.Assessment" >
-    insert into assessment (qid, pid, cid, type, 
-      score, realscore)
-    values (#{qid,jdbcType=INTEGER}, #{pid,jdbcType=INTEGER}, #{cid,jdbcType=CHAR}, #{type,jdbcType=TINYINT}, 
-      #{score,jdbcType=TINYINT}, #{realscore,jdbcType=TINYINT})
+    insert into assessment (qid, pid, query, 
+      avgerage, accuracy)
+    values (#{qid,jdbcType=INTEGER}, #{pid,jdbcType=INTEGER}, #{query,jdbcType=VARCHAR}, 
+      #{avgerage,jdbcType=REAL}, #{accuracy,jdbcType=REAL})
   </insert>
   <insert id="insertSelective" parameterType="cn.lwy.pojo.Assessment" >
     insert into assessment
@@ -105,17 +104,14 @@
       <if test="pid != null" >
         pid,
       </if>
-      <if test="cid != null" >
-        cid,
+      <if test="query != null" >
+        query,
       </if>
-      <if test="type != null" >
-        type,
+      <if test="avgerage != null" >
+        avgerage,
       </if>
-      <if test="score != null" >
-        score,
-      </if>
-      <if test="realscore != null" >
-        realscore,
+      <if test="accuracy != null" >
+        accuracy,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -125,17 +121,14 @@
       <if test="pid != null" >
         #{pid,jdbcType=INTEGER},
       </if>
-      <if test="cid != null" >
-        #{cid,jdbcType=CHAR},
+      <if test="query != null" >
+        #{query,jdbcType=VARCHAR},
       </if>
-      <if test="type != null" >
-        #{type,jdbcType=TINYINT},
+      <if test="avgerage != null" >
+        #{avgerage,jdbcType=REAL},
       </if>
-      <if test="score != null" >
-        #{score,jdbcType=TINYINT},
-      </if>
-      <if test="realscore != null" >
-        #{realscore,jdbcType=TINYINT},
+      <if test="accuracy != null" >
+        #{accuracy,jdbcType=REAL},
       </if>
     </trim>
   </insert>
@@ -154,17 +147,14 @@
       <if test="record.pid != null" >
         pid = #{record.pid,jdbcType=INTEGER},
       </if>
-      <if test="record.cid != null" >
-        cid = #{record.cid,jdbcType=CHAR},
+      <if test="record.query != null" >
+        query = #{record.query,jdbcType=VARCHAR},
       </if>
-      <if test="record.type != null" >
-        type = #{record.type,jdbcType=TINYINT},
+      <if test="record.avgerage != null" >
+        avgerage = #{record.avgerage,jdbcType=REAL},
       </if>
-      <if test="record.score != null" >
-        score = #{record.score,jdbcType=TINYINT},
-      </if>
-      <if test="record.realscore != null" >
-        realscore = #{record.realscore,jdbcType=TINYINT},
+      <if test="record.accuracy != null" >
+        accuracy = #{record.accuracy,jdbcType=REAL},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -175,10 +165,9 @@
     update assessment
     set qid = #{record.qid,jdbcType=INTEGER},
       pid = #{record.pid,jdbcType=INTEGER},
-      cid = #{record.cid,jdbcType=CHAR},
-      type = #{record.type,jdbcType=TINYINT},
-      score = #{record.score,jdbcType=TINYINT},
-      realscore = #{record.realscore,jdbcType=TINYINT}
+      query = #{record.query,jdbcType=VARCHAR},
+      avgerage = #{record.avgerage,jdbcType=REAL},
+      accuracy = #{record.accuracy,jdbcType=REAL}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>

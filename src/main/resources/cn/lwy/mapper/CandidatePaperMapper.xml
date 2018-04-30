@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.lwy.mapper.PaperQstMapper" >
-  <resultMap id="BaseResultMap" type="cn.lwy.pojo.PaperQst" >
-    <result column="cp_id" property="cpId" jdbcType="INTEGER" />
-    <result column="candidate_id" property="candidateId" jdbcType="CHAR" />
-    <result column="qst_id" property="qstId" jdbcType="INTEGER" />
-    <result column="answer" property="answer" jdbcType="VARCHAR" />
-    <result column="score" property="score" jdbcType="TINYINT" />
+<mapper namespace="cn.lwy.mapper.CandidatePaperMapper" >
+  <resultMap id="BaseResultMap" type="cn.lwy.pojo.CandidatePaper" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="cid" property="cid" jdbcType="CHAR" />
+    <result column="pid" property="pid" jdbcType="INTEGER" />
+    <result column="score" property="score" jdbcType="SMALLINT" />
     <result column="marking" property="marking" jdbcType="TINYINT" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -68,15 +67,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    cp_id, candidate_id, qst_id, answer, score, marking
+    id, cid, pid, score, marking
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.lwy.pojo.PaperQstExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.lwy.pojo.CandidatePaperExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from paper_qst
+    from candidate_paper
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -84,34 +83,39 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="cn.lwy.pojo.PaperQstExample" >
-    delete from paper_qst
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from candidate_paper
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from candidate_paper
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.lwy.pojo.CandidatePaperExample" >
+    delete from candidate_paper
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cn.lwy.pojo.PaperQst" >
-    insert into paper_qst (cp_id, candidate_id, qst_id, 
-      answer, score, marking
-      )
-    values (#{cpId,jdbcType=INTEGER}, #{candidateId,jdbcType=CHAR}, #{qstId,jdbcType=INTEGER}, 
-      #{answer,jdbcType=VARCHAR}, #{score,jdbcType=TINYINT}, #{marking,jdbcType=TINYINT}
-      )
+  <insert id="insert" parameterType="cn.lwy.pojo.CandidatePaper" >
+    insert into candidate_paper (id, cid, pid, score, 
+      marking)
+    values (#{id,jdbcType=INTEGER}, #{cid,jdbcType=CHAR}, #{pid,jdbcType=INTEGER}, #{score,jdbcType=SMALLINT}, 
+      #{marking,jdbcType=TINYINT})
   </insert>
-  <insert id="insertSelective" parameterType="cn.lwy.pojo.PaperQst" >
-    insert into paper_qst
+  <insert id="insertSelective" parameterType="cn.lwy.pojo.CandidatePaper" >
+    insert into candidate_paper
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="cpId != null" >
-        cp_id,
+      <if test="id != null" >
+        id,
       </if>
-      <if test="candidateId != null" >
-        candidate_id,
+      <if test="cid != null" >
+        cid,
       </if>
-      <if test="qstId != null" >
-        qst_id,
-      </if>
-      <if test="answer != null" >
-        answer,
+      <if test="pid != null" >
+        pid,
       </if>
       <if test="score != null" >
         score,
@@ -121,49 +125,43 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="cpId != null" >
-        #{cpId,jdbcType=INTEGER},
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
       </if>
-      <if test="candidateId != null" >
-        #{candidateId,jdbcType=CHAR},
+      <if test="cid != null" >
+        #{cid,jdbcType=CHAR},
       </if>
-      <if test="qstId != null" >
-        #{qstId,jdbcType=INTEGER},
-      </if>
-      <if test="answer != null" >
-        #{answer,jdbcType=VARCHAR},
+      <if test="pid != null" >
+        #{pid,jdbcType=INTEGER},
       </if>
       <if test="score != null" >
-        #{score,jdbcType=TINYINT},
+        #{score,jdbcType=SMALLINT},
       </if>
       <if test="marking != null" >
         #{marking,jdbcType=TINYINT},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="cn.lwy.pojo.PaperQstExample" resultType="java.lang.Integer" >
-    select count(*) from paper_qst
+  <select id="countByExample" parameterType="cn.lwy.pojo.CandidatePaperExample" resultType="java.lang.Integer" >
+    select count(*) from candidate_paper
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update paper_qst
+    update candidate_paper
     <set >
-      <if test="record.cpId != null" >
-        cp_id = #{record.cpId,jdbcType=INTEGER},
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.candidateId != null" >
-        candidate_id = #{record.candidateId,jdbcType=CHAR},
+      <if test="record.cid != null" >
+        cid = #{record.cid,jdbcType=CHAR},
       </if>
-      <if test="record.qstId != null" >
-        qst_id = #{record.qstId,jdbcType=INTEGER},
-      </if>
-      <if test="record.answer != null" >
-        answer = #{record.answer,jdbcType=VARCHAR},
+      <if test="record.pid != null" >
+        pid = #{record.pid,jdbcType=INTEGER},
       </if>
       <if test="record.score != null" >
-        score = #{record.score,jdbcType=TINYINT},
+        score = #{record.score,jdbcType=SMALLINT},
       </if>
       <if test="record.marking != null" >
         marking = #{record.marking,jdbcType=TINYINT},
@@ -174,15 +172,40 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update paper_qst
-    set cp_id = #{record.cpId,jdbcType=INTEGER},
-      candidate_id = #{record.candidateId,jdbcType=CHAR},
-      qst_id = #{record.qstId,jdbcType=INTEGER},
-      answer = #{record.answer,jdbcType=VARCHAR},
-      score = #{record.score,jdbcType=TINYINT},
+    update candidate_paper
+    set id = #{record.id,jdbcType=INTEGER},
+      cid = #{record.cid,jdbcType=CHAR},
+      pid = #{record.pid,jdbcType=INTEGER},
+      score = #{record.score,jdbcType=SMALLINT},
       marking = #{record.marking,jdbcType=TINYINT}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.lwy.pojo.CandidatePaper" >
+    update candidate_paper
+    <set >
+      <if test="cid != null" >
+        cid = #{cid,jdbcType=CHAR},
+      </if>
+      <if test="pid != null" >
+        pid = #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="score != null" >
+        score = #{score,jdbcType=SMALLINT},
+      </if>
+      <if test="marking != null" >
+        marking = #{marking,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.lwy.pojo.CandidatePaper" >
+    update candidate_paper
+    set cid = #{cid,jdbcType=CHAR},
+      pid = #{pid,jdbcType=INTEGER},
+      score = #{score,jdbcType=SMALLINT},
+      marking = #{marking,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

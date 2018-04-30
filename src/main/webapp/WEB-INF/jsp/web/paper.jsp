@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="lwy" uri="http://lwy.cn/common/" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,60 +57,63 @@
 						<ul class="tabBox panel mt10">
 							<li class="on">
 								<div class="pd10 grayBg2">
-									<div class="fublBox mr10"><span>类型：</span>
-										<input type="text" id="search-true-name" class="form-control form-itmeB" placeholder="">
-									</div>
-									<button type="button" class="btn btn-primary" >查询</button>
-									<a href="/web/paper/add"><button type="button" class="btn btn-primary r">添加试卷</button></a>
-
+									<form action="/web/paper" method="get">
+										<div class="fublBox mr10"><span>类型：</span>
+											<input type="text" class="form-control form-itmeB" name="name" placeholder="">
+										</div>
+										<input class="btn btn-primary" type="submit" value="查询">
+										<a href="/web/paper/add"><button type="button" class="btn btn-primary r">添加试卷</button></a>
+									</form>
 								</div>
 								<div class="pd10">
 									<table class="table drugsTable ftc" id="userList">
 										<thead>
 											<tr>
 												<th>编号</th>
-												<th>类型</th>
+												<th>试卷名</th>
 												<th>单选题个数</th>
-												<th>单选题总分数</th>
 												<th>多选题个数</th>
-												<th>多选题总分数</th>
 												<th>判断题个数</th>
-												<th>判断题总分数</th>
 												<th>主观题个数</th>
-												<th>主观题总分数</th>
+												<th>难度等级</th>
 												<th>总分数</th>
 												<th>考试时间</th>
 												<th>时长(m)</th>
 												<th>题目信息</th>
+												<th>操作</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>3</td>
-												<td>java</td>
-												<td>5</td>
-												<td>10</td>
-												<td>5</td>
-												<td>10</td>
-												<td>5</td>
-												<td>10</td>
-												<td>5</td>
-												<td>10</td>
-												<td>40</td>
-												<td>2018-04-14 14:32:10</td>
-												<td>30</td>
-												<td>
-													<a href="/web/paper/qst"><button type="button" class="btn btn-success btn-sm">详情</button></a> </td>
-											</tr>
+											<c:forEach items="${page.rows }" var="paper" varStatus="status">
+												<tr>
+													<td>${paper.id }</td>
+													<td>${paper.type }</td>
+													<td>${paper.singleCount }</td>
+													<td>${paper.multipleCount }</td>
+													<td>${paper.judgeCount }</td>
+													<td>${paper.subjectCount }</td>
+													<td>${paper.difficult }</td>
+													<td>${paper.score }</td>
+													<td>${paper.startTimeStr }</td>
+													<td>${paper.time }</td>
+													<td>
+														<a href="/web/paper/qst?id=${paper.id }"><button type="button" class="btn btn-success btn-sm">题目详情</button></a> </td>
+													<td>
+														<a href="/web/paper/del.do?id=${paper.id }"><button type="button" class="btn btn-success btn-sm">删除</button></a>
+													</td>
+												</tr>
+											</c:forEach>
 										</tbody>
 									</table>
 								</div>
-								<div class="paging mt20 mb20 ftc" id="userListPage"> </div>
+								<div class="paging mt20 mb20 ftc">
+									<lwy:page url="/web/paper"></lwy:page>
+								</div>
 							</li>
 						</ul>
 					</div>
 				</div>
-				<lwy:page url="/web/paper"></lwy:page>
+				
 			</div>
 			<!-- END MAIN CONTENT -->
 		</div>

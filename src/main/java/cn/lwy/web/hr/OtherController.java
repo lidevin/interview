@@ -18,16 +18,6 @@ import cn.lwy.pojo.KindExample;
 
 @Controller
 public class OtherController {
-	
-	@RequestMapping("/web/statistic/paper")
-	public String paper() {
-		return "web/statistic/paper";
-	}
-	@RequestMapping("/web/statistic/question")
-	public String question() {
-		return "web/statistic/question";
-	}
-	
 	@Autowired
 	private KindMapper kindMapper;
 	/**

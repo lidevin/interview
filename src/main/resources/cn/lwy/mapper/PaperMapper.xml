@@ -9,12 +9,10 @@
     <result column="judge_count" property="judgeCount" jdbcType="TINYINT" />
     <result column="subject_count" property="subjectCount" jdbcType="TINYINT" />
     <result column="difficult" property="difficult" jdbcType="TINYINT" />
-    <result column="score" property="score" jdbcType="TINYINT" />
-    <result column="candidate_score" property="candidateScore" jdbcType="TINYINT" />
-    <result column="marking" property="marking" jdbcType="TINYINT" />
+    <result column="score" property="score" jdbcType="SMALLINT" />
     <result column="kid" property="kid" jdbcType="INTEGER" />
     <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
-    <result column="time" property="time" jdbcType="TINYINT" />
+    <result column="time" property="time" jdbcType="SMALLINT" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -76,7 +74,7 @@
   </sql>
   <sql id="Base_Column_List" >
     id, type, single_count, multiple_count, judge_count, subject_count, difficult, score, 
-    candidate_score, marking, kid, start_time, time
+    kid, start_time, time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.lwy.pojo.PaperExample" >
     select
@@ -111,14 +109,12 @@
   <insert id="insert" parameterType="cn.lwy.pojo.Paper" >
     insert into paper (id, type, single_count, 
       multiple_count, judge_count, subject_count, 
-      difficult, score, candidate_score, 
-      marking, kid, start_time, 
-      time)
+      difficult, score, kid, 
+      start_time, time)
     values (#{id,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, #{singleCount,jdbcType=TINYINT}, 
       #{multipleCount,jdbcType=TINYINT}, #{judgeCount,jdbcType=TINYINT}, #{subjectCount,jdbcType=TINYINT}, 
-      #{difficult,jdbcType=TINYINT}, #{score,jdbcType=TINYINT}, #{candidateScore,jdbcType=TINYINT}, 
-      #{marking,jdbcType=TINYINT}, #{kid,jdbcType=INTEGER}, #{startTime,jdbcType=TIMESTAMP}, 
-      #{time,jdbcType=TINYINT})
+      #{difficult,jdbcType=TINYINT}, #{score,jdbcType=SMALLINT}, #{kid,jdbcType=INTEGER}, 
+      #{startTime,jdbcType=TIMESTAMP}, #{time,jdbcType=SMALLINT})
   </insert>
   <insert id="insertSelective" parameterType="cn.lwy.pojo.Paper" >
     insert into paper
@@ -146,12 +142,6 @@
       </if>
       <if test="score != null" >
         score,
-      </if>
-      <if test="candidateScore != null" >
-        candidate_score,
-      </if>
-      <if test="marking != null" >
-        marking,
       </if>
       <if test="kid != null" >
         kid,
@@ -186,13 +176,7 @@
         #{difficult,jdbcType=TINYINT},
       </if>
       <if test="score != null" >
-        #{score,jdbcType=TINYINT},
-      </if>
-      <if test="candidateScore != null" >
-        #{candidateScore,jdbcType=TINYINT},
-      </if>
-      <if test="marking != null" >
-        #{marking,jdbcType=TINYINT},
+        #{score,jdbcType=SMALLINT},
       </if>
       <if test="kid != null" >
         #{kid,jdbcType=INTEGER},
@@ -201,7 +185,7 @@
         #{startTime,jdbcType=TIMESTAMP},
       </if>
       <if test="time != null" >
-        #{time,jdbcType=TINYINT},
+        #{time,jdbcType=SMALLINT},
       </if>
     </trim>
   </insert>
@@ -236,13 +220,7 @@
         difficult = #{record.difficult,jdbcType=TINYINT},
       </if>
       <if test="record.score != null" >
-        score = #{record.score,jdbcType=TINYINT},
-      </if>
-      <if test="record.candidateScore != null" >
-        candidate_score = #{record.candidateScore,jdbcType=TINYINT},
-      </if>
-      <if test="record.marking != null" >
-        marking = #{record.marking,jdbcType=TINYINT},
+        score = #{record.score,jdbcType=SMALLINT},
       </if>
       <if test="record.kid != null" >
         kid = #{record.kid,jdbcType=INTEGER},
@@ -251,7 +229,7 @@
         start_time = #{record.startTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.time != null" >
-        time = #{record.time,jdbcType=TINYINT},
+        time = #{record.time,jdbcType=SMALLINT},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -267,12 +245,10 @@
       judge_count = #{record.judgeCount,jdbcType=TINYINT},
       subject_count = #{record.subjectCount,jdbcType=TINYINT},
       difficult = #{record.difficult,jdbcType=TINYINT},
-      score = #{record.score,jdbcType=TINYINT},
-      candidate_score = #{record.candidateScore,jdbcType=TINYINT},
-      marking = #{record.marking,jdbcType=TINYINT},
+      score = #{record.score,jdbcType=SMALLINT},
       kid = #{record.kid,jdbcType=INTEGER},
       start_time = #{record.startTime,jdbcType=TIMESTAMP},
-      time = #{record.time,jdbcType=TINYINT}
+      time = #{record.time,jdbcType=SMALLINT}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -299,13 +275,7 @@
         difficult = #{difficult,jdbcType=TINYINT},
       </if>
       <if test="score != null" >
-        score = #{score,jdbcType=TINYINT},
-      </if>
-      <if test="candidateScore != null" >
-        candidate_score = #{candidateScore,jdbcType=TINYINT},
-      </if>
-      <if test="marking != null" >
-        marking = #{marking,jdbcType=TINYINT},
+        score = #{score,jdbcType=SMALLINT},
       </if>
       <if test="kid != null" >
         kid = #{kid,jdbcType=INTEGER},
@@ -314,7 +284,7 @@
         start_time = #{startTime,jdbcType=TIMESTAMP},
       </if>
       <if test="time != null" >
-        time = #{time,jdbcType=TINYINT},
+        time = #{time,jdbcType=SMALLINT},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -327,12 +297,10 @@
       judge_count = #{judgeCount,jdbcType=TINYINT},
       subject_count = #{subjectCount,jdbcType=TINYINT},
       difficult = #{difficult,jdbcType=TINYINT},
-      score = #{score,jdbcType=TINYINT},
-      candidate_score = #{candidateScore,jdbcType=TINYINT},
-      marking = #{marking,jdbcType=TINYINT},
+      score = #{score,jdbcType=SMALLINT},
       kid = #{kid,jdbcType=INTEGER},
       start_time = #{startTime,jdbcType=TIMESTAMP},
-      time = #{time,jdbcType=TINYINT}
+      time = #{time,jdbcType=SMALLINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

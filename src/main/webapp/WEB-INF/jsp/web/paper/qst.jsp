@@ -14,17 +14,12 @@
 		<!-- VENDOR CSS -->
 		<link rel="stylesheet" href="/res/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/res/css/font-awesome.min.css">
-		
 		<link rel="stylesheet" href="/res/css/chartist-custom.css">
 		<!-- MAIN CSS -->
 		<link rel="stylesheet" href="/res/css/main.css">
-
 		<link rel="stylesheet" href="/res/css/demo.css">
-
 		<link rel="stylesheet" href="/res/css/public.css">
-
 		<link rel="stylesheet" type="text/css" href="/res/css/jquery.datetimepicker.css">
-
 		<script src="/res/js/jquery.min.js"></script>
 		<script src="/res/js/bootstrap.min.js"></script>
 		<script src="/res/js/jquery.slimscroll.min.js"></script>
@@ -36,11 +31,8 @@
 		<script src="/res/js/check.form.js"></script>
 		<script src="/res/js/layer.js"></script>
 		<link rel="stylesheet" href="/res/css/layer.css" id="layuicss-layer">
-
 	</head>
-
 	<body>
-
 		<div class="main">
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
@@ -53,7 +45,7 @@
 						<ul class="tabBox panel mt10">
 							<li class="on">
 								<div class="pd10 grayBg2">
-									<a href="/web/paper/addqst"><button type="button" class="btn btn-primary r doctorAddBtn">添加试题</button></a>
+									<!-- <a href="/web/paper/addqst"><button type="button" class="btn btn-primary r doctorAddBtn">添加试题</button></a> -->
 								</div>
 								<div class="pd10">
 									<table class="table drugsTable ftc" id="userList">
@@ -66,7 +58,7 @@
 												<th>标签</th>
 												<th>类型</th>
 												<th>详情</th>
-												<th>操作</th>
+												<!-- <th>操作</th> -->
 											</tr>
 										</thead>
 										<tbody>
@@ -78,8 +70,8 @@
 												<td>继承</td>
 												<td>C++</td>
 												<td>画出继承关系类图</td>
-												<td>
-													<a href="/web/question/edit"></a> <button type="button"  class="btn btn-default btn-sm deleteBtn">删除</button></td>
+												<!-- <td>
+													<a href="/web/question/edit"></a> <button type="button"  class="btn btn-default btn-sm deleteBtn">删除</button></td> -->
 											</tr>
 										</tbody>
 									</table>
