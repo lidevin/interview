@@ -6,6 +6,7 @@ import javax.servlet.ServletContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -15,9 +16,28 @@ import cn.lwy.pojo.DepartPostion;
 import cn.lwy.pojo.DepartPostionExample;
 import cn.lwy.pojo.Kind;
 import cn.lwy.pojo.KindExample;
+import cn.lwy.service.StatisticService;
 
 @Controller
 public class OtherController {
+	
+	@Autowired
+	private StatisticService statisticService;
+	
+	@RequestMapping("/web/test")
+	public String test() {
+		statisticService.insertOrUpdatePaper();
+        statisticService.insertOrUpdateQuestion();
+		return "web/power";
+	}
+	
+	
+	@RequestMapping("/web/power")
+	public String power(Model model, String info) {
+		model.addAttribute("info", info);
+		return "web/power";
+	}
+	
 	@Autowired
 	private KindMapper kindMapper;
 	/**

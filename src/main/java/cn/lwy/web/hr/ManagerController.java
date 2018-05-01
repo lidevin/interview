@@ -26,8 +26,8 @@ public class ManagerController {
 	@Value("${COOKIE.PWD}")
 	private String cookiePwd;
 	
-	@Value("${SESSION.USERNAME}")
-	private String sessionUserName;
+	@Value("${SESSION.USER}")
+	private String sessionUser;
 
 	/**
 	 * 登录处理
@@ -35,30 +35,30 @@ public class ManagerController {
 	 */
 	@RequestMapping("/web/login.do")
 	public String login(HttpServletRequest request,HttpServletResponse response, 
-			Manager manager, String isRem, RedirectAttributes attr) throws Exception{
-		boolean isLogin = managerService.getByName(manager);
-		HttpSession session = request.getSession();
-		if(isLogin) {
-			if(isRem != null && "login".equals(isRem)) {
-				//用户名
-				Cookie name = new Cookie(cookieUserName, manager.getName());
-				name.setMaxAge(Integer.MAX_VALUE);
-				name.setPath("/web");
-				//密码
-				Cookie pwd = new Cookie(cookiePwd, manager.getPwd());
-				pwd.setMaxAge(Integer.MAX_VALUE);
-				pwd.setPath("/web");
-				//添加到cookies
-				response.addCookie(name);
-				response.addCookie(pwd);
-			}
-			//添加到session
-			session.setAttribute(sessionUserName, manager.getName());
-			return "redirect:/web/index.html";
-		}else {
+			Manager manager, String isRem, RedirectAttributes attr) {
+		try {
+			manager = managerService.getByName(manager);
+		}catch (Exception e) {
 			attr.addFlashAttribute("errMsg", "用户名或密码错误");
 			return "redirect:/web/login";
 		}
+		HttpSession session = request.getSession();
+		if(isRem != null && "login".equals(isRem)) {
+			//用户名
+			Cookie name = new Cookie(cookieUserName, manager.getName());
+			name.setMaxAge(Integer.MAX_VALUE);
+			name.setPath("/web");
+			//密码
+			Cookie pwd = new Cookie(cookiePwd, manager.getPwd());
+			pwd.setMaxAge(Integer.MAX_VALUE);
+			pwd.setPath("/web");
+			//添加到cookies
+			response.addCookie(name);
+			response.addCookie(pwd);
+		}
+		//将manager对象存入到session
+		session.setAttribute(sessionUser, manager);
+		return "redirect:/web/index.html";
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class ManagerController {
 	@RequestMapping("/web/quit")
 	public String quit(HttpServletRequest request,HttpServletResponse response) {
 		//清除session
-		request.getSession().removeAttribute(sessionUserName);
+		request.getSession().removeAttribute(sessionUser);
 		//清除cookie
 		Cookie name = new Cookie(cookieUserName, null);
 		name.setMaxAge(0);

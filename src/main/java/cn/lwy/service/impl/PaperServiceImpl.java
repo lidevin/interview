@@ -155,5 +155,4 @@ public class PaperServiceImpl implements PaperService {
 		}
 		return questions;
 	}
-
 }

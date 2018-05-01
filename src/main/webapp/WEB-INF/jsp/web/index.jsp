@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -121,7 +122,12 @@
 			<div class="brand">
 				<img src="/res/img/def.jpg" style="display: inline-block;">
 				<div>
-					<span>用户名：<label>admin</label></span> <span>角色：<label>系统管理员</label></span>
+					<span>用户名：<label>${user.name }</label></span>
+					<span>角色：<c:choose>
+						<c:when test="${0 == user.level}"><label>超级管理员</label></c:when>
+						<c:when test="${1 == user.level}"><label>用户管理员</label></c:when>
+						<c:when test="${2 == user.level}"><label>面试管理员</label></c:when>
+					</c:choose></span>
 				</div>
 			</div>
 			<div class="container-fluid">
@@ -136,18 +142,39 @@
 					style="overflow: hidden; width: auto; height: 95%;">
 					<nav>
 						<ul class="nav" id="menu-nav">
-							<li class="li-menu"><a href="/web/question" class="menu"
-								target="main"> <i class="fa fa-files-o"></i> <span>题库信息</span>
-							</a></li>
-							<li class="li-menu"><a href="/web/interview" class="menu"
-								target="main"> <i class="fa fa-files-o"></i><span>面试官信息</span>
-							</a></li>
-							<li class="li-menu"><a href="/web/paper" class="menu"
-								target="main"> <i class="fa fa-files-o"></i><span>试卷信息</span>
-							</a></li>
+							<c:choose>
+								<c:when test="${0 == user.level || 1 == user.level}">
+									<li class="li-menu"><a href="/web/interview" class="menu"
+										target="main"> <i class="fa fa-files-o"></i><span>面试官信息</span>
+									</a></li>
+								</c:when>
+								<c:otherwise>
+									<li class="li-menu"><a href="/web/power" class="menu"
+										target="main"> <i class="fa fa-files-o"></i><span>面试官信息</span>
+									</a></li>
+								</c:otherwise>
+							</c:choose>
+							<c:choose>
+								<c:when test="${0 == user.level || 2 == user.level}">
+									<li class="li-menu"><a href="/web/question" class="menu"
+										target="main"> <i class="fa fa-files-o"></i> <span>题库信息</span>
+									</a></li>
+									<li class="li-menu"><a href="/web/paper" class="menu"
+										target="main"> <i class="fa fa-files-o"></i><span>试卷信息</span>
+									</a></li>
+								</c:when>
+								<c:otherwise>
+									<li class="li-menu"><a href="/web/power?info=题库信息" class="menu"
+										target="main"> <i class="fa fa-files-o"></i> <span>题库信息</span>
+									</a></li>
+									<li class="li-menu"><a href="/web/power?info=试卷信息" class="menu"
+										target="main"> <i class="fa fa-files-o"></i><span>试卷信息</span>
+									</a></li>
+								</c:otherwise>
+							</c:choose>
 							<li class="li-menu statistic-li"><a
-								class="menu" target="main" style="cursor: pointer;"> <i class="fa fa-folder-o"></i><span>统计分析</span>
-							</a></li>
+										class="menu" target="main" style="cursor: pointer;"> <i class="fa fa-folder-o"></i><span>统计分析</span>
+									</a></li>
 							<li class="li-menu">
 								<ul class="statistic">
 									<li class="li-menu"><a href="/web/statistic/paper"
@@ -187,7 +214,7 @@
 					var bHeight = iframe.contentWindow.document.body.scrollHeight;
 					var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
 					iframe.height = Math.max(bHeight, dHeight);
-				} catch (ex) {	alert("ex" + iframe.height);				}
+				} catch (ex) {}
 			 });
 		 });
 		//左侧导航
