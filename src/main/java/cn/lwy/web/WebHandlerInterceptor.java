@@ -20,8 +20,8 @@ public class WebHandlerInterceptor implements HandlerInterceptor{
 	@Value("${COOKIE.CNAME}")
 	private String cname;
 	
-	@Value("${SESSION.USERNAME}")
-	private String sessionUserName;
+	@Value("${SESSION.USER}")
+	private String sessionUser;
 
 	//该方法在目标方法之前被调用
 	@Override
@@ -32,7 +32,7 @@ public class WebHandlerInterceptor implements HandlerInterceptor{
 			System.out.println("微信端");
 			return true;//测试使用true，上线更改
 		}else {//web端
-			if(request.getSession().getAttribute(sessionUserName) != null) {//存在session,已登录
+			if(request.getSession().getAttribute(sessionUser) != null) {//存在session,已登录
 				return true;
 			}else {//没登录
 				response.sendRedirect("/web/login");

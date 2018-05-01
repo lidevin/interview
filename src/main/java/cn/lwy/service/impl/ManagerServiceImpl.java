@@ -18,21 +18,21 @@ public class ManagerServiceImpl implements ManagerService {
 	private ManagerMapper managerMapper;
 	
 	@Override
-	public boolean getByName(Manager manager) throws GeneralException{
+	public Manager getByName(Manager manager) throws GeneralException{
 		if(manager == null)
-			return false;
+			throw new GeneralException("传入数据为空");
 		String name = manager.getName();
 		if(name == null || "".equals(name))
-			return false;
+			throw new GeneralException("传入数据为空");
 		ManagerExample example = new ManagerExample();
 		example.createCriteria().andNameEqualTo(name);
 		List<Manager> list = managerMapper.selectByExample(example);
 		if(list == null || list.size() == 0)
-			return false;
+			throw new GeneralException("用户名错误");
 		Manager real = list.get(0);
 		if(real == null || !manager.getPwd().equals(real.getPwd()))
-			return false;
-		return true;
+			throw new GeneralException("密码错误");
+		return real;
 	}
 
 	@Override

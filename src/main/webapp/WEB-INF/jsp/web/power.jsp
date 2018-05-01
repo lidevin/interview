@@ -4,7 +4,7 @@
 <html lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>内容</title>
+		<title>权限</title>
 		<style type="text/css">
 			div{
 				width: 100%;
@@ -15,7 +15,7 @@
 	</head>
 	<body>
 		<div>
-			<h3>欢迎来到后台！</h3>
+			<h3>很抱歉，你没有权限查看${info }！</h3>
 		</div>
 	</body>
 </html>
