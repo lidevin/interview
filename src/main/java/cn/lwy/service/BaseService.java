@@ -5,7 +5,7 @@ public interface BaseService<T> {
 	/**
 	 * 根据id获得实体
 	 * @param id
-	 * @return
+	 * @return 数据库中查询的实体
 	 */
 	T getById(Number id);
 	

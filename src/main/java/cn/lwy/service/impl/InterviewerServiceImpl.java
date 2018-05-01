@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cn.lwy.exception.GeneralException;
 import cn.lwy.mapper.InterviewerMapper;
 import cn.lwy.pojo.Interviewer;
 import cn.lwy.pojo.InterviewerExample;
@@ -13,6 +14,9 @@ import cn.lwy.service.InterviewerService;
 import cn.lwy.utils.CommonUtils;
 import cn.lwy.vo.PageVo;
 
+/**
+ * 面试官的业务类
+ */
 @Service
 public class InterviewerServiceImpl implements InterviewerService {
 
@@ -112,5 +116,23 @@ public class InterviewerServiceImpl implements InterviewerService {
 		InterviewerExample example = new InterviewerExample();
 		example.createCriteria().andNicknameEqualTo(nickName);
 		return interviewerMapper.countByExample(example);
+	}
+
+	@Override
+	public Interviewer getByName(Interviewer interviewer) throws Exception {
+		if(interviewer == null)
+			throw new GeneralException("传入数据为空");
+		String name = interviewer.getNickname();
+		if(name == null || "".equals(name))
+			throw new GeneralException("传入数据为空");
+		InterviewerExample example = new InterviewerExample();
+		example.createCriteria().andNameEqualTo(name);
+		List<Interviewer> list = interviewerMapper.selectByExample(example);
+		if(list == null || list.size() == 0)
+			throw new GeneralException("用户名错误");
+		Interviewer real = list.get(0);
+		if(real == null || !interviewer.getPwd().equals(real.getPwd()))
+			throw new GeneralException("密码错误");
+		return real;
 	}
 }

@@ -47,13 +47,17 @@ public interface QuestionService extends BaseService<Question>{
     List<Question> getFullByExample(QuestionExample example);
     /**
      * 插入所有数据
+     * @param question 基本数据
+     * @param vo  传过来的数据（选项和答案）
+     * @throws GeneralException 抛异常则表示更新失败
      */
     void insertFullByIdSelective(Question question, QuestionVo vo) throws GeneralException;
     
     /**
      * 更新所有数据
-     * @throws GeneralException 
+     * @param question 基本数据
+     * @param vo  传过来的数据（选项和答案）
+     * @throws GeneralException  抛异常则表示更新失败
      */
     void updateFullByIdSelective(Question question, QuestionVo vo) throws GeneralException;
-	
 }

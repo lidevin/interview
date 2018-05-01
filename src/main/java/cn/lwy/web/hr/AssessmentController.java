@@ -22,23 +22,6 @@ public class AssessmentController {
 	@Value("${HR.ASSESSMENT.PAGESIZE}")
 	private String pageSizeStr;
 	
-	@RequestMapping("/web/statistic/paper")
-	public String paper(Model model, String query, PageVo vo) {
-		if(vo == null)	vo = new PageVo();
-		vo.setSize(Integer.valueOf(pageSizeStr));
-		AssessmentExample example = new AssessmentExample();
-		Criteria criteria = example.createCriteria();
-		criteria.andPidIsNotNull();
-		if(query != null && !"".equals(query.trim())) {
-			criteria.andQueryLike("%" + query + "%");
-			model.addAttribute("name", query);
-		}
-		Page<Assessment> page = assessmenService.getByExampleAndVo(example, vo,2);
-		model.addAttribute("page", page);
-		return "web/statistic/paper";
-	}
-	
-	
 	@RequestMapping("/web/statistic/question")
 	public String question(Model model, String query, PageVo vo) {
 		if(vo == null)	vo = new PageVo();
@@ -54,5 +37,20 @@ public class AssessmentController {
 		model.addAttribute("page", page);
 		return "web/statistic/question";
 	}
-
+	
+	@RequestMapping("/web/statistic/paper")
+	public String paper(Model model, String query, PageVo vo) {
+		if(vo == null)	vo = new PageVo();
+		vo.setSize(Integer.valueOf(pageSizeStr));
+		AssessmentExample example = new AssessmentExample();
+		Criteria criteria = example.createCriteria();
+		criteria.andPidIsNotNull();
+		if(query != null && !"".equals(query.trim())) {
+			criteria.andQueryLike("%" + query + "%");
+			model.addAttribute("name", query);
+		}
+		Page<Assessment> page = assessmenService.getByExampleAndVo(example, vo,2);
+		model.addAttribute("page", page);
+		return "web/statistic/paper";
+	}
 }

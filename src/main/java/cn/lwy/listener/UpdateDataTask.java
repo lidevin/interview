@@ -1,7 +1,5 @@
 package cn.lwy.listener;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -31,6 +29,9 @@ public class UpdateDataTask {
 	@Autowired
 	private StatisticService statisticService;
 	
+	/**
+	 * 00:00  分析试卷和题目
+	 */
 	@Scheduled(cron="0 0 0 * * ?") //00:00
     public void update(){
         statisticService.insertOrUpdatePaper();

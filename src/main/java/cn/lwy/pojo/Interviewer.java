@@ -9,14 +9,17 @@ import cn.lwy.utils.CommonUtils;
 public class Interviewer {
     private String id;
 
+    //真实姓名
     private String name;
 
+    //用户名
     private String nickname;
 
     private String pwd;
 
     private String sex;
 
+    //部门
     private String department;
 
     private String position;

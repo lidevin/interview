@@ -42,7 +42,7 @@ public class AssessmentServiceImpl implements AssessmentService{
 				for (Assessment assessment : list) {
 					assessment.setQst(questionMapper.selectByPrimaryKey(assessment.getQid()));
 				}
-			}else {//试卷
+			}else if(type==2){//试卷
 				for (Assessment assessment : list) {
 					assessment.setPaper(paperMapper.selectByPrimaryKey(assessment.getPid()));
 				}
