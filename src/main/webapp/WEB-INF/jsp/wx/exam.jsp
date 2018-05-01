@@ -1,5 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="lwy" uri="http://lwy.cn/common/" %>
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <link rel="stylesheet" href="./css/bootstrap.min.css">
@@ -80,7 +83,7 @@
 				</a>
 			</li>
 			<li class="text-center navtext">
-				<a href="./已有考试.html">
+				<a href="./exam.jsp">
 					<span style="vertical-align: middle; font-size: 16px;">已有考试</span>
 				</a>
 			</li>
@@ -122,11 +125,10 @@
 
 		<table width="100%" border="0" cellspacing="3" cellpadding="3">
 			<tbody><tr bgcolor="#dddddd" style="font-weight:bold;">
-				<td nowrap="">序号</td>
-				<td nowrap="">项目名称</td>
-				<td nowrap="">创建时间</td>
+				<td nowrap="">编号</td>
+				<td nowrap="" rowspan="2">试卷名</td>
 				<td nowrap="">总人数</td>
-				<td nowrap="">未开始</td>
+				<td nowrap="">总分数</td>
 				<td nowrap="">考试中</td>
 				<td nowrap="">已完成</td>
 				<td nowrap="" style="text-align:center;">操作</td>
@@ -135,7 +137,7 @@
 							<tr>
 					<td>1</td>
 					<td nowrap="">测试										</td>
-					<td nowrap="">2018-04-24 08:57</td>
+					<td nowrap="true">2018-04-24 08:57</td>
 					<td nowrap="">2</td>
 					<td nowrap="">0</td>
 					<td nowrap="">1</td>

@@ -23,7 +23,7 @@
 </div>	
 
 <div class="ques_info" style="margin: 15px auto 15px auto; width: 95%; max-width: 500px; ">
-	<form method="post" name="form1" id="form1" action="/wx/login.do">
+	<form method="post" name="form1" id="form1" action="/wx/candicade_login.do">
 	<input type="hidden" name="projid" value="">
 	<input type="hidden" name="p_loginmode" value="0">
 	<table width="95%" border="0" cellspacing="5" cellpadding="5" align="center" style="margin-top:10px;">
@@ -41,7 +41,7 @@
  
 <div class="btn_area" style="margin: 20px auto 0px auto; width: 95%; max-width: 500px; ">
 	<div class="btn" id="btn_sub" style="width:100%; ">面试者登录</div><div class="col-xs-12 cjwt" style="color:#999;">
-			[ <a href="./boss.html"><span>面试官登录</span></a> ] &nbsp; 
+			[ <a href="./boss_login.jsp"><span>面试官登录</span></a> ] &nbsp;
 			[ <a href=" "><span>忘记密码</span></a> ] &nbsp; 
 			[ <a target="_blank" href="./register.html"><span>注册</span></a> ] 
 		</div>
