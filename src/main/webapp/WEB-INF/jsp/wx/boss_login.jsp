@@ -44,7 +44,7 @@ var _hmt = _hmt || [];
 			</div>
 		</form>
 		<div class="col-xs-12 cjwt" style="color:#999;">
-			[ <a href="./candicade.html"><span>面试者登录</span></a> ] &nbsp; 
+			[ <a href="./candicade_login.jsp"><span>面试者登录</span></a> ] &nbsp;
 			[ <a href=" "><span>忘记密码</span></a> ] &nbsp; 
 			
 		</div>

@@ -80,7 +80,7 @@
 				</a>
 			</li>
 			<li class="text-center navtext">
-				<a href="./已有考试.html">
+				<a href="exam.jsp"  >
 					<span style="vertical-align: middle; font-size: 16px;">已有考试</span>
 				</a>
 			</li>
