@@ -10,8 +10,8 @@
 
 
 <title>面试者登录</title>
-<link href="./css/mobile.css" rel="stylesheet" type="text/css">
-<script language="javascript" type="text/javascript" src="./js/jquery.min.js"></script>
+<link href="/res/css/mobile.css" rel="stylesheet" type="text/css">
+<script language="javascript" type="text/javascript" src="/res/js/jquery.min.js"></script>
 </head>
 <body>
 <div class="proj_name" style="font-size:18px; line-height: 1.6em; ">面试者登录</div>
@@ -42,7 +42,7 @@
 <div class="btn_area" style="margin: 20px auto 0px auto; width: 95%; max-width: 500px; ">
 	<div class="btn" id="btn_sub" style="width:100%; ">面试者登录</div><div class="col-xs-12 cjwt" style="color:#999;">
 			[ <a href="./boss_login.jsp"><span>面试官登录</span></a> ] &nbsp;
-			[ <a href=" "><span>忘记密码</span></a> ] &nbsp; 
+
 			[ <a target="_blank" href="./register.html"><span>注册</span></a> ] 
 		</div>
 
