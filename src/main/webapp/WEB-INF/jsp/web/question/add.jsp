@@ -212,7 +212,7 @@
 									<input type="radio" name="answers3" value="A" checked="checked"/>
 									A 、 </span>
 									</span>
-									<input class="form-control" id="c31" type="text" name="choices3" placeholder="请编辑选项">
+									<input class="form-control" id="c31" type="text" name="choices3" value="对" placeholder="请编辑选项">
 								</div>
 								<div class="input-group listSeaForm mt10 wb100">
 									<span class="input-group-btn">
@@ -220,7 +220,7 @@
 									<input type="radio" name="answers3" value="B"/>
 									B 、 </span>
 									</span>
-									<input class="form-control" id="c32" type="text" name="choices3" placeholder="请编辑选项">
+									<input class="form-control" id="c32" type="text" name="choices3" value="错" placeholder="请编辑选项">
 								</div>
 							</li>
 							<li class="hidden">
