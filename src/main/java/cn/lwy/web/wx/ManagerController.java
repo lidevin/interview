@@ -17,7 +17,7 @@ public class ManagerController {
     @Value("${COOKIE.PWD}")
     private String cookiePwd;
 
-    @Value("${SESSION.USER}")
+    @Value("${SESSION.USERNAME}")
     private String sessionUserName;
 
     /**
@@ -25,7 +25,7 @@ public class ManagerController {
     * */
     @RequestMapping("/wx/boss_login.do")
     public String login(){
-        return "redirect:/wx/boss_index";
+        return "redirect:/wx/boss_index.jsp";
     }
     /**
      * 退出登陆
@@ -33,6 +33,6 @@ public class ManagerController {
     @RequestMapping("/wx/quit")
     public String quit(){
 
-        return "redirect:/wx/boss_login";
+        return "redirect:/wx/boss_login.jsp";
     }
 }

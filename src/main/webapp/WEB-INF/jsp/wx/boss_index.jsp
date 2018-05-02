@@ -2,10 +2,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<link rel="stylesheet" href="/res/css/bootstrap.min.css">
-<link rel="stylesheet" href="/res/css/user.css">
-<script type="text/javascript" src="/res/js/jquery.min.js"></script>
-<script type="text/javascript" src="/res/js/ats-func.js"></script>
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/user.css">
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/ats-func.js"></script>
 <title>后台</title>
 <style type="text/css">
 	.select-ul{
@@ -103,11 +103,11 @@
 
 
 
-<link rel="stylesheet" href="/res/css/bootstrap.min.css">
-<link rel="stylesheet" href="/res/css/user.css">
-<link rel="stylesheet" href="/res/css/iconfont.css">
-<script type="text/javascript" src="/res/js/jquery.min.js"></script>
-<script type="text/javascript" src="/res/js/ats-func.js"></script>
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/user.css">
+<link rel="stylesheet" href="./css/iconfont.css">
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/ats-func.js"></script>
 <script src="./js/echarts.min.js"></script>
 <title>后台</title>
 <style>
@@ -236,7 +236,14 @@
 	/* 
 	  URL为项目内调用字体的路径 
 	*/  
-	
+	@font-face {font-family: "iconfont";  
+	  src: url('iconfont.eot?t=1491967237541'); /* IE9*/  
+	  src: url('iconfont.eot?t=1491967237541#iefix') format('embedded-opentype'), /* IE6-IE8 */  
+	  url('/css/font/iconfont.woff?t=1491967237541') format('woff'),  /* chrome, firefox */  
+	  url('/css/font/iconfont.ttf?t=1491967237541') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/  
+	  url('iconfont.svg?t=1491967237541#iconfont') format('svg'); /* iOS 4.1- */  
+	}  
+	  
 	.iconfont {  
 	  font-family:"iconfont" !important;  
 	  font-size:23px;  

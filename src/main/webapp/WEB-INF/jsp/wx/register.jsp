@@ -38,8 +38,8 @@
     </script>
     
     <title>注册</title>
-    <link rel="stylesheet" href='/res/css/mresume_v20171228181422_3.css'/>
-    <link rel="stylesheet" href='/res/css/m3_v20180226154553_3.css'/>
+    <link rel="stylesheet" href='css/mresume_v20171228181422_3.css'/>
+    <link rel="stylesheet" href='css/m3_v20180226154553_3.css'/>
     <script type="text/javascript" charset="utf-8">
     var validateMobileMode = "1";
     </script>

@@ -5,8 +5,8 @@ pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<link rel="stylesheet" href="/res/css/bootstrap.min.css">
-<link rel="stylesheet" href="/res/css/user.css">
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/user.css">
 <script type="text/javascript" src="./js/jquery.min.js"></script>
 <script type="text/javascript" src="./js/ats-func.js"></script>
 <title>后台</title>
@@ -106,9 +106,9 @@ pageEncoding="UTF-8"%>
 
 
 
-<link rel="stylesheet" href="/res/css/bootstrap.min.css">
-<link rel="stylesheet" href="/res/css/user.css">
-<script type="text/javascript" src="/res/js/jquery.min.js"></script>
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/user.css">
+<script type="text/javascript" src="./js/jquery.min.js"></script>
 <title>后台</title>
 
 
