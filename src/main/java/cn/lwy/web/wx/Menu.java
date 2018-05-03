@@ -21,7 +21,7 @@ public class Menu {
 		WxMenu menu = new WxMenu();
 		List<WxMenuButton> btnList = new ArrayList<>();
 		String appid = WxConfig.getInstance().getAppId();
-		String candicadeUrl = "http://11095cfa.nat123.cc/wx/login";//候选人重定向网址
+		String candicadeUrl = "http://11095cfa.nat123.cc/wx/clogin";//候选人重定向网址
 		String interviewerUrl = "http://11095cfa.nat123.cc/wx/ilogin";//面试官重定向网址
 		
 		//需要对网址进行URLEncode编码
