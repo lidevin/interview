@@ -1,4 +1,5 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!-- saved from url=(0031)https://www.weicewang.com/login -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -10,8 +11,8 @@
 
 
 <title>面试者登录</title>
-<link href="./css/mobile.css" rel="stylesheet" type="text/css">
-<script language="javascript" type="text/javascript" src="./js/jquery.min.js"></script>
+<link href="/res/css/mobile.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/res/js/jquery.min.js"></script>
 </head>
 <body>
 <div class="proj_name" style="font-size:18px; line-height: 1.6em; ">面试者登录</div>
@@ -28,11 +29,11 @@
 	<input type="hidden" name="p_loginmode" value="0">
 	<table width="95%" border="0" cellspacing="5" cellpadding="5" align="center" style="margin-top:10px;">
 	<tbody><tr>
-		<td nowrap="" style="width:82px;font-weight:bold;">登录账号：</td>
+		<td  style="width:82px;font-weight:bold;">登录账号：</td>
 		<td><input type="text" id="candid" name="candid" maxlength="17" value="" style="width:90%;" placeholder="10位账号"></td>
 	</tr>
 	<tr>
-		<td nowrap="" style="width:82px;font-weight:bold;">登录密码：</td>
+		<td  style="width:82px;font-weight:bold;">登录密码：</td>
 		<td><input type="password" id="testcode" name="testcode" maxlength="6" value="" style="width:90%;" placeholder="6位密码"></td>
 	</tr>
 	</tbody></table>

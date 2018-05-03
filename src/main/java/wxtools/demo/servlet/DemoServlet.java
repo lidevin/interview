@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.ws.WebServiceRef;
 
-import com.lwy.wx.Menu;
 import com.soecode.wxtools.api.IService;
 import com.soecode.wxtools.api.WxConfig;
 import com.soecode.wxtools.api.WxMessageRouter;
@@ -20,6 +19,8 @@ import com.soecode.wxtools.handler.DemoHandler;
 import com.soecode.wxtools.interceptor.DemoInterceptor;
 import com.soecode.wxtools.matcher.DemoMatcher;
 import com.soecode.wxtools.util.xml.XStreamTransformer;
+
+import cn.lwy.web.wx.Menu;
 
 /**
  * <pre>

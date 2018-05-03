@@ -1,4 +1,4 @@
-package com.lwy.wx;
+package cn.lwy.web.wx;
 
 import com.soecode.wxtools.api.IService;
 import com.soecode.wxtools.api.WxConsts;

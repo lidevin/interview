@@ -1,4 +1,4 @@
-package com.lwy.wx;
+package cn.lwy.web.wx;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +33,7 @@ public class Menu {
 		//设置面试官菜单，跳转到面试官登陆页面
 		WxMenuButton interviewer = new WxMenuButton();
 		interviewer.setType(WxConsts.BUTTON_VIEW);
-		interviewer.setUrl("https://www.baidu.com");
+		interviewer.setUrl("http://localhost/wx/ilogin");
 		interviewer.setName("我是面试官");
 		
 		//放置按钮

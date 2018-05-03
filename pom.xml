@@ -46,6 +46,8 @@
 		<xstream.version>1.4.7</xstream.version>
 		<!-- IO -->
 		<commons-io.version>2.4</commons-io.version>
+		<!-- wxtools -->
+		<wxtools.version>2.1.3</wxtools.version>
 	</properties>
 	<dependencies>
 		<!--日志log4j -->
@@ -234,6 +236,14 @@
 			<version>${commons-io.version}</version>
 		</dependency>
 
+		<!-- wx-tools -->
+		<dependency>  
+		    <groupId>com.soecode</groupId>  
+		    <artifactId>wxtools</artifactId>  
+		    <version>${wxtools.version}</version>  
+		</dependency> 
+		
+		
 	</dependencies>
 	<build>
 		<plugins>

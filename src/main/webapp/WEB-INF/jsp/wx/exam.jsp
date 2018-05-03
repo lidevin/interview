@@ -1,15 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="lwy" uri="http://lwy.cn/common/" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<link rel="stylesheet" href="./css/bootstrap.min.css">
-<link rel="stylesheet" href="./css/user.css">
-<script type="text/javascript" src="./js/jquery.min.js"></script>
-<script type="text/javascript" src="./js/ats-func.js"></script>
 <title>后台</title>
+<link rel="stylesheet" href="/res/css/bootstrap.min.css">
+<link rel="stylesheet" href="/res/css/user.css">
+<script type="text/javascript" src="/res/js/jquery.min.js"></script>
+<script type="text/javascript" src="/res/js/ats-func.js"></script>
+
+<link rel="stylesheet" href="/res/css/bootstrap.min.css">
+<link rel="stylesheet" href="/res/css/user.css">
+<script type="text/javascript" src="/res/js/jquery.min.js"></script>
 <style type="text/css">
 	.select-ul{
 		width:100px;height: auto;
@@ -55,7 +60,7 @@ pageEncoding="UTF-8"%>
 		<ol class="leftlm">
 			<li style="margin:18px 0px 0px -43px; ">
 				<a href=" " title="后台主页">
-					<img src="./img/home.png" style=" width:20px; height:20px;  ">
+					<img src="/res/img/home.png" style=" width:20px; height:20px;  ">
 				</a>
 			</li>
 			<li class="text-center navtext">
@@ -70,10 +75,10 @@ pageEncoding="UTF-8"%>
 								
 							
 				<!-- <a href="/user/control" target="_blank" title="系统设置">
-					<img src="/img/setting.png" style="width:20px; height:20px; margin-top:18px; margin-left:20px;">
+					<img src="/res/img/setting.png" style="width:20px; height:20px; margin-top:18px; margin-left:20px;">
 				</a> -->
 								<a href=" " title="退出系统" onclick="return confirm(&#39;您真的要退出系统吗？&#39;);">
-					<img src="./img/quit.png" style="width:20px; height:20px; margin-top:18px; margin-left:20px;">
+					<img src="/res/img/quit.png" style="width:20px; height:20px; margin-top:18px; margin-left:20px;">
 				</a>
 			</li>
 			<li class="text-center navtext">
@@ -104,12 +109,6 @@ pageEncoding="UTF-8"%>
 </script>
 
 
-
-
-<link rel="stylesheet" href="./css/bootstrap.min.css">
-<link rel="stylesheet" href="./css/user.css">
-<script type="text/javascript" src="./js/jquery.min.js"></script>
-<title>后台</title>
 
 
 	<div class="lastdiv"></div>
