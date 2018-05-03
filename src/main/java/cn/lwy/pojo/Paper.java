@@ -1,6 +1,7 @@
 package cn.lwy.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -25,6 +26,7 @@ public class Paper {
 
     private Integer kid;
 
+    
     @DateTimeFormat(pattern= "yyyy-MM-dd HH:mm")
     private Date startTime;
 
@@ -32,7 +34,17 @@ public class Paper {
     
     private Short time;
 
-    public String getStartTimeStr() {
+    private List<Question> questions;
+    
+    public List<Question> getQuestions() {
+		return questions;
+	}
+
+	public void setQuestions(List<Question> questions) {
+		this.questions = questions;
+	}
+
+	public String getStartTimeStr() {
     	startTimeStr = CommonUtils.toDatetimeStr(startTime);
 		return startTimeStr;
 	}
