@@ -24,13 +24,13 @@ var _hmt = _hmt || [];
 <div id="box">
 	<div class="loginbox">
 		<div class="col-xs-12 topbiaoti" style="padding-bottom:10px;text-align:center; ">面试官登录</div>
-		<form action="/wx/boss_login.do" name="form1" id="form1" method="post">
+		<form action="/wx/ilogin.do" name="form1" id="form1" method="post">
 			<div class="col-xs-12">
 				<div class="input-group dlsrbox">
 					<span class="input-group-addon" style="padding: 0px 12px;"> 
 						<img src="/res/img/log-zh.png" style="width:18px;height:18px;">
 					</span> 
-					<input type="text" name="logname" class="form-control" placeholder="请输入账号" maxlength="20">
+					<input type="text" name="nickname" class="form-control" placeholder="请输入账号" maxlength="20">
 				</div>
 			</div>
 			<div class="col-xs-12">
@@ -38,7 +38,7 @@ var _hmt = _hmt || [];
 					<span class="input-group-addon" style="padding: 0px 12px;"> 
 						<img src="/res/img/log-key.png" style="width:18px;height:18px;">
 					</span> 
-					<input type="password" name="logpw" class="form-control" placeholder="请输入密码" maxlength="20">
+					<input type="password" name="pwd" class="form-control" placeholder="请输入密码" maxlength="20">
 				</div>
 			</div>
 			<div class="col-xs-12 dengluanniu " style="margin-top: 30px;">
@@ -46,7 +46,8 @@ var _hmt = _hmt || [];
 			</div>
 		</form>
 		<div class="col-xs-12 cjwt" style="color:#999;">
-			[ <a href="./candicade_login.jsp"><span>面试者登录</span></a> ] &nbsp;
+			<!-- [ <a href="./candicade_login.jsp"><span>面试者登录</span></a> ] &nbsp; -->
+			[ <input type="checkbox" name="isRem" value="login"> 记住我 ] &nbsp;
 			[ <a href=" "><span>忘记密码</span></a> ] &nbsp; 
 			
 		</div>
