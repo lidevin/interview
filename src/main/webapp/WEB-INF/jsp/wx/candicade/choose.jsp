@@ -1,11 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title></title>
-    <script src="js/mui.min.js"></script>
-    <link href="css/mui.min.css" rel="stylesheet"/>
+    <script src="/res/js/mui.min.js"></script>
+    <link href="/res/css/mui.min.css" rel="stylesheet"/>
     <script type="text/javascript" charset="utf-8">
       	mui.init();
     </script>
@@ -39,10 +41,10 @@
     </style>
 </head>
 <body>
-<form action="">
+<form action="/wx/candicade/success" method="exam">
 <div id="floater">  
-    <select id="content">
-    <option value="">请选择试卷</option>
+    <select id="content" name="pid">
+  <option value="">请选择试卷</option>
   <option value="volvo">Volvo</option>
   <option value="saab">Saab</option>
   <option value="opel">Opel</option>
