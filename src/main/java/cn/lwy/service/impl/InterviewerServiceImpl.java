@@ -70,21 +70,21 @@ public class InterviewerServiceImpl implements InterviewerService {
 		return false;
 	}
 	@Override
-	public boolean getByNickname(Interviewer interviewer){
+	public Interviewer getByNickname(Interviewer interviewer) throws Exception{
 		if(interviewer == null)
-			return false;
+			throw new GeneralException("传入数据错误！");
 		String nickname = interviewer.getNickname();
 		if(nickname == null || "".equals(nickname))
-			return false;
+			throw new GeneralException("传入数据错误！");
 		InterviewerExample example = new InterviewerExample();
 		example.createCriteria().andNicknameEqualTo(nickname);
 		List<Interviewer> list = interviewerMapper.selectByExample(example);
 		if(list == null || list.size() == 0)
-			return false;
+			throw new GeneralException("查询数据错误！");
 		Interviewer real = list.get(0);
 		if(real == null || !interviewer.getPwd().equals(real.getPwd()))
-			return false;
-		return true;
+			throw new GeneralException("查询数据错误！");
+		return real;
 	}
 
 	@Override
@@ -118,7 +118,7 @@ public class InterviewerServiceImpl implements InterviewerService {
 		return interviewerMapper.countByExample(example);
 	}
 
-	@Override
+/*	@Override
 	public Interviewer getByName(Interviewer interviewer) throws Exception {
 		if(interviewer == null)
 			throw new GeneralException("传入数据为空");
@@ -134,5 +134,5 @@ public class InterviewerServiceImpl implements InterviewerService {
 		if(real == null || !interviewer.getPwd().equals(real.getPwd()))
 			throw new GeneralException("密码错误");
 		return real;
-	}
+	}*/
 }

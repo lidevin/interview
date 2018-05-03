@@ -17,7 +17,7 @@ public interface InterviewerService extends BaseService<Interviewer>{
 	 * @param interviewer
 	 * @return
 	 */
-	boolean getByNickname(Interviewer interviewer);
+	Interviewer getByNickname(Interviewer interviewer) throws Exception;
 	
 	/**
 	 * 根据条件查询
@@ -37,12 +37,4 @@ public interface InterviewerService extends BaseService<Interviewer>{
 	 * @param nickName 用户名
 	 */
 	int countByNickname(String nickName);
-	
-	/**
-	 * 根据用户名获取面试官(登录业务)
-	 * @param interviewer 面试官实体类
-	 * @return  数据库中查询到的面试官实体类
-	 * @throws Exception  登录失败则出现异常
-	 */
-	Interviewer getByName(Interviewer interviewer) throws Exception;
 }

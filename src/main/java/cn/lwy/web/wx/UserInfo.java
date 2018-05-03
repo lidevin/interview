@@ -6,7 +6,6 @@ import com.soecode.wxtools.api.WxService;
 import com.soecode.wxtools.bean.WxUserList.WxUser;
 import com.soecode.wxtools.bean.WxUserList.WxUser.WxUserGet;
 import com.soecode.wxtools.bean.result.WxOAuth2AccessTokenResult;
-import com.soecode.wxtools.bean.result.WxUserListResult;
 import com.soecode.wxtools.exception.WxErrorException;
 
 public class UserInfo {

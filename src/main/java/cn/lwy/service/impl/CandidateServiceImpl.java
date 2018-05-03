@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import cn.lwy.exception.GeneralException;
 import cn.lwy.mapper.CandidateMapper;
@@ -20,6 +21,7 @@ import cn.lwy.pojo.PaperQst;
 import cn.lwy.pojo.Question;
 import cn.lwy.service.CandidateService;
 
+@Service
 public class CandidateServiceImpl implements CandidateService {
 
 	@Autowired
