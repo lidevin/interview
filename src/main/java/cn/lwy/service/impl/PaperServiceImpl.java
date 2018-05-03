@@ -87,7 +87,6 @@ public class PaperServiceImpl implements PaperService {
 			record.setQsttype(question.getQsttype());
 			count += paperQstListMapper.insert(record);
 		}
-		System.out.println("-----3-----");
 		if(count != qstList.size()) {
 			throw new GeneralException(1, "添加题目错误");
 		}
