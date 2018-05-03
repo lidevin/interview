@@ -15,4 +15,14 @@ public class MappingController {
 	public String candicadeLogin() {
 		return "wx/candicade_login";
 	}
+	@RequestMapping("/wx/exam")
+	public String exam() {
+		return "wx/exam";
+	}
+	@RequestMapping("/wx/register")
+	public String register() {
+		return "wx/register";
+	}
+	
+	
 }

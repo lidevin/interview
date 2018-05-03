@@ -18,7 +18,7 @@ public interface CandidateService extends BaseService<Candidate>{
 	boolean getByOpenid(Candidate candidate);
 	
 	/**
-	 * 获取最近考试的试卷
+	 * 获取未来time时间内的所有试卷
 	 * @param candidate  单位秒
 	 */
 	List<Paper> getRecentPaper(Long time);

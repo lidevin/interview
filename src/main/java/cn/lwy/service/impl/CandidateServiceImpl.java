@@ -73,7 +73,7 @@ public class CandidateServiceImpl implements CandidateService {
 	public List<Paper> getRecentPaper(Long time) {
 		long curTime = System.currentTimeMillis();
 		PaperExample example = new PaperExample();
-		example.createCriteria().andStartTimeNotBetween(new Date(curTime - time), new Date());
+		example.createCriteria().andStartTimeNotBetween(new Date(), new Date(curTime + time));
 		return paperMapper.selectByExample(example);
 	}
 
