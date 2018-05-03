@@ -23,6 +23,10 @@ public class MappingController {
 	public String register() {
 		return "wx/register";
 	}
-	
+	@RequestMapping("/wx/creatMenu")
+	public void createMenu(){
+		Menu menu = new Menu();
+		menu.createMenu();		
+	}
 	
 }

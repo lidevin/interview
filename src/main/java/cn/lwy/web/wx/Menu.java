@@ -1,5 +1,6 @@
 package cn.lwy.web.wx;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +21,18 @@ public class Menu {
 		WxMenu menu = new WxMenu();
 		List<WxMenuButton> btnList = new ArrayList<>();
 		String appid = WxConfig.getInstance().getAppId();
-		String REDIRECT_URI = "http%3a%2f%2f524f76dd.ngrok.io%2f";//需要对网址进行URLEncode编码
+		String candicadeUrl = "http://11095cfa.nat123.cc/wx/login";//候选人重定向网址
+		String interviewerUrl = "http://11095cfa.nat123.cc/wx/ilogin";//面试官重定向网址
+		
+		//需要对网址进行URLEncode编码
+		String REDIRECT_URI = null;
+		try {
+			REDIRECT_URI = java.net.URLEncoder.encode(candicadeUrl,"utf-8");
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}//需要对网址进行URLEncode编码
+		System.out.println(REDIRECT_URI);
 		String SCOPE = "snsapi_userinfo";//获取用户openid
 		String access = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="+appid+"&redirect_uri="+REDIRECT_URI+"&response_type=code&scope="+SCOPE+"&state=STATE#wechat_redirect";
 		//设置候选人菜单，跳转到候选人登陆页面
@@ -33,7 +45,7 @@ public class Menu {
 		//设置面试官菜单，跳转到面试官登陆页面
 		WxMenuButton interviewer = new WxMenuButton();
 		interviewer.setType(WxConsts.BUTTON_VIEW);
-		interviewer.setUrl("http://localhost/wx/ilogin");
+		interviewer.setUrl(interviewerUrl);
 		interviewer.setName("我是面试官");
 		
 		//放置按钮

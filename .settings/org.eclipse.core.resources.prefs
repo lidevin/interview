@@ -4,6 +4,7 @@ encoding//src/main/resources=UTF-8
 encoding//src/main/webapp/WEB-INF/jsp/wx/boss_index.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/jsp/wx/boss_login.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/jsp/wx/candicade_login.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/wx/choose.jsp=utf-8
 encoding//src/test/java=UTF-8
 encoding//src/test/resources=UTF-8
 encoding/<project>=UTF-8
