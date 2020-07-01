@@ -30,7 +30,7 @@
 		<!--MyBatis分页查询插件 -->
 		<pagehelper.version>5.1.2</pagehelper.version>
 		<!--数据库 -->
-		<mysql.version>5.1.40</mysql.version>
+		<mysql.version>8.0.16</mysql.version>
 		<!--连接池 -->
 		<druid.version>1.0.9</druid.version>
 		<!--单元测试包 -->
