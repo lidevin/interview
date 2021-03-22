@@ -43,7 +43,7 @@
 		<!-- JSON -->
 		<jackson-mapper-asl.version>1.9.13</jackson-mapper-asl.version>
 		<!-- XML -->
-		<xstream.version>1.4.7</xstream.version>
+		<xstream.version>1.4.16</xstream.version>
 		<!-- IO -->
 		<commons-io.version>2.4</commons-io.version>
 		<!-- wxtools -->
